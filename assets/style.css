@@ -1127,7 +1127,7 @@ body, html {
 }
 
 .project__image.image__firebase {
-  background-image: url("../project_images/firebase.jpg");
+  background-image: url("../project_images/Firebase.jpg");
 }
 
 .project__image.image__cryptocurrency {
@@ -1171,7 +1171,7 @@ body, html {
   width: 100%;
   height: 100%;
   color: inherit;
-  background-color: rgba(210, 225, 228, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1187,11 +1187,7 @@ body, html {
   cursor: pointer;
 }
 
-.project__name.pointer span {
-  padding: 3%;
-}
-
-.project__name.pointer span:hover {
+.project__name.pointer:hover {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   -webkit-box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15), 0 0px 16px rgba(0, 0, 0, 0.15);
