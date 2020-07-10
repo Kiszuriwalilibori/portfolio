@@ -241,24 +241,6 @@ body, html {
   }
 }
 
-@-webkit-keyframes nav-enter {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-
-@keyframes nav-enter {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-
 .ui-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,10 +264,6 @@ body, html {
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
   width: 50%;
-}
-
-.ui-section .ui-heading {
-  text-shadow: 0.5px 0.5px black;
 }
 
 .fancy-shadow {
@@ -378,6 +356,7 @@ body, html {
 }
 
 .ui-section.-hero .ui-heading > .ui-heading-inner > span {
+  text-shadow: 0.5px 0.5px black;
   display: inline-block;
 }
 
@@ -429,6 +408,10 @@ body, html {
   transition: margin-top 2s ease-in-out;
 }
 
+.ui-section:nth-child(2) .ui-aside {
+  text-shadow: 0.5px 0.5px black;
+}
+
 .ui-section:nth-child(2) .ui-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -446,14 +429,12 @@ body, html {
   position: absolute;
   bottom: 1vw;
   left: 1vw;
-  opacity: 0;
-  -webkit-animation: nav-enter 1s ease-in-out 4s forwards;
-          animation: nav-enter 1s ease-in-out 4s forwards;
 }
 
 .ui-section:nth-child(3) {
   color: orange;
   z-index: 1000;
+  text-shadow: 0.5px 0.5px black;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background-color: rgba(247, 202, 24, 0.25);
@@ -462,9 +443,10 @@ body, html {
 }
 
 .ui-section:nth-child(4) {
-  color: #0159B1;
-  background-color: rgba(247, 202, 247, 0.25);
-  background-image: url("../graphics/textures/broken-noise.png");
+  color: #004445;
+  background-color: #88A09A;
+  background: url(../graphics/textures/pont.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .ui-section:nth-child(4) .ui-content {
@@ -476,6 +458,10 @@ body, html {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.ui-section:nth-child(5) {
+  color: #E74C3C;
 }
 
 .informacje_item {
@@ -501,23 +487,12 @@ body, html {
     height: auto;
     padding: 1rem;
   }
-  .ui-section > .ui-content .project {
-    height: 24.2vw;
-  }
   .ui-section > .ui-aside:after,
   .ui-section > .ui-content:after {
     display: none;
   }
   .ui-section > .ui-aside {
     text-align: center;
-  }
-  .ui-section > .ui-aside #large-project-content {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    -webkit-transform: translateY(100%) translateX(-50%);
-            transform: translateY(100%) translateX(-50%);
   }
   .ui-section > .ui-aside > * {
     -ms-flex-item-align: initial;
@@ -543,11 +518,6 @@ body, html {
   .ui-section.-hero > .ui-content {
     text-align: center;
   }
-  .ui-section.-hero > .ui-aside .ui-heading-inner {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .ui-section .ui-content .desktop-hidden {
     display: block;
   }
@@ -558,9 +528,6 @@ body, html {
   }
   .informacje_item {
     width: 100%;
-  }
-  .gif_intro {
-    float: right;
   }
 }
 
@@ -952,7 +919,7 @@ body, html {
 }
 
 .gif {
-  width: 180px;
+  width: 120px;
   margin: 0 auto;
 }
 
@@ -998,11 +965,6 @@ body, html {
   margin: 10px 0 10px 0;
   border-radius: 1%;
   overflow: hidden;
-  height: 12.1vw;
-}
-
-.project.large {
-  height: unset;
 }
 
 .project:hover {
@@ -1020,9 +982,9 @@ body, html {
 }
 
 .project__image {
+  width: 280px;
   background-size: cover;
-  width: 100%;
-  height: 100%;
+  height: 175px;
 }
 
 .project__image.image__fizjo {
@@ -1046,7 +1008,7 @@ body, html {
 }
 
 .project__image.image__pogodynka {
-  background-image: url("../project_images/pogodynka.jpg");
+  background-image: url("../project_images/gbfinder.jpg");
 }
 
 .project__image.image__arch1 {
@@ -1125,7 +1087,6 @@ body, html {
 
 .large-project__cover .project {
   width: 345px;
-  display: none;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 }
