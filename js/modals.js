@@ -2,6 +2,7 @@
 
 let modal = document.getElementById('large-project-content');
 let large_project = document.getElementById('large-project-content');
+
 function show_modal(ev) {
 
   let source = ev.target.parentNode;
