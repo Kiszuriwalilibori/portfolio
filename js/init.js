@@ -31,6 +31,7 @@ function throttle(func, ms) {
 window.onload = function () {
 
   var element = document.getElementById('intro');
+  const loader = document.getElementById('loader-wrapper');
   element.classList.add('regular');
   document.getElementById('informations').style.marginTop = document.getElementById('heading').clientHeight + "px";
   window.scrollTo({
@@ -57,4 +58,5 @@ window.onload = function () {
       button.addEventListener('click', change_location);
     }
   );
+
 }
