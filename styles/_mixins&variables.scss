@@ -1,0 +1,49 @@
+@mixin section($color, $bgr) {
+    color: $color;
+    background-color: $bgr;
+    background-image: url("../graphics/textures/broken-noise.png");
+}
+
+@mixin abs_top_left_00 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@mixin full_size {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin hero_shadow_large {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
+}
+
+@mixin hero_shadow_small {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11);
+}
+
+@mixin information_shadow {box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);}
+
+@mixin skills_shadow {box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11); }
+
+@mixin skills_shadow_hover {box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);}
+
+@mixin flex_column($justify){
+    display:flex;
+    flex-direction: column;
+    justify-content: $justify;
+    
+}
+
+@mixin flex_row($justify, $align){
+    display:flex;
+    flex-direction: row;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+
+$breakMobile: 776px;
+$breakSmallMobile: 422px;

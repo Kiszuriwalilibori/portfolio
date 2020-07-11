@@ -1,37 +1,17 @@
 
 .ui-footer {
-    background-color: rgba(0,255,255, 0.35);
-    background-image: url("../graphics/textures/broken-noise.png");
+    @include section(white,rgba(0,255,255,0.35));
     width: 100%;
     padding: 1rem;
     text-align: center;
-    color: white; 
-    & p{
-          text-align: center;
-          font-size:24px;
-          background: -webkit-linear-gradient(45deg,magenta, gold 70%);
-          -webkit-background-clip: text;
-          background-clip:text;
-          -webkit-text-fill-color: transparent;
-        }
+    @include skills_shadow;
+  &:hover{ @include skills_shadow_hover;}
+  & p{
+        text-align: center;
+        font-size:24px;
+        background: -webkit-linear-gradient(45deg,magenta, gold 70%);
+        -webkit-background-clip: text;
+        background-clip:text;
+        -webkit-text-fill-color: transparent;
+      }
 }
-    .ui-footer a {
-      text-decoration: none;
-      color: #FEC214;
-      display: inline-block;
-      margin: 0 0.5rem; }
-      .ui-footer a:before {
-        content: '';
-        position: absolute;
-        display: block;
-        top: calc(100% + 0.1rem);
-        left: 0;
-        height: 0.5ex;
-        width: 100%;
-        background: #FEC214;
-        transform: scaleX(0);
-        transform-origin: left; }
-      .ui-footer a:hover:before {
-        transform: scaleX(1); }
-  
-  
