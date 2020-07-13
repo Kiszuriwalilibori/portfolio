@@ -1,0 +1,17 @@
+
+.ui-footer {
+    @include section(white,rgba(0,255,255,0.35));
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    @include skills_shadow;
+  &:hover{ @include skills_shadow_hover;}
+  & p{
+        text-align: center;
+        font-size:24px;
+        background: -webkit-linear-gradient(45deg,magenta, gold 70%);
+        -webkit-background-clip: text;
+        background-clip:text;
+        -webkit-text-fill-color: transparent;
+      }
+}

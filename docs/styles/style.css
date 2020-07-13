@@ -595,6 +595,7 @@ body, html {
   color: #31444F;
   border: 1px solid #31444F;
   overflow: hidden;
+  cursor: pointer;
   outline: none;
 }
 
