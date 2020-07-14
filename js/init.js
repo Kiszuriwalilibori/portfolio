@@ -30,28 +30,36 @@ function throttle(func, ms) {
 /////////// assures proper repositioning of intro  
 window.onload = function () {
 
-  var element = document.getElementById('intro');
-  const loader = document.getElementById('loader-wrapper');
+  const element = document.getElementById('intro');
+  const informations = document.getElementById('informations');
+  const heading = document.getElementById('heading');
+  const intro = document.getElementById('intro');
+  if (! (element && informations && heading && intro)){window.alert('Nie odnaleziono jednego lub więcej waznych identyfikatorów. Strona nie bedzie działać proawidłowo'); return false;}
+
   element.classList.add('regular');
-  document.getElementById('informations').style.marginTop = document.getElementById('heading').clientHeight + "px";
+  informations.style.marginTop = heading.clientHeight + "px";
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   });
 
-  setTimeout(function () {
-    new ResizeSensor(element, function () {
-      document.getElementById('informations').style.marginTop = element.clientHeight + "px";
-    });
-  }, 5000)
+  if (typeof ResizeSensor !== 'undefined') {
+    setTimeout(function () {
+      new ResizeSensor(element, function () {
+        informations.style.marginTop = element.clientHeight + "px";
+      });
+    }, 5000)
+  } else {
+    window.alert('ResizeSensor nie jest dostępny')
+  }
 
   function change_location(ev) {
     location.hash = ev.target.dataset.target;
-    window.scrollBy(0, -document.getElementById('intro').clientHeight);
+    window.scrollBy(0, -intro.clientHeight);
   }
 
-  change_location = throttle(change_location, 500);
-
+  change_location = (typeof throttle !== 'undefined')? throttle(change_location, 500):change_location;
+  
   Array.prototype.forEach.call(
     document.getElementsByClassName('location-button'),
     button => {
