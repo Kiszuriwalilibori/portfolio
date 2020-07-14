@@ -29,39 +29,41 @@ function throttle(func, ms) {
 
 /////////// assures proper repositioning of intro  
 window.onload = function () {
-
-  const element = document.getElementById('intro');
+  
+  // variables
+  const intro = document.getElementById('intro');
   const informations = document.getElementById('informations');
   const heading = document.getElementById('heading');
-  const intro = document.getElementById('intro');
-  if (! (element && informations && heading && intro)){window.alert('Nie odnaleziono jednego lub więcej waznych identyfikatorów. Strona nie bedzie działać proawidłowo'); return false;}
-
-  element.classList.add('regular');
-  informations.style.marginTop = heading.clientHeight + "px";
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-
-  if (typeof ResizeSensor !== 'undefined') {
-    setTimeout(function () {
-      new ResizeSensor(element, function () {
-        informations.style.marginTop = element.clientHeight + "px";
-      });
-    }, 5000)
-  } else {
-    window.alert('ResizeSensor nie jest dostępny')
-  }
+  const buttons =  document.getElementsByClassName('location-button');
+  
+  //check for missing items
+  if (!(informations && heading && intro && buttons)){window.alert('Nie odnaleziono jednego lub więcej waznych identyfikatorów. Strona nie bedzie działać proawidłowo'); return false;}
+  
+  //local functions
+  function adjustMargin (item){informations.style.marginTop = item.clientHeight +"px"}
 
   function change_location(ev) {
     location.hash = ev.target.dataset.target;
     window.scrollBy(0, -intro.clientHeight);
   }
-
   change_location = (typeof throttle !== 'undefined')? throttle(change_location, 500):change_location;
   
+  //main function flow starts here
+  intro.classList.add('regular');
+  adjustMargin(heading);
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  if (typeof ResizeSensor !== 'undefined') {
+    setTimeout(function () {
+      new ResizeSensor(intro, function () {adjustMargin(intro);});
+    }, 5000)
+  } 
+  else {
+    window.alert('ResizeSensor nie jest dostępny')
+  }
+
   Array.prototype.forEach.call(
-    document.getElementsByClassName('location-button'),
+    buttons,
     button => {
       button.addEventListener('click', change_location);
     }
