@@ -1,7 +1,6 @@
 @mixin section($color, $bgr) {
     color: $color;
     background-color: $bgr;
-    background-image: url("../graphics/textures/broken-noise.png");
 }
 
 @mixin abs_top_left_00 {

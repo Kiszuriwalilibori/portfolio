@@ -15,6 +15,7 @@ body, html {
 
 }
 
+
 .ui-section {
   @include flex_row(center, stretch);
   min-height:100vh;
@@ -25,12 +26,12 @@ body, html {
     width: 50%;
   }
 }
-  
-// .fancy-shadow{
-//   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11); 
-// }
-// .fancy-shadow:hover{box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);}
+
+.webp .ui-section{background-image:  url("../graphics/textures/broken-noise.webp");}
+.no-webp .ui-section{background-image: url("../graphics/textures/broken-noise.png");}
+
 @import 'hero';
+
 
 .ui-section:nth-child(2) {
   @include section(#003B46,rgba(0,255,0,0.15));
@@ -114,9 +115,7 @@ body, html {
 .ui-screen {
   pointer-events: none;
   z-index: 0;
-  
   @include abs_top_left_00;
- 
   @include full_size;
   background: white;
   transform: scaleX(0);
@@ -141,6 +140,7 @@ body, html {
   color: #31444F;
   border: 1px solid #31444F;
   overflow: hidden;
+  cursor:pointer;
   outline: none; }
   .ui-button + .ui-button, .ui-buttons:hover > .ui-button + .ui-button {
     margin-left: 1rem; }

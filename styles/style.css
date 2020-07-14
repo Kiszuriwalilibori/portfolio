@@ -288,10 +288,17 @@ body, html {
   width: 50%;
 }
 
+.webp .ui-section {
+  background-image: url("../graphics/textures/broken-noise.webp");
+}
+
+.no-webp .ui-section {
+  background-image: url("../graphics/textures/broken-noise.png");
+}
+
 .ui-section.-hero {
   color: red;
   background-color: white;
-  background-image: url("../graphics/textures/broken-noise.png");
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
   position: fixed;
@@ -421,7 +428,6 @@ body, html {
 .ui-section:nth-child(2) {
   color: #003B46;
   background-color: rgba(0, 255, 0, 0.15);
-  background-image: url("../graphics/textures/broken-noise.png");
   margin-top: 0;
   -webkit-transition: margin-top 2s ease-in-out;
   transition: margin-top 2s ease-in-out;
@@ -454,7 +460,6 @@ body, html {
 .ui-section:nth-child(3) {
   color: orange;
   background-color: rgba(247, 202, 24, 0.25);
-  background-image: url("../graphics/textures/broken-noise.png");
   z-index: 1000;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -471,7 +476,6 @@ body, html {
 .ui-section:nth-child(4) {
   color: #0159B1;
   background-color: rgba(247, 202, 247, 0.25);
-  background-image: url("../graphics/textures/broken-noise.png");
 }
 
 .ui-section:nth-child(4) .ui-content {
@@ -595,6 +599,7 @@ body, html {
   color: #31444F;
   border: 1px solid #31444F;
   overflow: hidden;
+  cursor: pointer;
   outline: none;
 }
 
@@ -635,7 +640,6 @@ body, html {
 .ui-footer {
   color: white;
   background-color: rgba(0, 255, 255, 0.35);
-  background-image: url("../graphics/textures/broken-noise.png");
   width: 100%;
   padding: 1rem;
   text-align: center;
@@ -655,6 +659,14 @@ body, html {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.webp .ui-footer {
+  background-image: url("../graphics/textures/broken-noise.webp");
+}
+
+.no-webp .ui-footer {
+  background-image: url("../graphics/textures/broken-noise.png");
 }
 
 .ui-content.skills ul {
@@ -898,49 +910,89 @@ body, html {
   height: 100%;
 }
 
-.project__image.image__fizjo {
-  background-image: url("../graphics/project_images/fizjo.jpg");
-}
-
-.project__image.image__jsbooks {
-  background-image: url("../graphics/project_images/jsbooks.jpg");
-}
-
-.project__image.image__firebase {
-  background-image: url("../graphics/project_images/firebase.jpg");
-}
-
-.project__image.image__cryptocurrency {
-  background-image: url("../graphics/project_images/cryptocurrency.jpg");
-}
-
-.project__image.image__gbfinder {
-  background-image: url("../graphics/project_images/gbfinder.jpg");
-}
-
-.project__image.image__pogodynka {
-  background-image: url("../graphics/project_images/pogodynka.jpg");
-}
-
-.project__image.image__arch1 {
-  background-image: url("../graphics/project_images/archiwalne_1.jpg");
-}
-
-.project__image.image__arch2 {
-  background-image: url("../graphics/project_images/archiwalne_2.jpg");
-}
-
-.project__image.image__drzewo {
-  background-image: url("../graphics/project_images/drzewo.jpg");
-}
-
-.project__image.image__athletes {
-  background-image: url("../graphics/project_images/athletes.jpg");
-}
-
 .project__image.large {
   width: 345px;
   height: 237px;
+}
+
+.webp .project__image.image-gbfinder {
+  background-image: url("../graphics/project_images/gbfinder.webp");
+}
+
+.nowebp .project__image.image-gbfinder {
+  background-image: url("../graphics/project_images/gbfinder.jpg");
+}
+
+.webp .project__image.image-fizjo {
+  background-image: url("../graphics/project_images/fizjo.webp");
+}
+
+.nowebp .project__image.image-fizjo {
+  background-image: url("../graphics/project_images/fizjo.jpg");
+}
+
+.webp .project__image.image-athletes {
+  background-image: url("../graphics/project_images/athletes.webp");
+}
+
+.nowebp .project__image.image-athletes {
+  background-image: url("../graphics/project_images/athletes.jpg");
+}
+
+.webp .project__image.image-cryptocurrency {
+  background-image: url("../graphics/project_images/cryptocurrency.webp");
+}
+
+.nowebp .project__image.image-cryptocurrency {
+  background-image: url("../graphics/project_images/cryptocurrency.jpg");
+}
+
+.webp .project__image.image-drzewo {
+  background-image: url("../graphics/project_images/drzewo.webp");
+}
+
+.nowebp .project__image.image-drzewo {
+  background-image: url("../graphics/project_images/drzewo.jpg");
+}
+
+.webp .project__image.image-jsbooks {
+  background-image: url("../graphics/project_images/jsbooks.webp");
+}
+
+.nowebp .project__image.image-jsbooks {
+  background-image: url("../graphics/project_images/jsbooks.jpg");
+}
+
+.webp .project__image.image-arch1 {
+  background-image: url("../graphics/project_images/arch1.webp");
+}
+
+.nowebp .project__image.image-arch1 {
+  background-image: url("../graphics/project_images/arch1.jpg");
+}
+
+.webp .project__image.image-arch2 {
+  background-image: url("../graphics/project_images/arch2.webp");
+}
+
+.nowebp .project__image.image-arch2 {
+  background-image: url("../graphics/project_images/arch2.jpg");
+}
+
+.webp .project__image.image-firebase {
+  background-image: url("../graphics/project_images/firebase.webp");
+}
+
+.nowebp .project__image.image-firebase {
+  background-image: url("../graphics/project_images/firebase.jpg");
+}
+
+.webp .project__image.image-pogodynka {
+  background-image: url("../graphics/project_images/pogodynka.webp");
+}
+
+.nowebp .project__image.image-pogodynka {
+  background-image: url("../graphics/project_images/pogodynka.jpg");
 }
 
 .project__name {

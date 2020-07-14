@@ -26,5 +26,4 @@
 
 ### To do
 
-more webp
-optimise images
+nice frame around some divs
