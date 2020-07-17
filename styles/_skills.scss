@@ -46,6 +46,7 @@
     padding-left:10px; 
     font-weight: bold;
     text-shadow: 0.5px 0.5px black;
+    hyphens: auto;
   }
 }
 
@@ -127,5 +128,10 @@
 .gif.gif_intro{width:100px; opacity:0%; animation: girl-intro 0.3s ease-in-out 4s forwards;}
 .gif.gif_intro-blue{width:100px; opacity:0%; animation: girl-intro 0.3s ease-in-out 4s forwards; float:left;}
 .gif.gif_boys{width:180px;}
+.gif.gif-footer{
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);}
 
-//test

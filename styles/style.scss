@@ -45,7 +45,7 @@ body, html {
       font-size: 14px;
       color:white;
       width:95%;
-      background: rgba(0,58,69, 0.7);
+      background: rgba(0,58,69, 0.35);
       @include information_shadow;
     }
   }
@@ -137,8 +137,8 @@ body, html {
   text-transform: uppercase;
   padding: 1rem;
   font-weight: 700;
-  padding:calc(6px + 8 * ((100vw - 320px) / 1080)) ;
-  font-size: calc(12px + 4 * ((100vw - 320px) / 1080)) ;
+  padding:calc(4px + 10 * ((100vw - 320px) / 1080)) ;
+  font-size: calc(10px + 6 * ((100vw - 320px) / 1080)) ;
   background: transparent;
   color: #31444F;
   border: 1px solid #31444F;

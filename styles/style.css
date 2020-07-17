@@ -452,7 +452,7 @@ body, html {
   font-size: 14px;
   color: white;
   width: 95%;
-  background: rgba(0, 58, 69, 0.7);
+  background: rgba(0, 58, 69, 0.35);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 }
@@ -593,8 +593,8 @@ body, html {
   text-transform: uppercase;
   padding: 1rem;
   font-weight: 700;
-  padding: calc(6px + 8 * ((100vw - 320px) / 1080));
-  font-size: calc(12px + 4 * ((100vw - 320px) / 1080));
+  padding: calc(4px + 10 * ((100vw - 320px) / 1080));
+  font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
   background: transparent;
   color: #31444F;
   border: 1px solid #31444F;
@@ -639,7 +639,7 @@ body, html {
 
 .ui-footer {
   color: white;
-  background-color: rgba(255, 255, 2, 0.35);
+  background-color: rgba(0, 255, 255, 0.2);
   width: 100%;
   padding: 1rem;
   text-align: center;
@@ -750,6 +750,9 @@ body, html {
   padding-left: 10px;
   font-weight: bold;
   text-shadow: 0.5px 0.5px black;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .bg-bootstrap {
@@ -864,6 +867,15 @@ body, html {
 
 .gif.gif_boys {
   width: 180px;
+}
+
+.gif.gif-footer {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .author-foto {
@@ -1242,6 +1254,15 @@ body, html {
   .ui-content.skills ul {
     padding-left: 0;
   }
+  .gif.gif_intro, .gif.gif_intro-blue {
+    width: calc(50px + 50 * ((100vw - 320px) / 380));
+  }
+  .gif_intro-blue {
+    margin-left: 20px;
+  }
+  .gif_intro {
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 700px) {
@@ -1253,20 +1274,31 @@ body, html {
   }
 }
 
-@media (max-width: 509px) {
+@media (max-width: 508px) {
+  .ui-section > .ui-aside {
+    padding: 0;
+  }
   .ui-content .ui-buttons {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    display: none;
   }
   .ui-section.-hero nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    left: 0;
+    padding: 0 1vw 0 1vw;
+  }
+  .ui-section.-hero nav .ui-button {
+    margin: 0;
+  }
+  .ui-section.-hero .ui-content {
+    padding: 0;
   }
   .ui-content.skills ul li {
     width: 45%;
@@ -1276,6 +1308,16 @@ body, html {
 @media (max-width: 415px) {
   .large-project__cover .project {
     width: calc(300px + 45 * ((100vw - 320px) / 95));
+  }
+}
+
+.below_509_visible {
+  display: none;
+}
+
+@media (max-width: 508px) {
+  .below_509_visible {
+    display: block;
   }
 }
 /*# sourceMappingURL=style.css.map */
