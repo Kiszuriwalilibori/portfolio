@@ -23,13 +23,13 @@ function show_modal(ev) {
   modal.classList.add('large');
   modal.getElementsByClassName('project__image')[0].classList.add('large');
   modal.style.display = 'block';
-
+ 
+  
 // scrolls window to assure proper location of modal
   location.hash = "projects";
   window.scrollBy(0, -document.getElementById('intro').clientHeight);
 
 }
-
 //mounts handlers on small project covers
 Array.prototype.forEach.call(
   smallProjectCovers,

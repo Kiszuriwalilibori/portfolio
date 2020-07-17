@@ -1,6 +1,6 @@
 
 .ui-footer {
-    @include section(white,rgba(0,255,255,0.35));
+    @include section(white,rgba(255,255,2,0.35));
     width: 100%;
     padding: 1rem;
     text-align: center;
@@ -8,8 +8,9 @@
   &:hover{ @include skills_shadow_hover;}
   & p{
         text-align: center;
-        font-size:24px;
-        background: -webkit-linear-gradient(45deg,magenta, gold 70%);
+        font-size:36px;
+        @media( max-width: 520px){font-size: 20px;}
+        background: -webkit-linear-gradient(45deg,red, navy);
         -webkit-background-clip: text;
         background-clip:text;
         -webkit-text-fill-color: transparent;
