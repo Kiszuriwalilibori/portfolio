@@ -1,35 +1,49 @@
 @mixin project-background {
-    padding: 2% 5% 2% 5%;
-    font-size: 0.875rem;
-    font-family: Roboto, "Helvetica",  sans-serif;
-    font-weight: 400;
-    line-height: 1.43;
-    letter-spacing: 0.01071em;
-    &:hover{background:#F6F6F6;}  
+  padding: 2% 5% 2% 5%;
+  font-size: 0.875rem;
+  font-family: Roboto, "Helvetica", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+
+  &:hover {
+    background: #F6F6F6;
+  }
 }
-  
-.project{
-  width:40%;
-  position:relative;
+
+.project {
+  width: 40%;
+  position: relative;
   margin: 10px 0 10px 0;
   border-radius: 1%;
-  overflow:hidden;
+  overflow: hidden;
   height: 12.1vw;
-  &.large {height:unset;}
-  &:hover{box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15),0 0px 16px rgba(0, 0, 0, 0.15) ;}
-  &.pointer{
-    cursor: pointer;
-    margin:2%;
-    
+
+  &.large {
+    height: unset;
   }
-  & .initial{display:none !important;}
-  
+
+  &:hover {
+    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15), 0 0px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  &.pointer {
+    cursor: pointer;
+    margin: 2%;
+
+  }
+
+  & .initial {
+    display: none !important;
+  }
+
 }
+
 .project__image {
 
   background-size: cover;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 
   // &.image-fizjo{ background-image: url("../graphics/project_images/fizjo.jpg");}
   // &.image-jsbooks{ background-image: url("../graphics/project_images/jsbooks.jpg");}
@@ -41,143 +55,213 @@
   // &.image-arch2{ background-image: url("../graphics/project_images/archiwalne_2.jpg");}
   // &.image-drzewo{ background-image: url("../graphics/project_images/drzewo.jpg");}
   // &.image-athletes{ background-image: url("../graphics/project_images/athletes.jpg");}
-  &.large{
-    width:345px; 
-    height:237px;
+  &.large {
+    width: 345px;
+    height: 237px;
   }
 }
-.webp .project__image.image-gbfinder{ background-image: url("../graphics/project_images/gbfinder.webp");}
-.nowebp .project__image.image-gbfinder{ background-image: url("../graphics/project_images/gbfinder.jpg");}
-  
-.webp .project__image.image-fizjo{ background-image: url("../graphics/project_images/fizjo.webp");}
-.nowebp .project__image.image-fizjo{ background-image: url("../graphics/project_images/fizjo.jpg");}
- 
-.webp .project__image.image-athletes{ background-image: url("../graphics/project_images/athletes.webp");}
-.nowebp .project__image.image-athletes{ background-image: url("../graphics/project_images/athletes.jpg");}
 
-.webp .project__image.image-cryptocurrency{ background-image: url("../graphics/project_images/cryptocurrency.webp");}
-.nowebp .project__image.image-cryptocurrency{ background-image: url("../graphics/project_images/cryptocurrency.jpg");}
- 
-.webp .project__image.image-drzewo{ background-image: url("../graphics/project_images/drzewo.webp");}
-.nowebp .project__image.image-drzewo{ background-image: url("../graphics/project_images/drzewo.jpg");}
-
-.webp .project__image.image-jsbooks{ background-image: url("../graphics/project_images/jsbooks.webp");}
-.nowebp .project__image.image-jsbooks{ background-image: url("../graphics/project_images/jsbooks.jpg");}
-
-.webp .project__image.image-arch1{ background-image: url("../graphics/project_images/arch1.webp");}
-.nowebp .project__image.image-arch1{ background-image: url("../graphics/project_images/arch1.jpg");}
-
-.webp .project__image.image-arch2{ background-image: url("../graphics/project_images/arch2.webp");}
-.nowebp .project__image.image-arch2{ background-image: url("../graphics/project_images/arch2.jpg");}
-
-
-.webp .project__image.image-firebase{ background-image: url("../graphics/project_images/firebase.webp");}
-.nowebp .project__image.image-firebase{ background-image: url("../graphics/project_images/firebase.jpg");}
-
-
-.webp .project__image.image-pogodynka{ background-image: url("../graphics/project_images/pogodynka.webp");}
-.nowebp .project__image.image-pogodynka{ background-image: url("../graphics/project_images/pogodynka.jpg");}
-
-
-
-.project__name{
-  z-index: 1000;
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  color:inherit;
-  background-color:rgba(255, 255, 255, 0.6);
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  &.pointer{cursor: pointer;
-      &:hover{
-        background-color: rgba(0,0,0,0.30);
-        color:white;
-        box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15),0 0px 16px rgba(0, 0, 0, 0.15) ;}
-    }
+.webp .project__image.image-gbfinder {
+  background-image: url("../graphics/project_images/gbfinder.webp");
 }
 
-.large-project__cover{
+.nowebp .project__image.image-gbfinder {
+  background-image: url("../graphics/project_images/gbfinder.jpg");
+}
+
+.webp .project__image.image-fizjo {
+  background-image: url("../graphics/project_images/fizjo.webp");
+}
+
+.nowebp .project__image.image-fizjo {
+  background-image: url("../graphics/project_images/fizjo.jpg");
+}
+
+.webp .project__image.image-athletes {
+  background-image: url("../graphics/project_images/athletes.webp");
+}
+
+.nowebp .project__image.image-athletes {
+  background-image: url("../graphics/project_images/athletes.jpg");
+}
+
+.webp .project__image.image-cryptocurrency {
+  background-image: url("../graphics/project_images/cryptocurrency.webp");
+}
+
+.nowebp .project__image.image-cryptocurrency {
+  background-image: url("../graphics/project_images/cryptocurrency.jpg");
+}
+
+.webp .project__image.image-drzewo {
+  background-image: url("../graphics/project_images/drzewo.webp");
+}
+
+.nowebp .project__image.image-drzewo {
+  background-image: url("../graphics/project_images/drzewo.jpg");
+}
+
+.webp .project__image.image-jsbooks {
+  background-image: url("../graphics/project_images/jsbooks.webp");
+}
+
+.nowebp .project__image.image-jsbooks {
+  background-image: url("../graphics/project_images/jsbooks.jpg");
+}
+
+.webp .project__image.image-arch1 {
+  background-image: url("../graphics/project_images/arch1.webp");
+}
+
+.nowebp .project__image.image-arch1 {
+  background-image: url("../graphics/project_images/arch1.jpg");
+}
+
+.webp .project__image.image-arch2 {
+  background-image: url("../graphics/project_images/arch2.webp");
+}
+
+.nowebp .project__image.image-arch2 {
+  background-image: url("../graphics/project_images/arch2.jpg");
+}
+
+
+.webp .project__image.image-firebase {
+  background-image: url("../graphics/project_images/firebase.webp");
+}
+
+.nowebp .project__image.image-firebase {
+  background-image: url("../graphics/project_images/firebase.jpg");
+}
+
+
+.webp .project__image.image-pogodynka {
+  background-image: url("../graphics/project_images/pogodynka.webp");
+}
+
+.nowebp .project__image.image-pogodynka {
+  background-image: url("../graphics/project_images/pogodynka.jpg");
+}
+
+
+
+.project__name {
   z-index: 1000;
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  display:flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
   justify-content: center;
   align-items: center;
-  & .project{
-    width:345px;
-    display:none;
+
+  &.pointer {
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.30);
+      color: white;
+      box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15), 0 0px 16px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.large-project__cover {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .project {
+    width: 345px;
+    display: none;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 
-    & .project__image{
-      width: 100%; 
+    & .project__image {
+      width: 100%;
     }
-    & .project__data{ 
-      background:white;
-      &.initial{display:none !important;}
-     
-      & .project__title{
+
+    & .project__data {
+      background: white;
+
+      &.initial {
+        display: none !important;
+      }
+
+      & .project__title {
         @include project-background();
-        font-size:24px;
+        font-size: 24px;
         font-weight: 400;
         letter-spacing: normal;
         font-size: 1.5rem;
-        color:black;
+        color: black;
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-        font-weight: 400;
+        font-weight: bold;
         line-height: 1.334;
         margin-top: 0;
-        margin-bottom:0;
-        padding-top:5%;
-        padding-bottom:5%;
-        
+        margin-bottom: 0;
+        padding-top: 5%;
+        padding-bottom: 5%;
+
       }
-      & .project__description{
+
+      & .project__description {
         @include project-background();
         color: rgba(0, 0, 0, 0.54);
-        
+
       }
-      & .project__skills{ 
+
+      & .project__skills {
         @include project-background();
-        color:black;
-        & span{padding: 0 1% 0 1%;}
+        color: black;
+
+        & span {
+          padding: 0 1% 0 1%;
+        }
       }
-      & .project__links{
-        background:#4285F4;
-        letter-spacing:0.07em;
-        font-size:1rem;
+
+      & .project__links {
+        background: #4285F4;
+        letter-spacing: 0.07em;
+        font-size: 1rem;
         font-weight: bolder;
-        display:flex;
+        display: flex;
         justify-content: space-around;
-        padding-top:5%;
-        padding-bottom:5%;
-        & a{
-          cursor: pointer; 
-          color:white; 
-          text-decoration:none; 
+        padding-top: 5%;
+        padding-bottom: 5%;
+
+        & a {
+          cursor: pointer;
+          color: white;
+          text-decoration: none;
           padding: 3%;
-          &:hover{background:rgb(119, 165, 239);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);}
-        } 
+
+          &:hover {
+            background: rgb(119, 165, 239);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+          }
+        }
       }
-    } 
+    }
   }
 }
 
-.icon-delete{
+.icon-delete {
   background-image: url('../graphics/icons/delete.png');
-  width:64px;
-  height:64px;
-  background-size:cover;
-  position:absolute;
-  top:0;
-  left:100%;
+  width: 64px;
+  height: 64px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 100%;
   transform: translateX(-100%);
-  cursor:pointer;
+  cursor: pointer;
 }
