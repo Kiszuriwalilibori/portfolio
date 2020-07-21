@@ -25,5 +25,3 @@
 
 
 ### To do
-
-nice frame around some divs
