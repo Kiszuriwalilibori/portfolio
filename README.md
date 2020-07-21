@@ -25,3 +25,10 @@
 
 
 ### To do
+powinno mieć obsługę zdzrzenia kliknięcia enter na wsyztsko skoro jest klikalne klawiaturą
+
+https://ezgif.com/gif-to-webp/   Wszystkie gify można zamienić na webp i przestanie jeczeć o animacjach
+
+https://web.dev/en/replace-gifs-with-videos/ albo tak
+
+https://web.dev/en/native-lazy-loading/ dobry opis skryptu do tego celu
