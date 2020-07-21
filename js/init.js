@@ -35,7 +35,6 @@ window.onload = function () {
   const informations = document.getElementById('informations');
   const heading = document.getElementById('heading');
   const buttons = document.getElementsByClassName('location-button');
-  const footerHook = document.getElementsByClassName('ui-footer')[0];
   //check for missing items
   if (!(informations && heading && intro && buttons)) {
     window.alert('Nie odnaleziono jednego lub więcej waznych identyfikatorów. Strona nie bedzie działać proawidłowo');
@@ -79,10 +78,5 @@ window.onload = function () {
   );
 
 
-  console.log('footerhook', footerHook);
-  footerHook.innerHTML = `<img class='gif gif-footer' src='../graphics/gifs/dancer.gif'>
-  <strong>
-    <p>Created by Piotr Maksymiuk.</p>
-  </strong>`
 
 }
