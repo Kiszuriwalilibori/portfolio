@@ -795,73 +795,133 @@ html {
           hyphens: auto;
 }
 
-.bg-bootstrap {
+.webp .bg-bootstrap {
+  width: 50px;
+  height: 42px;
+  background: url("../graphics/skills/css_sprites.webp") -80px -220px;
+}
+
+.nowebp .bg-bootstrap {
   width: 50px;
   height: 42px;
   background: url("../graphics/skills/css_sprites.png") -80px -220px;
 }
 
-.bg-css {
+.webp .bg-css {
+  width: 50px;
+  height: 50px;
+  background: url("../graphics/skills/css_sprites.webp") -10px -10px;
+}
+
+.nowebp .bg-css {
   width: 50px;
   height: 50px;
   background: url("../graphics/skills/css_sprites.png") -10px -10px;
 }
 
-.bg-html {
+.webp .bg-html {
+  width: 50px;
+  height: 50px;
+  background: url("../graphics/skills/css_sprites.webp") -80px -10px;
+}
+
+.nowebp .bg-html {
   width: 50px;
   height: 50px;
   background: url("../graphics/skills/css_sprites.png") -80px -10px;
 }
 
-.bg-jquery {
+.webp .bg-jquery {
+  width: 50px;
+  height: 50px;
+  background: url("../graphics/skills/css_sprites.webp") -10px -80px;
+}
+
+.nowebp .bg-jquery {
   width: 50px;
   height: 50px;
   background: url("../graphics/skills/css_sprites.png") -10px -80px;
 }
 
-.bg-js {
+.webp .bg-js {
+  width: 50px;
+  height: 50px;
+  background: url("../graphics/skills/css_sprites.webp") -80px -80px;
+}
+
+.nowebp .bg-js {
   width: 50px;
   height: 50px;
   background: url("../graphics/skills/css_sprites.png") -80px -80px;
 }
 
-.bg-linux {
+.webp .bg-linux {
+  width: 50px;
+  height: 50px;
+  background: url("../graphics/skills/css_sprites.webp") -150px -10px;
+}
+
+.nowebp .bg-linux {
   width: 50px;
   height: 50px;
   background: url("../graphics/skills/css_sprites.png") -150px -10px;
 }
 
-.bg-material {
+.webp .bg-material {
+  width: 50px;
+  height: 50px;
+  background: url("../graphics/skills/css_sprites.webp") -150px -80px;
+}
+
+.nowebp .bg-material {
   width: 50px;
   height: 50px;
   background: url("../graphics/skills/css_sprites.png") -150px -80px;
 }
 
-.bg-sql {
+.nowebp .bg-sql {
   width: 50px;
   height: 50px;
   background: url("../graphics/skills/css_sprites.png") -10px -150px;
 }
 
-.bg-php {
+.webp .bg-sql {
+  width: 50px;
+  height: 50px;
+  background: url("../graphics/skills/css_sprites.webp") -10px -150px;
+}
+
+.webp .bg-php {
+  width: 50px;
+  height: 27px;
+  background: url("../graphics/skills/css_sprites.webp") -150px -220px;
+}
+
+.nowebp .bg-php {
   width: 50px;
   height: 27px;
   background: url("../graphics/skills/css_sprites.png") -150px -220px;
 }
 
-.bg-pug {
+.webp .bg-pug {
   width: 50px;
   height: 50px;
-  background: url("../graphics/skills/css_sprites.png") -80px -150px;
+  background: url("../graphics/skills/css_sprites.webp") -80px -150px;
 }
 
-.bg-react {
+.nowebp .bg-react {
   width: 50px;
   height: 45px;
   background: url("../graphics/skills/css_sprites.png") -220px -150px;
 }
 
-.bg-redux {
+.webp .bg-redux {
+  width: 50px;
+  height: 45px;
+  background: url("../graphics/skills/css_sprites.webp") -10px -220px;
+}
+
+.nowebp .bg-redux {
   width: 50px;
   height: 45px;
   background: url("../graphics/skills/css_sprites.png") -10px -220px;
