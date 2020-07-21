@@ -1,84 +1,7 @@
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Piotr Maksymiuk about</title>
-  <link rel="preload" href="./graphics/textures/broken-noise.webp" as="image">
-  <link rel="stylesheet" href="./styles/style.css">
-  <script src='./js/ResizeSensor.js' defer></script>
-  <script src='./js/modernizr-custom.js' defer></script>
-  <script src='./js/init.js' defer></script>
-  <script src='./js/modals.js' defer></script>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-
-</head>
-
-<body>
-  <section class="ui-section -hero " id='intro'>
-    <div class="ui-aside">
-      <div class=author-foto></div>
-      <h1 class="ui-heading" id='heading'>
-        <img class='gif gif_intro-blue' src='./graphics/gifs/blue_girl.gif' alt='blue dancing girl'>
-        <img class='gif gif_intro' src='./graphics/gifs/red_girl.gif' alt='red dancing girl'>
-        <span class="ui-heading-inner">
-          <span>Piotr</span>
-          <span>Maksymiuk</span>
-        </span>
-      </h1>
-      <nav>
-        <a class='ui-button location-button' data-target='informations'>Informacje</a>
-        <a class='ui-button location-button' data-target="skills">Umiejętności</a>
-        <a class='ui-button location-button' data-target='projects'>Projekty</a>
-        <a href="https://github.com/Kiszuriwalilibori" class="ui-button below_509_visible">Github</a>
-        <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button below_509_visible">Facebook</a>
-      </nav>
-    </div>
-    <div class="ui-content">
-      <div class="ui-buttons above_509_visible">
-        <a href="https://github.com/Kiszuriwalilibori" class="ui-button">Github</a>
-        <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button">Facebook</a>
-      </div>
-      <p class=desktop-visible>
-        Web developer z zamiłowania, choć nie z wykształcenia. Zainteresowany raczej mechanizmami działania stron niż
-        wyglądem (to co tworzy jemu samemu podoba się najbardziej, ale powiadają, że de gustibus non disputandum est).
-        Woli ciemne i nasycone kolory (bierze na klatę oskarżenia o jarmarczność) niż klasyczny biurowy layout, acz jest
-        w stanie nagiąć się do wymagań zleceniodawcy. Uważa że stosowane z umiarem gif-y są cool.
-      </p>
-      <div class="ui-screen desktop-visible"></div>
-    </div>
-  </section>
-  <section class="ui-section" id='informations'>
-    <div class="ui-aside">
-      <img class='gif gif_boys' src='./graphics/gifs/boys.gif' width="100" height="165" alt='dancing boys'>
-      <h1 class="ui-heading">Informacje</h1>
-
-    </div>
-    <div class="ui-content">
-      <div class='informacje_item desktop-hidden'>Web developerem z zamiłowania choć nie z wykształcenia. Zainteresowany
-        raczej mechanizmami działania stron niż wyglądem (to co tworzy jemu samemu podoba się najbardziej, ale
-        powiadają, że de gustibus non disputandum est). Woli ciemne i nasycone kolory (bierze na klatę oskarżenia o
-        jarmarczność) niż klasyczny biurowy layout acz jest w stanie nagiąć się do wymagań zleceniodawcy. Uważa że
-        stosowane z umiarem gif-y są cool.</div>
-      <div class='informacje_item'>Ukończyłem chemię na Politechnice Warszawskiej, dawno temu. Studiowałem długo, ale
-        nie za długo, tak w sam raz. Potem bywało różnie, ale przede wszystkim pracowałem przy sprzedaży tworzyw
-        sztucznych</div>
-      <div class='informacje_item'>Fascynacja programowaniem narodziła się u mnie z czystej ciekawości poznania
-        otaczającego nas internetowego świata oraz zdobycia chociaż cząstki wiedzy na temat jego funkcjonowania. A także
-        z głębokiego pragnienia zmiany i podsumowania aktywów ( zawsze byłem dobry z przedmiotów ścisłych, pierwszy
-        kontakt z programowaniem to czasy procesorów 80286 i Turbo Pascala).</div>
-      <div class='informacje_item'>Front-endu uczę się we własnym zakresie, z materiałów dostępnych w sieci. Odbyłem
-        staż, a teraz rad bym się zatrudnić na stałe.</div>
-      <div class='informacje_item'>Mieszkam w Warszawie i raczej się nie przeprowadzę. Jestem żonaty, mam córkę</div>
-      <div class='informacje_item'>W wolnych chwilach jeśli pogoda dopisuje, jeżdżę na rowerze po okolicznych lasach.
-        Kiedy jest więcej czasu, po Puszczy Białowieskiej. Jestem fanem Pink Floyd i słucham ich na kolumnach
-        głośnikowych, które sam zrobiłem.</div>
-
-    </div>
-  </section>
-  <section class="ui-section" id='skills'>
+function injectBody() {
+    const target = document.getElementsByTagName(body)[0];
+    footerWrapper = document.getElementByClass('ui-footer')[0];
+    const skills = `
     <div class="ui-aside">
       <img class='gif' src='./graphics/gifs/elephant.webp' width="200" height="200" alt='dancing elephant'>
       <h1 class="ui-heading">Umki<br> albo inaczej skille</h1>
@@ -247,8 +170,8 @@
 
       </ul>
     </div>
-  </section>
-  <section class="ui-section" id='projects'>
+  `
+    const projects = `
     <div class="ui-aside">
       <div class='large-project__cover initial'>
         <div class='project' id='large-project-content'>
@@ -413,15 +336,13 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <footer class="ui-footer">
-    <!-- <img class='gif gif-footer' src='../graphics/gifs/dancer.gif'>
+  `
+    const footer =
+        `<img class='gif gif-footer' src='../graphics/gifs/dancer.gif'>
     <strong>
       <p>Created by Piotr Maksymiuk.</p>
-    </strong> -->
-  </footer>
+    </strong>
+  </footer>`
 
-</body>
-
-</html>
+    footerWrapper.innerHTML = footer;
+}

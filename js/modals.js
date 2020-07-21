@@ -4,15 +4,18 @@ let modal = document.getElementById('large-project-content');
 let large_project = document.getElementById('large-project-content');
 let smallProjectCovers = document.getElementsByClassName('project-pointer');
 
+console.log(modal, large_project, smallProjectCovers);
+
 function show_modal(ev) {
 
   modal.innerHTML = ev.target.parentNode.innerHTML;
   modal.removeChild(modal.getElementsByClassName('project__name pointer')[0]);
   modal.getElementsByClassName('initial')[0].classList.toggle('initial');
-  
+
   const delete_button = document.createElement("div");
   delete_button.classList.add('icon-delete');
   delete_button.addEventListener('click', hide_modal);
+
   function hide_modal() {
     delete_button.removeEventListener('click', hide_modal);
     modal.innerHTML = '';
@@ -24,7 +27,7 @@ function show_modal(ev) {
   modal.getElementsByClassName('project__image')[0].classList.add('large');
   modal.style.display = 'block';
 
-// scrolls window to assure proper location of modal
+  // scrolls window to assure proper location of modal
   location.hash = "projects";
   window.scrollBy(0, -document.getElementById('intro').clientHeight);
 
