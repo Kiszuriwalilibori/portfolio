@@ -1131,6 +1131,14 @@ html {
   background-image: url("../graphics/project_images/pogodynka.jpg");
 }
 
+.webp .project__image.image-portfolio {
+  background-image: url("../graphics/project_images/portfolio_aktualne.webp");
+}
+
+.nowebp .project__image.image-portfolio {
+  background-image: url("../graphics/project_images/portfolio_aktualne.jpg");
+}
+
 .project__name {
   z-index: 1000;
   position: absolute;
