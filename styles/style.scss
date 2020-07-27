@@ -1,6 +1,6 @@
-@import 'mixins&variables';
-@import 'transitions';
-@import 'fonts';
+@import "mixins&variables";
+@import "transitions";
+@import "fonts";
 
 *,
 *:before,
@@ -16,21 +16,19 @@ html {
   margin: 0;
   padding: 0;
   font-size: calc(12px + 6px * ((100vw - 320px) / 1080));
-  font-family: 'Oxygen', sans-serif;
-
+  font-family: "Oxygen", sans-serif;
 }
-
 
 .ui-section {
   @include flex_row(center, stretch);
   min-height: 100vh;
-  color: #31444F;
+  color: #31444f;
 
   & .ui-heading {
     text-shadow: 0.5px 0.5px black;
   }
 
-  &>* {
+  & > * {
     flex: 1 1 50%;
     width: 50%;
   }
@@ -44,11 +42,11 @@ html {
   background-image: url("../graphics/textures/broken-noise.png");
 }
 
-@import 'hero';
-@import 'email';
+@import "hero";
+@import "email";
 
 .ui-section:nth-child(2) {
-  @include section(#003B46, rgba(0, 255, 0, 0.15));
+  @include section(#003b46, rgba(0, 255, 0, 0.15));
   margin-top: 0;
   transition: margin-top 2s ease-in-out;
 
@@ -77,11 +75,10 @@ html {
   &:hover {
     @include skills_shadow_hover;
   }
-
 }
 
 .ui-section:nth-child(4) {
-  @include section(#0159B1, rgba(247, 202, 247, 0.25));
+  @include section(#0159b1, rgba(247, 202, 247, 0.25));
 
   & .ui-content {
     flex-flow: row wrap;
@@ -94,11 +91,10 @@ html {
 .ui-aside {
   @include flex_column(center);
   padding-right: 0;
-
 }
 
 .ui-aside:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -106,12 +102,20 @@ html {
   height: 100%;
   color: inherit;
   width: 0.5rem;
-  background-image: linear-gradient(to top, transparent, transparent 9.99%, currentColor 10%, currentColor 90%, transparent 90.01%, transparent);
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    transparent 9.99%,
+    currentColor 10%,
+    currentColor 90%,
+    transparent 90.01%,
+    transparent
+  );
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
-.ui-aside>ul {
+.ui-aside > ul {
   margin: 0;
   text-align: right;
   list-style-type: none;
@@ -133,7 +137,7 @@ html {
   font-family: "Oxygen-Regular", sans-serif;
 }
 
-.ui-content>* {
+.ui-content > * {
   z-index: 1;
 }
 
@@ -155,17 +159,16 @@ html {
   transform-origin: left center;
 }
 
-.ui-buttons:hover~.ui-screen {
+.ui-buttons:hover ~ .ui-screen {
   transform: scaleX(1);
 }
 
-
-.ui-buttons:hover~* {
+.ui-buttons:hover ~ * {
   color: #111;
 }
 
 .ui-button,
-.ui-buttons:hover>.ui-button {
+.ui-buttons:hover > .ui-button {
   display: inline-block;
   appearance: none;
   text-decoration: none;
@@ -176,36 +179,36 @@ html {
   padding: calc(4px + 10 * ((100vw - 320px) / 1080));
   font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
   background: transparent;
-  color: #31444F;
-  border: 1px solid #31444F;
+  color: #31444f;
+  border: 1px solid #31444f;
   overflow: hidden;
   cursor: pointer;
   outline: none;
 }
 
-.ui-button+.ui-button,
-.ui-buttons:hover>.ui-button+.ui-button {
+.ui-button + .ui-button,
+.ui-buttons:hover > .ui-button + .ui-button {
   margin-left: 1rem;
 }
 
 .ui-button:hover,
-.ui-buttons:hover>.ui-button:hover,
+.ui-buttons:hover > .ui-button:hover,
 .ui-button:focus,
-.ui-buttons:hover>.ui-button:focus {
+.ui-buttons:hover > .ui-button:focus {
   color: red;
   outline: none;
 }
 
 .ui-button:hover:before,
-.ui-buttons:hover>.ui-button:hover:before,
+.ui-buttons:hover > .ui-button:hover:before,
 .ui-button:focus:before,
-.ui-buttons:hover>.ui-button:focus:before {
+.ui-buttons:hover > .ui-button:focus:before {
   transform: translateX(0) skewX(30deg);
 }
 
 .ui-button:before,
-.ui-buttons:hover>.ui-button:before {
-  content: '';
+.ui-buttons:hover > .ui-button:before {
+  content: "";
   display: block;
 
   @include abs_top_left_00;
@@ -213,15 +216,13 @@ html {
   height: 100%;
   transform: scale(1.1) translateX(calc(-100% - 2rem)) skewX(30deg);
   transform-origin: left bottom;
-  background: #31444F;
+  background: #31444f;
   transition: transform 0.3s cubic-bezier(0.61, 0, 0.2, 1);
   z-index: -1;
 }
 
-@import 'footer';
-
-@import 'skills';
-
-@import 'author';
-@import 'projects';
-@import 'mediaqueries';
+@import "footer";
+@import "skills";
+@import "author";
+@import "projects";
+@import "mediaqueries";

@@ -285,7 +285,7 @@ html {
   margin: 0;
   padding: 0;
   font-size: calc(12px + 6px * ((100vw - 320px) / 1080));
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 
 .ui-section {
@@ -303,7 +303,7 @@ html {
       -ms-flex-align: stretch;
           align-items: stretch;
   min-height: 100vh;
-  color: #31444F;
+  color: #31444f;
 }
 
 .ui-section .ui-heading {
@@ -644,7 +644,7 @@ html {
 }
 
 .ui-section:nth-child(2) {
-  color: #003B46;
+  color: #003b46;
   background-color: rgba(0, 255, 0, 0.15);
   margin-top: 0;
   -webkit-transition: margin-top 2s ease-in-out;
@@ -692,7 +692,7 @@ html {
 }
 
 .ui-section:nth-child(4) {
-  color: #0159B1;
+  color: #0159b1;
   background-color: rgba(247, 202, 247, 0.25);
 }
 
@@ -720,7 +720,7 @@ html {
 }
 
 .ui-aside:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -817,8 +817,8 @@ html {
   padding: calc(4px + 10 * ((100vw - 320px) / 1080));
   font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
   background: transparent;
-  color: #31444F;
-  border: 1px solid #31444F;
+  color: #31444f;
+  border: 1px solid #31444f;
   overflow: hidden;
   cursor: pointer;
   outline: none;
@@ -847,7 +847,7 @@ html {
 
 .ui-button:before,
 .ui-buttons:hover > .ui-button:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -858,7 +858,7 @@ html {
           transform: scale(1.1) translateX(calc(-100% - 2rem)) skewX(30deg);
   -webkit-transform-origin: left bottom;
           transform-origin: left bottom;
-  background: #31444F;
+  background: #31444f;
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.61, 0, 0.2, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.61, 0, 0.2, 1);
   transition: transform 0.3s cubic-bezier(0.61, 0, 0.2, 1);
