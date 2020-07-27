@@ -445,6 +445,10 @@ html {
   font-weight: bold;
 }
 
+.ui-section.-hero > .ui-content .above_509_visible {
+  margin-bottom: 1vw;
+}
+
 .ui-section.-hero .ui-button {
   color: red;
   border-color: red;
@@ -452,6 +456,191 @@ html {
 
 .ui-section.-hero .ui-button:hover {
   border-color: #31444F;
+}
+
+#emailModal {
+  display: none;
+}
+
+#emailModal.active {
+  z-index: 1000;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#emailModal.active .emailModal__content {
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);
+  padding: 5vw;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../graphics/textures/broken-noise.webp");
+  border: 2px solid #00B4CC;
+  color: white;
+}
+
+#emailModal.active .emailModal__content .successStyle {
+  color: #6DFE25;
+  background-color: #00B4CC;
+  padding: 10px;
+  margin: 5px;
+}
+
+#emailModal.active .emailModal__content .failureStyle {
+  color: red;
+  background-color: #00B4CC;
+  padding: 10px;
+  margin: 5px;
+}
+
+#emailModal.active .emailModal__content:hover {
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11);
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11);
+}
+
+#emailModal.active .emailModal__content .emailform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);
+          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, right top, from(#005F6B), to(#283E4A));
+  background-image: linear-gradient(to right, #005F6B, #283E4A);
+  border: 2px solid #00B4CC;
+  border-radius: 2px;
+}
+
+#emailModal.active .emailModal__content .emailform label, #emailModal.active .emailModal__content .emailform input, #emailModal.active .emailModal__content .emailform textarea {
+  width: 250px;
+  margin: 10px 30px;
+}
+
+#emailModal.active .emailModal__content .emailform textarea {
+  min-height: 60px;
+}
+
+#emailModal.active .emailModal__content .emailform .form__input {
+  display: block;
+  padding: 0 0 0 4px;
+  font-size: 0.875rem;
+  background-color: #F5F5F5;
+  height: 35px;
+  border: 2px solid #008C9E;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+  -webkit-transition: border-color, -webkit-box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s;
+  transition: border-color, -webkit-box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s;
+  transition: border-color, box-shadow ease-in-out .2s, box-shadow ease-in-out .2s;
+  transition: border-color, box-shadow ease-in-out .2s, box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s;
+}
+
+#emailModal.active .emailModal__content .emailform .form__input:focus {
+  border-color: #00DFFC;
+  -webkit-box-shadow: 0 0 5px -1px #00DFFC;
+          box-shadow: 0 0 5px -1px #00DFFC;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  margin: 10px 0 20px 0;
+  border: 1px solid #e1e1e1;
+  font: 12px/1.2 "Oswald", sans-serif;
+  letter-spacing: 0.4em;
+  text-align: center;
+  text-indent: 2px;
+  text-transform: uppercase;
+  background: #00B4CC;
+  border-color: #00B4CC;
+  cursor: pointer;
+  -webkit-transition: color 0.1s linear 0.05s;
+  transition: color 0.1s linear 0.05s;
+}
+
+.btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e1e1e1;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0.2s;
+  transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0.2s;
+}
+
+.btn::after {
+  -webkit-transition: border 0.1s linear 0.05s;
+  transition: border 0.1s linear 0.05s;
+}
+
+.btn .btn-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.btn:hover {
+  color: #373737;
+  -webkit-transition: color 0.1s linear 0s;
+  transition: color 0.1s linear 0s;
+}
+
+.btn:hover::before {
+  top: 0;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+  transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+}
+
+.btn:hover::after {
+  border-color: #373737;
+  -webkit-transition: border 0.1s linear 0s;
+  transition: border 0.1s linear 0s;
 }
 
 .ui-section:nth-child(2) {
@@ -1299,6 +1488,7 @@ html {
   position: absolute;
   top: 0;
   left: 100%;
+  z-index: 1000;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   cursor: pointer;
@@ -1391,7 +1581,7 @@ html {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 701px) {
   .ui-section .ui-content .desktop-hidden {
     display: none;
   }
@@ -1403,6 +1593,10 @@ html {
 @media (max-width: 508px) {
   .ui-section > .ui-aside {
     padding: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    min-height: 180px;
   }
   .ui-content .ui-buttons {
     -webkit-box-pack: center;
@@ -1417,11 +1611,22 @@ html {
     width: 100%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     left: 0;
     padding: 0 1vw 0 1vw;
   }
   .ui-section.-hero nav .ui-button {
-    margin: 0;
+    margin: 4px 0;
+    min-width: 90px;
+  }
+  .ui-section.-hero nav .former-content {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .ui-section.-hero .ui-content {
     padding: 0;

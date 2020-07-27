@@ -45,7 +45,7 @@ html {
 }
 
 @import 'hero';
-
+@import 'email';
 
 .ui-section:nth-child(2) {
   @include section(#003B46, rgba(0, 255, 0, 0.15));
@@ -155,7 +155,6 @@ html {
   transform-origin: left center;
 }
 
-
 .ui-buttons:hover~.ui-screen {
   transform: scaleX(1);
 }
@@ -222,11 +221,6 @@ html {
 @import 'footer';
 
 @import 'skills';
-// @mixin above-mobile {
-//   @media (min-width: $breakMobile) {
-//       @content;
-//   }
-// }
 
 @import 'author';
 @import 'projects';

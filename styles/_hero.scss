@@ -59,7 +59,10 @@
 .ui-section.-hero > .ui-content {
   animation: content-enter 1s 2s cubic-bezier(0.61, 0, 0.2, 1) both;
   flex-direction: column-reverse;
-  color:white; font-weight:bold; }
+  color:white; 
+  font-weight:bold; 
+  & .above_509_visible{margin-bottom:1vw;}
+}
         
 .ui-section.-hero .ui-button {
   color: red;

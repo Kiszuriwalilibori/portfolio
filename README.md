@@ -64,3 +64,5 @@ form.addEventListener("submit", e => {
 const someFunction = () => {
     // uses moduleA
 }
+część kodu przyjmuje klawisz enter częsc nie, ujednolicić i dać jakiś focus widoczny na przetabowanie
+browserify init.js -o bundle.js

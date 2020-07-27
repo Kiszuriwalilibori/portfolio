@@ -1,0 +1,112 @@
+#emailModal{
+    display:none;
+    &.active{
+        z-index:1000;
+        position:fixed;
+        width:100vw;
+        height:100vh;
+        background-color: rgba(0,0,0,0.3);
+        @include flex_row( center, center);
+        & .emailModal__content{
+          @include skills_shadow_hover;
+          padding: 5vw;
+          background-color:white;
+          @include flex_row( center, center);
+          background-image: url("../graphics/textures/broken-noise.webp");
+          border: 2px solid $c_blue3;
+          color: white;
+          & .successStyle {color:#6DFE25; background-color:$c_blue3; padding:10px;margin:5px;}
+          & .failureStyle {color: red; background-color:$c_blue3; padding:10px;margin:5px; }
+          &:hover{@include skills_shadow}
+
+          & .emailform {
+          
+          @include flex_column(space-evenly);
+          @include skills_shadow_hover;
+          align-items:center;
+          background-image: linear-gradient(to right, $c_blue1, $c_blue0 );
+          border: 2px solid $c_blue3;
+          border-radius: 2px;
+          & label,input,textarea{width:250px; margin:10px 30px;}
+          & textarea {min-height:60px;}
+          & .form__input{
+            display: block;
+            padding: 0 0 0 4px;
+            font-size: 0.875rem;
+            background-color: $c_grey;
+            height: 35px;
+            border: 2px solid $c_blue2;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .08);
+            transition: border-color, box-shadow ease-in-out .2s, box-shadow ease-in-out .2s;
+            &:focus {
+              border-color: $c_blue4;
+              box-shadow: 0 0 5px -1px $c_blue4;
+            }
+          }
+
+          }
+          
+        }
+    }  
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  margin:10px 0 20px 0;
+  border: 1px solid #e1e1e1;
+  font: 12px/1.2 "Oswald", sans-serif;
+  letter-spacing: 0.4em;
+  text-align: center;
+  text-indent: 2px;
+  text-transform: uppercase;
+  background: $c_blue3;
+  border-color: $c_blue3;
+  cursor:pointer;
+  transition: color 0.1s linear 0.05s;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    z-index: 1;
+    opacity: 0;
+    transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0.2s;
+  }
+
+  &::after {
+    transition: border 0.1s linear 0.05s;
+  }
+
+  .btn-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:hover {
+    color: #373737;
+    transition: color 0.1s linear 0s;
+
+    &::before {
+      top: 0;
+      height: 100%;
+      opacity: 1;
+      transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+    }
+
+    &::after {
+      border-color: #373737;
+      transition: border 0.1s linear 0s;
+    }
+  }
+}
