@@ -7,7 +7,7 @@
   letter-spacing: 0.01071em;
 
   &:hover {
-    background: #F6F6F6;
+    background: #f6f6f6;
   }
 }
 
@@ -24,23 +24,21 @@
   }
 
   &:hover {
-    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15), 0 0px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15),
+      0 0px 16px rgba(0, 0, 0, 0.15);
   }
 
   &.pointer {
     cursor: pointer;
     margin: 2%;
-
   }
 
   & .initial {
     display: none !important;
   }
-
 }
 
 .project__image {
-
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -125,7 +123,6 @@
   background-image: url("../graphics/project_images/arch2.jpg");
 }
 
-
 .webp .project__image.image-firebase {
   background-image: url("../graphics/project_images/firebase.webp");
 }
@@ -133,7 +130,6 @@
 .nowebp .project__image.image-firebase {
   background-image: url("../graphics/project_images/firebase.jpg");
 }
-
 
 .webp .project__image.image-pogodynka {
   background-image: url("../graphics/project_images/pogodynka.webp");
@@ -150,8 +146,6 @@
 .nowebp .project__image.image-portfolio {
   background-image: url("../graphics/project_images/portfolio_aktualne.jpg");
 }
-
-
 
 .project__name {
   z-index: 1000;
@@ -170,9 +164,10 @@
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.30);
+      background-color: rgba(0, 0, 0, 0.3);
       color: white;
-      box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15), 0 0px 16px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15), 0 0px 2px rgba(0, 0, 0, 0.15), 0 0px 4px rgba(0, 0, 0, 0.15), 0 0px 8px rgba(0, 0, 0, 0.15), 0 0px 12px rgba(0, 0, 0, 0.15),
+        0 0px 16px rgba(0, 0, 0, 0.15);
     }
   }
 }
@@ -218,13 +213,11 @@
         margin-bottom: 0;
         padding-top: 5%;
         padding-bottom: 5%;
-
       }
 
       & .project__description {
         @include project-background();
         color: rgba(0, 0, 0, 0.54);
-
       }
 
       & .project__skills {
@@ -237,7 +230,7 @@
       }
 
       & .project__links {
-        background: #4285F4;
+        background: #4285f4;
         letter-spacing: 0.07em;
         font-size: 1rem;
         font-weight: bolder;
@@ -263,14 +256,14 @@
 }
 
 .icon-delete {
-  background-image: url('../graphics/icons/delete.png');
+  background-image: url("../graphics/icons/delete.png");
   width: 64px;
   height: 64px;
   background-size: cover;
   position: absolute;
   top: 0;
   left: 100%;
-  z-index:1000;
+  z-index: 1000;
   transform: translateX(-100%);
   cursor: pointer;
 }

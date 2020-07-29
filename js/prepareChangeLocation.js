@@ -5,10 +5,7 @@ module.exports = {
       window.scrollBy(0, -intro.clientHeight);
     }
 
-    change_location =
-      typeof throttle !== "undefined"
-        ? throttle(change_location, 500)
-        : change_location;
+    change_location = typeof throttle !== "undefined" ? throttle(change_location, 500) : change_location;
 
     Array.prototype.forEach.call(buttons, (button) => {
       button.addEventListener("click", change_location);

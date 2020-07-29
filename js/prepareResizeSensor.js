@@ -1,7 +1,10 @@
+
+
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro) {
+    
     function adjustMargin(item) {
-      informations.style.marginTop = item.clientHeight + "px";
+      informations.style.marginTop = item.offsetHeight + "px";
     }
 
     intro.classList.add("regular");

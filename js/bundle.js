@@ -3,10 +3,10 @@ const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
+const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { throttle } = require("./throttle");
 
 window.onload = function () {
-  // variables
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");
   const heading = document.getElementById("heading");
@@ -14,30 +14,23 @@ window.onload = function () {
   const mailButtons = document.getElementsByClassName("mail-button");
   const emailModal = document.getElementById("emailModal");
   const projectModal = document.getElementById("large-project-content");
-  
-  if (
-    !(
-      informations &&
-      heading &&
-      intro &&
-      locationButtons &&
-      mailButtons &&
-      emailModal
-    )
-  ) {
-    window.alert(
-      "Nie odnaleziono jednego lub więcej ważnych identyfikatorów. Strona nie będzie działać proawidłowo"
-    );
+  const hamburgerMenu = document.getElementById("hamburger");
+  const menu = document.getElementsByTagName("nav");
+
+  if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu)) {
+    window.alert("Nie odnaleziono jednego lub więcej ważnych identyfikatorów. Strona nie będzie działać proawidłowo");
     return false;
   }
-
+  
   prepareResizeSensor(informations, intro);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal);
+  prepareHamburgerMenu(hamburgerMenu, menu[0]);
+
 };
 
-},{"./prepareChangeLocation":2,"./prepareEmailService.js":3,"./prepareProjectModals":4,"./prepareResizeSensor":5,"./throttle":6}],2:[function(require,module,exports){
+},{"./prepareChangeLocation":2,"./prepareEmailService.js":3,"./prepareHamburgerMenu":4,"./prepareProjectModals":5,"./prepareResizeSensor":6,"./throttle":7}],2:[function(require,module,exports){
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
     function change_location(ev) {
@@ -45,10 +38,7 @@ module.exports = {
       window.scrollBy(0, -intro.clientHeight);
     }
 
-    change_location =
-      typeof throttle !== "undefined"
-        ? throttle(change_location, 500)
-        : change_location;
+    change_location = typeof throttle !== "undefined" ? throttle(change_location, 500) : change_location;
 
     Array.prototype.forEach.call(buttons, (button) => {
       button.addEventListener("click", change_location);
@@ -146,52 +136,64 @@ module.exports = {
 };
 
 },{}],4:[function(require,module,exports){
-module.exports ={prepareProjectModals:
-function prepareProjectModals (modal){
-let smallProjectCovers = document.getElementsByClassName('project-pointer');
+module.exports = {
+  prepareHamburgerMenu: function prepareHamburgerMenu(target, menu) {
+    toggleMenuVisibility = function () {
+      menu.classList.toggle("active");
+    };
+    target.addEventListener("click", toggleMenuVisibility);
+    target.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        toggleMenuVisibility();
+      }
+    });
+  },
+};
 
-function show_modal(ev) {
-
-  modal.innerHTML = ev.target.parentNode.innerHTML;
-  modal.removeChild(modal.getElementsByClassName('project__name pointer')[0]);
-  modal.getElementsByClassName('initial')[0].classList.toggle('initial');
-
-  const delete_button = document.createElement("div");
-  delete_button.classList.add('icon-delete');
-  delete_button.addEventListener('click', hide_modal);
-
-  function hide_modal() {
-    delete_button.removeEventListener('click', hide_modal);
-    modal.innerHTML = '';
-
-  }
-  modal.appendChild(delete_button);
-  modal.classList.add('large');
-  modal.getElementsByClassName('project__image')[0].classList.add('large');
-  modal.style.display = 'block';
-
-  // scrolls window to assure proper location of modal
-  location.hash = "projects";
-  window.scrollBy(0, -document.getElementById('intro').clientHeight);
-
-}
-
-//mounts handlers on small project covers
-Array.prototype.forEach.call(
-  smallProjectCovers,
-  cover => {
-    cover.addEventListener('click', show_modal);
-    
-  }
-);
-
-}
-}
 },{}],5:[function(require,module,exports){
 module.exports = {
+  prepareProjectModals: function prepareProjectModals(modal) {
+    let smallProjectCovers = document.getElementsByClassName("project-pointer");
+
+    function show_modal(ev) {
+      modal.innerHTML = ev.target.parentNode.innerHTML;
+      modal.removeChild(modal.getElementsByClassName("project__name pointer")[0]);
+      modal.getElementsByClassName("initial")[0].classList.toggle("initial");
+
+      const delete_button = document.createElement("div");
+      delete_button.classList.add("icon-delete");
+      delete_button.addEventListener("click", hide_modal);
+
+      function hide_modal() {
+        delete_button.removeEventListener("click", hide_modal);
+        modal.innerHTML = "";
+      }
+      modal.appendChild(delete_button);
+      modal.classList.add("large");
+      modal.getElementsByClassName("project__image")[0].classList.add("large");
+      modal.style.display = "block";
+
+      // scrolls window to assure proper location of modal
+      location.hash = "projects";
+      window.scrollBy(0, -document.getElementById("intro").clientHeight);
+    }
+
+    //mounts handlers on small project covers
+    Array.prototype.forEach.call(smallProjectCovers, (cover) => {
+      cover.addEventListener("click", show_modal);
+    });
+  },
+};
+
+},{}],6:[function(require,module,exports){
+
+
+module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro) {
+    
     function adjustMargin(item) {
-      informations.style.marginTop = item.clientHeight + "px";
+      informations.style.marginTop = item.offsetHeight + "px";
     }
 
     intro.classList.add("regular");
@@ -213,7 +215,7 @@ module.exports = {
   },
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,

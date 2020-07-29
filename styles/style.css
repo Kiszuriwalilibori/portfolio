@@ -141,19 +141,25 @@
 }
 
 @-webkit-keyframes blink {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     opacity: 1;
   }
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
   }
 }
 
 @keyframes blink {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     opacity: 1;
   }
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
   }
 }
@@ -243,14 +249,14 @@
 }
 
 @font-face {
-  font-family: 'Oxygen';
+  font-family: "Oxygen";
   src: url("../fonts/oxygen/oxygen-latin-bold.woff2") format("woff2"), url("../fonts/oxygen/oxygen-latin-bold.woff") format("woff"), url("../fonts/oxygen/oxygen-latin-bold.ttf") format("truetype"), url("../fonts/oxygen/oxygen-latin-bold.svg") format("svg");
   font-weight: bold;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Oxygen-Regular';
+  font-family: "Oxygen-Regular";
   src: url("../fonts/oxygen/oxygen-latin-regular.woff2") format("woff2"), url("../fonts/oxygen/oxygen-latin-regular.woff") format("woff"), url("../fonts/oxygen/oxygen-latin-regular.svg") format("svg");
   font-weight: 500;
   font-display: swap;
@@ -258,7 +264,7 @@
 
 /* roboto-regular - latin-ext_latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -338,6 +344,10 @@ html {
   z-index: 2000;
   -webkit-transition: all 0.5s ease-in-out, min-height 3s ease-in-out 3s;
   transition: all 0.5s ease-in-out, min-height 3s ease-in-out 3s;
+  border-width: 10px 0 0px;
+  border-top-style: solid;
+  -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+  border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
   min-height: 100vh;
 }
 
@@ -373,7 +383,7 @@ html {
 }
 
 .ui-section.-hero .ui-heading:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -431,7 +441,7 @@ html {
 }
 
 .ui-section.-hero .ui-heading > .ui-heading-inner > span:before {
-  content: '\00a0';
+  content: "\00a0";
 }
 
 .ui-section.-hero > .ui-content {
@@ -455,7 +465,7 @@ html {
 }
 
 .ui-section.-hero .ui-button:hover {
-  border-color: #31444F;
+  border-color: #31444f;
 }
 
 #emailModal {
@@ -502,20 +512,20 @@ html {
       -ms-flex-align: center;
           align-items: center;
   background-image: url("../graphics/textures/broken-noise.webp");
-  border: 2px solid #00B4CC;
+  border: 2px solid #00b4cc;
   color: white;
 }
 
 #emailModal.active .emailModal__content .successStyle {
-  color: #6DFE25;
-  background-color: #00B4CC;
+  color: #6dfe25;
+  background-color: #00b4cc;
   padding: 10px;
   margin: 5px;
 }
 
 #emailModal.active .emailModal__content .failureStyle {
   color: red;
-  background-color: #00B4CC;
+  background-color: #00b4cc;
   padding: 10px;
   margin: 5px;
 }
@@ -541,13 +551,15 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: -webkit-gradient(linear, left top, right top, from(#005F6B), to(#283E4A));
-  background-image: linear-gradient(to right, #005F6B, #283E4A);
-  border: 2px solid #00B4CC;
+  background-image: -webkit-gradient(linear, left top, right top, from(#005f6b), to(#283e4a));
+  background-image: linear-gradient(to right, #005f6b, #283e4a);
+  border: 2px solid #00b4cc;
   border-radius: 2px;
 }
 
-#emailModal.active .emailModal__content .emailform label, #emailModal.active .emailModal__content .emailform input, #emailModal.active .emailModal__content .emailform textarea {
+#emailModal.active .emailModal__content .emailform label,
+#emailModal.active .emailModal__content .emailform input,
+#emailModal.active .emailModal__content .emailform textarea {
   width: 250px;
   margin: 10px 30px;
 }
@@ -560,22 +572,22 @@ html {
   display: block;
   padding: 0 0 0 4px;
   font-size: 0.875rem;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   height: 35px;
-  border: 2px solid #008C9E;
+  border: 2px solid #008c9e;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-  -webkit-transition: border-color, -webkit-box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s;
-  transition: border-color, -webkit-box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s;
-  transition: border-color, box-shadow ease-in-out .2s, box-shadow ease-in-out .2s;
-  transition: border-color, box-shadow ease-in-out .2s, box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s, -webkit-box-shadow ease-in-out .2s;
+  -webkit-transition: border-color, -webkit-box-shadow ease-in-out 0.2s, -webkit-box-shadow ease-in-out 0.2s;
+  transition: border-color, -webkit-box-shadow ease-in-out 0.2s, -webkit-box-shadow ease-in-out 0.2s;
+  transition: border-color, box-shadow ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
+  transition: border-color, box-shadow ease-in-out 0.2s, box-shadow ease-in-out 0.2s, -webkit-box-shadow ease-in-out 0.2s, -webkit-box-shadow ease-in-out 0.2s;
 }
 
 #emailModal.active .emailModal__content .emailform .form__input:focus {
-  border-color: #00DFFC;
-  -webkit-box-shadow: 0 0 5px -1px #00DFFC;
-          box-shadow: 0 0 5px -1px #00DFFC;
+  border-color: #00dffc;
+  -webkit-box-shadow: 0 0 5px -1px #00dffc;
+          box-shadow: 0 0 5px -1px #00dffc;
 }
 
 .btn {
@@ -591,8 +603,8 @@ html {
   text-align: center;
   text-indent: 2px;
   text-transform: uppercase;
-  background: #00B4CC;
-  border-color: #00B4CC;
+  background: #00b4cc;
+  border-color: #00b4cc;
   cursor: pointer;
   -webkit-transition: color 0.1s linear 0.05s;
   transition: color 0.1s linear 0.05s;
@@ -866,12 +878,27 @@ html {
   z-index: -1;
 }
 
+.hamburger {
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+  width: 40px;
+  height: 40px;
+  z-index: 2000;
+  visibility: hidden;
+  cursor: pointer;
+}
+
 .ui-footer {
   color: white;
   background-color: rgba(0, 255, 255, 0.2);
   width: 100%;
   padding: 1rem;
   text-align: center;
+  border-width: 0 0 10px;
+  border-bottom-style: solid;
+  -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+  border-image: linear-gradient(139deg, #e02aff, #0d70f1, #475eac, #4ac163) 3;
   -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11);
           box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11);
 }
@@ -1418,7 +1445,7 @@ html {
 }
 
 .large-project__cover .project .project__data .project__title:hover {
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 
 .large-project__cover .project .project__data .project__description {
@@ -1432,7 +1459,7 @@ html {
 }
 
 .large-project__cover .project .project__data .project__description:hover {
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 
 .large-project__cover .project .project__data .project__skills {
@@ -1446,7 +1473,7 @@ html {
 }
 
 .large-project__cover .project .project__data .project__skills:hover {
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 
 .large-project__cover .project .project__data .project__skills span {
@@ -1454,7 +1481,7 @@ html {
 }
 
 .large-project__cover .project .project__data .project__links {
-  background: #4285F4;
+  background: #4285f4;
   letter-spacing: 0.07em;
   font-size: 1rem;
   font-weight: bolder;
@@ -1570,7 +1597,8 @@ html {
   .ui-content.skills ul {
     padding-left: 0;
   }
-  .gif.gif_intro, .gif.gif_intro-blue {
+  .gif.gif_intro,
+  .gif.gif_intro-blue {
     width: calc(50px + 50 * ((100vw - 320px) / 380));
   }
   .gif_intro-blue {
@@ -1591,6 +1619,9 @@ html {
 }
 
 @media (max-width: 508px) {
+  .hamburger {
+    visibility: visible;
+  }
   .ui-section > .ui-aside {
     padding: 0;
     -webkit-box-pack: start;
@@ -1605,6 +1636,9 @@ html {
     display: none;
   }
   .ui-section.-hero nav {
+    display: none;
+  }
+  .ui-section.-hero nav.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1615,12 +1649,14 @@ html {
         flex-wrap: wrap;
     left: 0;
     padding: 0 1vw 0 1vw;
+    -webkit-animation: nav-enter 1s ease-in-out 0s forwards;
+            animation: nav-enter 1s ease-in-out 0s forwards;
   }
-  .ui-section.-hero nav .ui-button {
+  .ui-section.-hero nav.active .ui-button {
     margin: 4px 0;
     min-width: 90px;
   }
-  .ui-section.-hero nav .former-content {
+  .ui-section.-hero nav.active .former-content {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;

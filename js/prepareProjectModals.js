@@ -4,9 +4,7 @@ module.exports = {
 
     function show_modal(ev) {
       modal.innerHTML = ev.target.parentNode.innerHTML;
-      modal.removeChild(
-        modal.getElementsByClassName("project__name pointer")[0]
-      );
+      modal.removeChild(modal.getElementsByClassName("project__name pointer")[0]);
       modal.getElementsByClassName("initial")[0].classList.toggle("initial");
 
       const delete_button = document.createElement("div");

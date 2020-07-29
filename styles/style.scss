@@ -102,15 +102,7 @@ html {
   height: 100%;
   color: inherit;
   width: 0.5rem;
-  background-image: linear-gradient(
-    to top,
-    transparent,
-    transparent 9.99%,
-    currentColor 10%,
-    currentColor 90%,
-    transparent 90.01%,
-    transparent
-  );
+  background-image: linear-gradient(to top, transparent, transparent 9.99%, currentColor 10%, currentColor 90%, transparent 90.01%, transparent);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -220,7 +212,16 @@ html {
   transition: transform 0.3s cubic-bezier(0.61, 0, 0.2, 1);
   z-index: -1;
 }
-
+.hamburger {
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+  width: 40px;
+  height: 40px;
+  z-index: 2000;
+  visibility: hidden;
+  cursor: pointer;
+}
 @import "footer";
 @import "skills";
 @import "author";
