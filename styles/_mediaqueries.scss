@@ -40,7 +40,7 @@
   .ui-section .ui-buttons {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   .ui-section.-hero > .ui-content {
@@ -84,6 +84,8 @@
   }
   .ui-section .ui-content .desktop-visible {
     visibility: visible;
+    padding-bottom: 1vh;
+    line-height: 1.3;
   }
 }
 
@@ -94,6 +96,9 @@
   .ui-section > .ui-aside {
     padding: 0;
     justify-content: flex-start;
+    //min-height: 180px;
+  }
+  .ui-section > .ui-aside.filled {
     min-height: 180px;
   }
   .ui-content .ui-buttons {
@@ -138,5 +143,21 @@
   display: none;
   @media (max-width: 508px) {
     display: block;
+  }
+}
+
+@media (max-width: 1110px) {
+  // }
+  .skills.legend {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 920px) {
+  .skills.legend {
+    position: unset;
+    right: unset;
+    left: unset;
   }
 }

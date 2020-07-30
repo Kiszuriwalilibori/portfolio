@@ -64,5 +64,5 @@ form.addEventListener("submit", e => {
 const someFunction = () => {
     // uses moduleA
 }
-część kodu przyjmuje klawisz enter częsc nie, ujednolicić i dać jakiś focus widoczny na przetabowanie
+część kodu przyjmuje klawisz enter częsc nie, ujednolicić i dać jakiś focus widoczny na przetabowanie. Chodzi o to że teraz tabindex jest na project-pointer ale klasa zmieniająca wygląd na
 browserify init.js -o bundle.js

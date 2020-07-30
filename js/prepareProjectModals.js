@@ -2,7 +2,7 @@ module.exports = {
   prepareProjectModals: function prepareProjectModals(modal) {
     let smallProjectCovers = document.getElementsByClassName("project-pointer");
 
-    function show_modal(ev) {
+    function showModal(ev) {
       modal.innerHTML = ev.target.parentNode.innerHTML;
       modal.removeChild(modal.getElementsByClassName("project__name pointer")[0]);
       modal.getElementsByClassName("initial")[0].classList.toggle("initial");
@@ -20,14 +20,12 @@ module.exports = {
       modal.getElementsByClassName("project__image")[0].classList.add("large");
       modal.style.display = "block";
 
-      // scrolls window to assure proper location of modal
       location.hash = "projects";
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }
-
-    //mounts handlers on small project covers
+    showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;
     Array.prototype.forEach.call(smallProjectCovers, (cover) => {
-      cover.addEventListener("click", show_modal);
+      cover.addEventListener("click", showModal);
     });
   },
 };

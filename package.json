@@ -1,0 +1,20 @@
+{
+  "name": "portfolio_aktualne_browserify",
+  "version": "1.0.0",
+  "description": "aktualne portfolio",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle":"browserify js/init.js -o js/bundle.js"
+  },
+  "author": "Piotr Maksymiuk",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^16.5.1",
+    "uglify": "^0.1.5",
+    "watchify": "^3.11.1"
+  }
+}

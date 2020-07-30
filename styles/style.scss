@@ -1,7 +1,7 @@
 @import "mixins&variables";
 @import "transitions";
 @import "fonts";
-
+@import "gifs";
 *,
 *:before,
 *:after {
@@ -9,13 +9,18 @@
   position: relative;
   transition: all 0.3s cubic-bezier(0.61, 0, 0.2, 1);
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body,
 html {
   @include full_size;
   margin: 0;
   padding: 0;
-  font-size: calc(12px + 6px * ((100vw - 320px) / 1080));
+  font-size: calc(12px + 6 * ((100vw - 320px) / 1080));
   font-family: "Oxygen", sans-serif;
 }
 
@@ -42,7 +47,7 @@ html {
   background-image: url("../graphics/textures/broken-noise.png");
 }
 
-@import "hero";
+//@import "hero";
 @import "email";
 
 .ui-section:nth-child(2) {
@@ -58,7 +63,7 @@ html {
       margin: 5% 0 5% 0;
       font-size: 14px;
       color: white;
-      width: 95%;
+      width: 100%;
       background: rgba(0, 58, 69, 0.35);
       @include information_shadow;
     }
@@ -66,7 +71,7 @@ html {
 }
 
 .ui-section:nth-child(3) {
-  @include section(orange, rgba(247, 202, 24, 0.25));
+  @include section(orange, rgba(0, 100, 255, 0.55)) ;
   z-index: 1000;
   transition: all 0.5s ease-in-out;
   position: relative;
@@ -122,7 +127,7 @@ html {
   @include flex_column(center);
   line-height: 1.5;
   align-items: flex-start;
-  padding-right: 0;
+  padding-right: 2rem;
   padding-left: 2rem;
   font-weight: bold;
   letter-spacing: 0.75px;
@@ -222,6 +227,8 @@ html {
   visibility: hidden;
   cursor: pointer;
 }
+
+@import "hero";
 @import "footer";
 @import "skills";
 @import "author";

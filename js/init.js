@@ -15,8 +15,9 @@ window.onload = function () {
   const projectModal = document.getElementById("large-project-content");
   const hamburgerMenu = document.getElementById("hamburger");
   const menu = document.getElementsByTagName("nav");
+  const introUIAside = document.getElementById("intro-ui-aside");
 
-  if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu)) {
+  if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside)) {
     window.alert("Nie odnaleziono jednego lub więcej ważnych identyfikatorów. Strona nie będzie działać proawidłowo");
     return false;
   }
@@ -25,6 +26,6 @@ window.onload = function () {
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal);
-  prepareHamburgerMenu(hamburgerMenu, menu[0]);
+  prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
 
 };
