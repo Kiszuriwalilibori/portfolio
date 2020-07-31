@@ -799,6 +799,8 @@ html {
 .ui-section.-hero {
   color: red;
   background-color: white;
+  background: url("../graphics/textures/intro.jpg") no-repeat center center fixed;
+  background-size: cover;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
   position: fixed;
@@ -809,10 +811,6 @@ html {
   z-index: 2000;
   -webkit-transition: all 0.5s ease-in-out, min-height 3s ease-in-out 3s;
   transition: all 0.5s ease-in-out, min-height 3s ease-in-out 3s;
-  border-width: 10px 0 0px;
-  border-top-style: solid;
-  -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
-  border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
   min-height: 100vh;
 }
 
