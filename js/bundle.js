@@ -4,6 +4,7 @@ const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
+const { prepareFooter }= require('./prepareFooter');
 const { throttle } = require("./throttle");
 
 window.onload = function () {
@@ -17,8 +18,9 @@ window.onload = function () {
   const hamburgerMenu = document.getElementById("hamburger");
   const menu = document.getElementsByTagName("nav");
   const introUIAside = document.getElementById("intro-ui-aside");
+  const body =document.getElementsByTagName('body')[0];
 
-  if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside)) {
+  if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside && body)) {
     window.alert("Nie odnaleziono jednego lub więcej ważnych identyfikatorów. Strona nie będzie działać proawidłowo");
     return false;
   }
@@ -28,10 +30,10 @@ window.onload = function () {
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-
+  prepareFooter(body);
 };
 
-},{"./prepareChangeLocation":2,"./prepareEmailService.js":3,"./prepareHamburgerMenu":4,"./prepareProjectModals":5,"./prepareResizeSensor":6,"./throttle":7}],2:[function(require,module,exports){
+},{"./prepareChangeLocation":2,"./prepareEmailService.js":3,"./prepareFooter":4,"./prepareHamburgerMenu":5,"./prepareProjectModals":6,"./prepareResizeSensor":7,"./throttle":8}],2:[function(require,module,exports){
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
     function change_location(ev) {
@@ -138,6 +140,16 @@ module.exports = {
 
 },{}],4:[function(require,module,exports){
 module.exports = {
+  prepareFooter: function prepareFooter(target) {
+    const footer = document.createElement("footer");
+    footer.classList.add('ui-footer');
+    footer.innerHTML = "<svg viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%; width: 100%; position:absolute; bottom:0; left:0;'><path d= 'M0.27,1.47 C222.62,412.00 311.23,-263.98 499.72,150.48 L500.27,153.45 L0.00,150.00 Z' style='stroke: none;fill:#8083FF;'></path></svg><img class='gif gif-footer' src='../graphics/gifs/dancer.webp' alt='dancer' /><strong><p>Created by Piotr Maksymiuk | 2020. © Wszelkie prawa zastrzeżone</p></strong>"
+    target.appendChild(footer);
+  },
+};
+
+},{}],5:[function(require,module,exports){
+module.exports = {
   prepareHamburgerMenu: function prepareHamburgerMenu(target, menu, uiAside) {
     toggleMenuVisibility = function () {
       menu.classList.toggle("active");
@@ -155,18 +167,23 @@ module.exports = {
   },
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = {
   prepareProjectModals: function prepareProjectModals(modal) {
     let smallProjectCovers = document.getElementsByClassName("project-pointer");
 
     function showModal(ev) {
+      
       modal.innerHTML = ev.target.parentNode.innerHTML;
+      
       modal.removeChild(modal.getElementsByClassName("project__name pointer")[0]);
+      modal.removeChild(modal.getElementsByClassName("left-cover")[0]);
+      modal.removeChild(modal.getElementsByClassName('right-cover')[0]);
       modal.getElementsByClassName("initial")[0].classList.toggle("initial");
 
       const delete_button = document.createElement("div");
       delete_button.classList.add("icon-delete");
+      delete_button.tabIndex = 0;
       delete_button.addEventListener("click", hide_modal);
 
       function hide_modal() {
@@ -184,11 +201,12 @@ module.exports = {
     showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;
     Array.prototype.forEach.call(smallProjectCovers, (cover) => {
       cover.addEventListener("click", showModal);
+      cover.addEventListener("keyup", function(event){if(event.keyCode===13){showModal(event)};});
     });
   },
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 
 
 module.exports = {
@@ -217,7 +235,7 @@ module.exports = {
   },
 };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,

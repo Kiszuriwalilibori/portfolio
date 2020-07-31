@@ -49,6 +49,10 @@
   align-items: $align;
 }
 
+@mixin project-hover-focus {
+  color: transparent;
+}
+
 $breakMobile: 776px;
 $breakSmallMobile: 422px;
 
@@ -62,8 +66,7 @@ $c_blue4: #00dffc;
 $c_modal: rgba(0, 140, 158, 0.3);
 $c_grey: #f5f5f5;
 
-$top_rainbow_strip_thickness:10px;
-
+$top_rainbow_strip_thickness: 10px;
 
 $skills-top-spacing: 2vw;
 $skills-items-backround: lightgray;
@@ -71,3 +74,12 @@ $gradient-average: linear-gradient(#028f05, #034902);
 $gradient-starter: linear-gradient(#d20106, #950002);
 $gradient-fair: linear-gradient(#0193f3, #0158c3);
 $gradient-good: linear-gradient(#0193f3, #0158c3);
+
+@mixin project-background {
+  padding: 2% 5% 2% 5%;
+  font-size: 0.875rem;
+  font-family: Roboto, "Helvetica", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}

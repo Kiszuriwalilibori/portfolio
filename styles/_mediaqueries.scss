@@ -3,6 +3,7 @@
     display: block;
     height: auto;
     overflow: visible;
+    min-height: unset;
   }
   .ui-section > .ui-aside,
   .ui-section > .ui-content {
@@ -76,6 +77,9 @@
   .gif_intro {
     margin-right: 20px;
   }
+  .ui-footer p {
+    font-size: calc(20px + 16 * ((100vw - 508px) / 192));
+  }
 }
 
 @media (min-width: 701px) {
@@ -132,7 +136,12 @@
   .ui-content.skills ul li {
     width: 45%;
   }
+
+  .ui-footer p {
+    font-size: 20px;
+  }
 }
+
 @media (max-width: 415px) {
   .large-project__cover .project {
     width: calc(300px + 45 * ((100vw - 320px) / 95));

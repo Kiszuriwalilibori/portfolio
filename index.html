@@ -9,12 +9,12 @@
     content="Piotr Maksymiuk Portfolio with basic information, skills, projects and links to additional resources" />
   <title>Piotr Maksymiuk - Portfolio</title>
   <link rel="preload" href="./graphics/textures/broken-noise.webp" as="image" />
-  <link rel="preload" as="font" href="/fonts/oxygen/oxygen-latin-regular.woff2" type="font/woff2"
-    crossorigin="anonymous" />
+  <!-- <link rel="preload" as="font" href="/fonts/oxygen/oxygen-latin-regular.woff2" type="font/woff2"
+    crossorigin="anonymous" /> -->
   <link rel="stylesheet" href="./styles/style.css" />
   <script src="./js/ResizeSensor.js" defer></script>
   <script src="./js/modernizr-custom.js" defer></script>
-  <script src="./js/bundle.min.js" defer></script>
+  <script src="./js/bundle.js" defer></script>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 </head>
 
@@ -163,16 +163,7 @@
         <div class=legend-text>Nareszcie pewna swoboda w operowaniu. Bez wahania stosuję to w projektach, ale i stawiam
           coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i pokazuje ile jeszcze do nauki.</div>
       </div>
-      <!-- <div class='skills legend good'>
-        <header class='good'>
-          <h1></h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon fill="lightgray" points="0,100 100,0 100,100" />
-          </svg>
-        </header>
-        <div class=legend-text>Chciałoby się powiedzieć, że wszystko pod kontrolą, ale to złudzenie. Co i raz pojawiają
-          się nowości, mutacje, upgrady. Pokusa rutyny i powielania schematów. Każda kolejna umka poszerza horyzonty i
-          pokazuje ile jeszcze do nauki.</div>
-      </div> -->
+      
     </div>
     <div class="ui-content skills">
 
@@ -185,7 +176,6 @@
         </header>
         <img loading="lazy" alt='html5 logo' width="140" height='140' src='./graphics/skills/html5.svg'>
       </div>
-
 
       <div class='skill'>
         <header class='fair'>
@@ -329,8 +319,10 @@
     </div>
 
     <div class="ui-content" id="projects-container">
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Fizjoterapia</div>
+      <div class="project project-pointer" >
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Fizjoterapia</div>
         <div class="project__image image-fizjo"></div>
         <div class="project__data initial">
           <h2 class="project__title">Fizjoterapia</h2>
@@ -345,8 +337,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">JS Books</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">JS Books</div>
         <div class="project__image image-jsbooks"></div>
         <div class="project__data initial">
           <h2 class="project__title">Książki o java scripcie</h2>
@@ -363,8 +357,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Firebase</div>
+      <div class="project project-pointer" >
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0" >Firebase</div>
         <div class="project__image image-firebase"></div>
         <div class="project__data initial">
           <h2 class="project__title">Wstęp do Firebase</h2>
@@ -382,8 +378,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Kryptowaluty</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Kryptowaluty</div>
         <div class="project__image image-cryptocurrency"></div>
         <div class="project__data initial">
           <h2 class="project__title">Tracker kryptowalut</h2>
@@ -402,8 +400,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Wyszukiwarka książek</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Wyszukiwarka książek</div>
         <div class="project__image image-gbfinder"></div>
         <div class="project__data initial">
           <h2 class="project__title">Wyszukiwarka książek Google Books</h2>
@@ -421,8 +421,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Pogodynka</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Pogodynka</div>
         <div class="project__image image-pogodynka"></div>
         <div class="project__data initial">
           <h2 class="project__title">Pogodynka</h2>
@@ -440,8 +442,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Drzewo</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Drzewo</div>
         <div class="project__image image-drzewo"></div>
         <div class="project__data initial">
           <h2 class="project__title">Interfejs drzewa decyzyjnego</h2>
@@ -457,8 +461,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Ukryty potencjał</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Ukryty potencjał</div>
         <div class="project__image image-athletes"></div>
         <div class="project__data initial">
           <h2 class="project__title">Ukryty potencjał sportowców</h2>
@@ -473,8 +479,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Archiwalne portfolio 1</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Archiwalne portfolio 1</div>
         <div class="project__image image-arch1"></div>
         <div class="project__data initial">
           <h2 class="project__title">Archiwalne portfolio 1</h2>
@@ -489,8 +497,10 @@
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Archiwalne portfolio 2</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Archiwalne portfolio 2</div>
         <div class="project__image image-arch2"></div>
         <div class="project__data initial">
           <h2 class="project__title">Archiwalne portfolio 2</h2>
@@ -504,8 +514,10 @@
           </div>
         </div>
       </div>
-      <div class="project project-pointer" tabindex="0">
-        <div class="project__name pointer">Te portfolio</div>
+      <div class="project project-pointer">
+        <div class='left-cover'></div>
+        <div class='right-cover'></div>
+        <div class="project__name pointer" tabindex="0">Te portfolio</div>
         <div class="project__image image-portfolio"></div>
         <div class="project__data initial">
           <h2 class="project__title">Te portfolio</h2>
@@ -522,12 +534,7 @@
     </div>
   </section>
   <div id="emailModal"></div>
-  <footer class="ui-footer">
-    <img class="gif gif-footer" src="../graphics/gifs/dancer.webp" alt="dancer" />
-    <strong>
-      <p>Created by Piotr Maksymiuk.</p>
-    </strong>
-  </footer>
+   
 </body>
 
 </html>

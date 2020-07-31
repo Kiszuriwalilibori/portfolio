@@ -7,12 +7,15 @@
 *:after {
   box-sizing: border-box;
   position: relative;
-  transition: all 0.3s cubic-bezier(0.61, 0, 0.2, 1);
-}
-* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.61, 0, 0.2, 1);
+}
+:focus {
+  outline: none;
+}
+::-moz-focus-inner {
+  border: 0;
 }
 
 body,
@@ -71,7 +74,7 @@ html {
 }
 
 .ui-section:nth-child(3) {
-  @include section(orange, rgba(0, 100, 255, 0.55)) ;
+  @include section(orange, rgba(0, 100, 255, 0.55));
   z-index: 1000;
   transition: all 0.5s ease-in-out;
   position: relative;
@@ -83,7 +86,7 @@ html {
 }
 
 .ui-section:nth-child(4) {
-  @include section(#0159b1, rgba(247, 202, 247, 0.25));
+  @include section(rgb(37, 125, 155), rgba(24, 12, 240, 0.5));
 
   & .ui-content {
     flex-flow: row wrap;

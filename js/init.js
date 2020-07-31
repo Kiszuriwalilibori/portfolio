@@ -3,6 +3,7 @@ const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
+const { prepareFooter }= require('./prepareFooter');
 const { throttle } = require("./throttle");
 
 window.onload = function () {
@@ -16,8 +17,9 @@ window.onload = function () {
   const hamburgerMenu = document.getElementById("hamburger");
   const menu = document.getElementsByTagName("nav");
   const introUIAside = document.getElementById("intro-ui-aside");
+  const body =document.getElementsByTagName('body')[0];
 
-  if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside)) {
+  if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside && body)) {
     window.alert("Nie odnaleziono jednego lub więcej ważnych identyfikatorów. Strona nie będzie działać proawidłowo");
     return false;
   }
@@ -27,5 +29,5 @@ window.onload = function () {
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-
+  prepareFooter(body);
 };
