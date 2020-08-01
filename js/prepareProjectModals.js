@@ -16,6 +16,11 @@ module.exports = {
       delete_button.tabIndex = 0;
       delete_button.addEventListener("click", hide_modal);
 
+    
+
+
+
+
       function hide_modal() {
         delete_button.removeEventListener("click", hide_modal);
         modal.innerHTML = "";
@@ -25,7 +30,7 @@ module.exports = {
       modal.getElementsByClassName("project__image")[0].classList.add("large");
       modal.style.display = "block";
 
-      location.hash = "projects";
+      location.hash ='large-project-content';
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }
     showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;

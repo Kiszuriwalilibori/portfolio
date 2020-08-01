@@ -30,7 +30,24 @@ html {
 .ui-section {
   @include flex_row(center, stretch);
   min-height: 100vh;
-  color: #31444f;
+  color: $intro-btn-hover;
+  & svg.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    opacity:0.7;
+  }
+  & svg.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
 
   & .ui-heading {
     text-shadow: 0.5px 0.5px black;
@@ -50,11 +67,10 @@ html {
   background-image: url("../graphics/textures/broken-noise.png");
 }
 
-//@import "hero";
 @import "email";
 
 .ui-section:nth-child(2) {
-  @include section(#003b46, rgba(0, 255, 0, 0.15));
+  @include section(#003b46, #8083ff);
   margin-top: 0;
   transition: margin-top 2s ease-in-out;
 
@@ -94,11 +110,12 @@ html {
   }
 }
 
-//@import 'mediaqueries';
+
 
 .ui-aside {
   @include flex_column(center);
   padding-right: 0;
+  z-index: 1000;
 }
 
 .ui-aside:after {
@@ -179,8 +196,8 @@ html {
   padding: calc(4px + 10 * ((100vw - 320px) / 1080));
   font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
   background: transparent;
-  color: #31444f;
-  border: 1px solid #31444f;
+  color: $intro-btn-hover;
+  border: 1px solid $intro-btn-hover;
   overflow: hidden;
   cursor: pointer;
   outline: none;
@@ -195,7 +212,7 @@ html {
 .ui-buttons:hover > .ui-button:hover,
 .ui-button:focus,
 .ui-buttons:hover > .ui-button:focus {
-  color: red;
+  color: $intro-basic-color;
   outline: none;
 }
 
@@ -216,7 +233,7 @@ html {
   height: 100%;
   transform: scale(1.1) translateX(calc(-100% - 2rem)) skewX(30deg);
   transform-origin: left bottom;
-  background: #31444f;
+  background: $intro-btn-hover;
   transition: transform 0.3s cubic-bezier(0.61, 0, 0.2, 1);
   z-index: -1;
 }
@@ -224,8 +241,8 @@ html {
   position: fixed;
   top: 1vw;
   right: 1vw;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   z-index: 2000;
   visibility: hidden;
   cursor: pointer;
@@ -237,3 +254,4 @@ html {
 @import "author";
 @import "projects";
 @import "mediaqueries";
+@import "informations";

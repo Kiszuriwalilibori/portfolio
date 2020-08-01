@@ -14,7 +14,7 @@
 }
 @keyframes heading-color {
   from {
-    background-color: red;
+    background-color: $intro-basic-color;
   }
   to {
     background-color: transparent;
@@ -109,5 +109,15 @@
   }
   to {
     opacity: 100%;
+  }
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }

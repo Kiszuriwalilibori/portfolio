@@ -195,7 +195,9 @@ module.exports = {
       modal.getElementsByClassName("project__image")[0].classList.add("large");
       modal.style.display = "block";
 
-      location.hash = "projects";
+      // location.hash = "projects";
+      // window.scrollBy(0, -document.getElementById("intro").clientHeight);
+      location.hash ='large-project-content';
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }
     showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;
