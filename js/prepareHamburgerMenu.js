@@ -1,5 +1,6 @@
 module.exports = {
   prepareHamburgerMenu: function prepareHamburgerMenu(target, menu, uiAside) {
+    if (target && menu && uiAside){
     toggleMenuVisibility = function () {
       menu.classList.toggle("active");
       uiAside.classList.toggle("filled");
@@ -13,5 +14,6 @@ module.exports = {
         toggleMenuVisibility();
       }
     });
+  }else{console.log('can not open hamburger mnu - missing or falsey arguments')}
   },
 };

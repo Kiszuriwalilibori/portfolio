@@ -5,7 +5,8 @@
   border-radius: 1%;
   overflow: hidden;
   height: 12.1vw;
-
+  @include information_shadow;
+  color:rgb(0,59,70);
   &.large {
     height: unset;
   }

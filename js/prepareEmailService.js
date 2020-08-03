@@ -4,9 +4,13 @@ module.exports = {
       function toggleEmailModalVisibility() {
         emailModal.classList.toggle("active");
       }
+
       toggleEmailModalVisibility();
+
       const iconDelete = emailModal.getElementsByClassName("icon-delete")[0];
-      iconDelete.addEventListener("click", toggleEmailModalVisibility);
+      if (iconDelete) {
+        iconDelete.addEventListener("click", toggleEmailModalVisibility);
+      }
       let form = document.getElementById("contact-form");
 
       form.addEventListener("submit", function (e) {

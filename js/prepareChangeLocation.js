@@ -1,8 +1,10 @@
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
     function change_location(ev) {
-      location.hash = ev.target.dataset.target;
-      window.scrollBy(0, -intro.clientHeight);
+      if (ev.target.dataset.target) {
+        location.hash = ev.target.dataset.target;
+        window.scrollBy(0, -intro.clientHeight);
+      } else console.log("event location has not valid dataset");
     }
 
     change_location = typeof throttle !== "undefined" ? throttle(change_location, 500) : change_location;

@@ -9,7 +9,7 @@
   .ui-section > .ui-content {
     width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 2rem;
   }
   .ui-section > .ui-content .project {
     height: 24.2vw;
@@ -159,14 +159,17 @@
   // }
   .skills.legend {
     width: 200px;
-    height: 300px;
+    //height: 300px; xxx
+    position:relative; //xxx
+    margin: 5% auto; //xxx
   }
 }
 
 @media (max-width: 920px) {
-  .skills.legend {
-    position: unset;
-    right: unset;
-    left: unset;
-  }
+  //.skills.legend {
+    //position: unset; xxx
+    //right: unset; xxx
+    //left: unset; xxx
+    .skills.legend.average, .skills.legend.starter, skills.legend.fair{left:0; right:0;}
+  //}
 }

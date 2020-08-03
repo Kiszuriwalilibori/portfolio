@@ -37,8 +37,10 @@ window.onload = function () {
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
     function change_location(ev) {
-      location.hash = ev.target.dataset.target;
-      window.scrollBy(0, -intro.clientHeight);
+      if (ev.target.dataset.target) {
+        location.hash = ev.target.dataset.target;
+        window.scrollBy(0, -intro.clientHeight);
+      } else console.log("event location has not valid dataset");
     }
 
     change_location = typeof throttle !== "undefined" ? throttle(change_location, 500) : change_location;
@@ -62,9 +64,13 @@ module.exports = {
       function toggleEmailModalVisibility() {
         emailModal.classList.toggle("active");
       }
+
       toggleEmailModalVisibility();
+
       const iconDelete = emailModal.getElementsByClassName("icon-delete")[0];
-      iconDelete.addEventListener("click", toggleEmailModalVisibility);
+      if (iconDelete) {
+        iconDelete.addEventListener("click", toggleEmailModalVisibility);
+      }
       let form = document.getElementById("contact-form");
 
       form.addEventListener("submit", function (e) {
@@ -151,6 +157,7 @@ module.exports = {
 },{}],5:[function(require,module,exports){
 module.exports = {
   prepareHamburgerMenu: function prepareHamburgerMenu(target, menu, uiAside) {
+    if (target && menu && uiAside){
     toggleMenuVisibility = function () {
       menu.classList.toggle("active");
       uiAside.classList.toggle("filled");
@@ -164,6 +171,7 @@ module.exports = {
         toggleMenuVisibility();
       }
     });
+  }else{console.log('can not open hamburger mnu - missing or falsey arguments')}
   },
 };
 
@@ -186,6 +194,11 @@ module.exports = {
       delete_button.tabIndex = 0;
       delete_button.addEventListener("click", hide_modal);
 
+    
+
+
+
+
       function hide_modal() {
         delete_button.removeEventListener("click", hide_modal);
         modal.innerHTML = "";
@@ -195,8 +208,6 @@ module.exports = {
       modal.getElementsByClassName("project__image")[0].classList.add("large");
       modal.style.display = "block";
 
-      // location.hash = "projects";
-      // window.scrollBy(0, -document.getElementById("intro").clientHeight);
       location.hash ='large-project-content';
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }
@@ -209,11 +220,8 @@ module.exports = {
 };
 
 },{}],7:[function(require,module,exports){
-
-
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro) {
-    
     function adjustMargin(item) {
       informations.style.marginTop = item.offsetHeight + "px";
     }

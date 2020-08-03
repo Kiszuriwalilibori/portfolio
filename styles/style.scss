@@ -47,6 +47,15 @@ html {
     height: 100%;
     width: 100%;
     z-index: 0;
+    &.top-small{height:50%;}
+  }
+  & svg.border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
   }
 
   & .ui-heading {
@@ -70,7 +79,7 @@ html {
 @import "email";
 
 .ui-section:nth-child(2) {
-  @include section(#003b46, #8083ff);
+  @include section(#FFAF44, #8083ff);
   margin-top: 0;
   transition: margin-top 2s ease-in-out;
 
@@ -102,7 +111,7 @@ html {
 }
 
 .ui-section:nth-child(4) {
-  @include section(rgb(37, 125, 155), rgba(24, 12, 240, 0.5));
+  @include section(#BAB247, rgba(24, 12, 240, 0.5));
 
   & .ui-content {
     flex-flow: row wrap;

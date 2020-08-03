@@ -1,7 +1,6 @@
 
 #informations{
     & .ui-content{
-
         .information-item{position: relative;
             margin: .5em auto;
             padding: 1em;
@@ -11,6 +10,7 @@
             background: #629bdd;
             z-index:1000;
             border-radius: .25em;
+            color: rgb(0,59,70);
           
             &:before {
               content: '';
