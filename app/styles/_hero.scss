@@ -1,9 +1,9 @@
 .ui-section.-hero {
-  @include section($intro-basic-color, white);
+  //@include section($intro-basic-color, white);
 
-  background: url('../graphics/textures/intro.jpg') no-repeat center center fixed; 
+  background: white url('../graphics/textures/intro.jpg') no-repeat center center fixed; 
   background-size: cover;
-
+  color:$intro-basic-color;
   @include hero_shadow_large;
 
   position: fixed;
