@@ -1,0 +1,61 @@
+.ui-buttons:hover ~ .ui-screen {
+  transform: scaleX(1);
+}
+
+.ui-buttons:hover ~ * {
+  color: #111;
+}
+
+.ui-button,
+.ui-buttons:hover > .ui-button {
+  display: inline-block;
+  appearance: none;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 1rem;
+  font-weight: 700;
+  padding: calc(4px + 10 * ((100vw - 320px) / 1080));
+  font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
+  background: transparent;
+  color: $intro-btn-hover;
+  border: 1px solid $intro-btn-hover;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.ui-button + .ui-button,
+.ui-buttons:hover > .ui-button + .ui-button {
+  margin-left: 1rem;
+}
+
+.ui-button:hover,
+.ui-buttons:hover > .ui-button:hover,
+.ui-button:focus,
+.ui-buttons:hover > .ui-button:focus {
+  color: $intro-basic-color;
+  outline: none;
+}
+
+.ui-button:hover:before,
+.ui-buttons:hover > .ui-button:hover:before,
+.ui-button:focus:before,
+.ui-buttons:hover > .ui-button:focus:before {
+  transform: translateX(0) skewX(30deg);
+}
+
+.ui-button:before,
+.ui-buttons:hover > .ui-button:before {
+  content: "";
+  display: block;
+
+  @include abs_top_left_00;
+  width: calc(100% + 2rem);
+  height: 100%;
+  transform: scale(1.1) translateX(calc(-100% - 2rem)) skewX(30deg);
+  transform-origin: left bottom;
+  background: $intro-btn-hover;
+  transition: transform 0.3s cubic-bezier(0.61, 0, 0.2, 1);
+  z-index: -1;
+}

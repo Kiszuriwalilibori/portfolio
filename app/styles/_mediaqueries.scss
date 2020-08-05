@@ -100,7 +100,6 @@
   .ui-section > .ui-aside {
     padding: 0;
     justify-content: flex-start;
-    //min-height: 180px;
   }
   .ui-section > .ui-aside.filled {
     min-height: 180px;
@@ -111,7 +110,6 @@
   }
   nav {
     display: none;
-
   }
   nav.active {
     display: flex;
@@ -157,20 +155,28 @@
 }
 
 @media (max-width: 1110px) {
-  // }
+  
   .skills.legend {
     width: 200px;
-    //height: 300px; xxx
-    position:relative; //xxx
-    margin: 5% auto; //xxx
+    position: relative;
+    margin: 5% auto; 
   }
 }
 
 @media (max-width: 920px) {
-  //.skills.legend {
-    //position: unset; xxx
-    //right: unset; xxx
-    //left: unset; xxx
-    .skills.legend.average, .skills.legend.starter, skills.legend.fair{left:0; right:0;}
-  //}
+  .webp .hero-background {
+    background: white url("../graphics/textures/intro_small.webp") no-repeat center center fixed;
+    background-size: cover;
+  }
+  .nowebp .hero-background {
+    background: white url("../graphics/textures/intro-small.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .skills.legend.average,
+  .skills.legend.starter,
+  skills.legend.fair {
+    left: 0;
+    right: 0;
+  }
 }

@@ -1,21 +1,21 @@
-.ui-section.-hero {
-  //@include section($intro-basic-color, white);
-
-  background: white url('../graphics/textures/intro.jpg') no-repeat center center fixed; 
+.webp .hero-background {
+  background: white url("../graphics/textures/intro.webp") no-repeat center center fixed;
   background-size: cover;
-  color:$intro-basic-color;
-  @include hero_shadow_large;
+}
+.nowebp .hero-background {
+  background: white url("../graphics/textures/intro.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
 
+.ui-section.-hero {
+  color: $intro-basic-color;
+  @include hero_shadow_large;
   position: fixed;
   transform: translateZ(0);
   top: 0;
   left: 0;
   z-index: 2000;
   transition: all 0.5s ease-in-out, min-height 3s ease-in-out 3s;
-  // border-width: $top_rainbow_strip_thickness 0 0px;
-  // border-top-style: solid;
-  // -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
-  // border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
   min-height: 100vh;
   &:hover {
     @include hero_shadow_small;

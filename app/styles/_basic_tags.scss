@@ -1,0 +1,24 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.61, 0, 0.2, 1);
+}
+:focus {
+  outline: none;
+}
+::-moz-focus-inner {
+  border: 0;
+}
+
+body,
+html {
+  @include full_size;
+  margin: 0;
+  padding: 0;
+  font-size: calc(12px + 6 * ((100vw - 320px) / 1080));
+  font-family: "Oxygen", sans-serif;
+}
