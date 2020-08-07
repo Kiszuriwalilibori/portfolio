@@ -51,3 +51,4 @@ if ('loading' in HTMLImageElement.prototype) {
 
 JS
 
+watchify app/js/init.js -o app/js/bundle.js -v
