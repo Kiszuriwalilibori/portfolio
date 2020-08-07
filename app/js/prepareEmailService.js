@@ -1,16 +1,17 @@
 module.exports = {
-  prepareEmailService: function prepareEmailService(mountHooks, emailModal) {
+  prepareEmailService: function prepareEmailService(mountHooks, emailModal, iconDelete) {
+    if (iconDelete) {
+      iconDelete.addEventListener("click", toggleEmailModalVisibility);
+    }
+
+    function toggleEmailModalVisibility() {
+      emailModal.classList.toggle("active");
+    }
+
+    toggleEmailModalVisibility = typeof throttle !== "undefined" ? throttle(toggleEmailModalVisibility, 300) : toggleEmailModalVisibility;
+
     function sendEmail() {
-      function toggleEmailModalVisibility() {
-        emailModal.classList.toggle("active");
-      }
-
-      toggleEmailModalVisibility();
-
-      const iconDelete = emailModal.getElementsByClassName("icon-delete")[0];
-      if (iconDelete) {
-        iconDelete.addEventListener("click", toggleEmailModalVisibility);
-      }
+      emailModal.classList.toggle("active");
       let form = document.getElementById("contact-form");
 
       form.addEventListener("submit", function (e) {

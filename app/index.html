@@ -59,11 +59,26 @@
       </p>
       <div class="ui-screen desktop-visible"></div>
     </div>
-    <div class='hamburger'><img alt = 'hamburger' id='hamburger' src='./graphics/icons/list.svg'
-        onerror="this.onerror=null; this.src='./graphics/icons/hamburger.webp'"></div>
+    <div class='hamburger'>
+        <svg tabindex='0' id = 'hamburger' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="50px"
+        height="50px">
+        <path fill="" d="M64 14A50 50 0 1 0 64 114A50 50 0 1 0 64 14Z" />
+        <path fill=" #FB6542"
+            d="M64,117c-29.2,0-53-23.8-53-53s23.8-53,53-53s53,23.8,53,53S93.2,117,64,117z M64,17c-25.9,0-47,21.1-47,47s21.1,47,47,47s47-21.1,47-47S89.9,17,64,17z" />
+        <path fill=" #FB6542"
+            d="M86.5 52h-45c-1.7 0-3-1.3-3-3s1.3-3 3-3h45c1.7 0 3 1.3 3 3S88.2 52 86.5 52zM86.5 67h-45c-1.7 0-3-1.3-3-3s1.3-3 3-3h45c1.7 0 3 1.3 3 3S88.2 67 86.5 67z" />
+        <g>
+            <path fill="#FB6542" d="M86.5,82h-45c-1.7,0-3-1.3-3-3s1.3-3,3-3h45c1.7,0,3,1.3,3,3S88.2,82,86.5,82z" />
+        </g>
+    </svg>
+
+
+      </div>
     <div id="emailModal">
       <div class="emailModal__content">
-        <div class="icon-delete"></div>
+        <div class="emailModal__delete">
+          <svg id = 'emailModal-deleteIcon' height="65px" viewBox="0 0 365.71733 365" width="65px" xmlns="http://www.w3.org/2000/svg"><g fill="#f44336"><path d="m356.339844 296.347656-286.613282-286.613281c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503906-12.5 32.769532 0 45.25l286.613281 286.613282c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082032c12.523438-12.480468 12.523438-32.75.019532-45.25zm0 0"/><path d="m295.988281 9.734375-286.613281 286.613281c-12.5 12.5-12.5 32.769532 0 45.25l15.082031 15.082032c12.503907 12.5 32.769531 12.5 45.25 0l286.632813-286.59375c12.503906-12.5 12.503906-32.765626 0-45.246094l-15.082032-15.082032c-12.5-12.523437-32.765624-12.523437-45.269531-.023437zm0 0"/></g></svg>
+        </div>
         <form class="emailform" id="contact-form">
           <label for="name">Imię&nbsp;i&nbsp;nazwisko</label>
           <input class="form__input" type="text" name="name" id="name" placeholder="Imię i Nazwisko" required />
@@ -129,24 +144,7 @@
   <section class="ui-section" id="skills">
 
     <div class="ui-aside">
-      <!-- <div class='skills legend starter'>
-        <header class='starter'>
-          <h1></h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon fill="lightgray" points="0,100 100,0 100,100" />
-          </svg>
-        </header>
-        <div class=legend-text>Coś tam wiem na ten temat, ale nie żeby dużo. Na razie staram się to ogarnąć na prostych
-          przykładach. Jest więcej pytań niż odpowiedzi. Takie rozpoznanie bojem. </div>
-      </div>
-      <div class='skills legend average'>
-        <header class='average'>
-          <h1></h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon fill="lightgray" points="0,100 100,0 100,100" />
-          </svg>
-        </header>
-        <div class=legend-text>Pierwsze kroki za mną, ale do zadowolenia bardzo daleko. Tworzę coraz bardziej
-          zaawansowane mutacje przykładów, i wrzucam je do tu będących projektów. Takie czeladnictwo.</div>
-      </div> -->
+      
       <div class= "skills legend starter"><p>Coś tam wiem na ten temat, ale nie żeby dużo. Na razie staram się to ogarnąć na prostych
         przykładach. Jest więcej pytań niż odpowiedzi. Takie rozpoznanie bojem.</p></div>
       <div class= 'skills legend average'><p>Pierwsze kroki za mną, ale do zadowolenia bardzo daleko. Tworzę coraz bardziej
@@ -159,17 +157,7 @@
         albo inaczej skille
       </h1>
       <div class ="skills legend fair"><p>Nareszcie pewna swoboda w operowaniu. Bez wahania stosuję to w projektach, ale i stawiam
-        coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i pokazuje ile jeszcze do nauki.</p></div>
-      <!-- <div class='skills legend fair'>
-        <header class='fair'>
-          <h1></h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon fill="lightgray" points="0,100 100,0 100,100" />
-          </svg>
-        </header>
-        <div class=legend-text>Nareszcie pewna swoboda w operowaniu. Bez wahania stosuję to w projektach, ale i stawiam
-          coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i pokazuje ile jeszcze do nauki.</div>
-      </div> -->
-      
+        coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i pokazuje ile jeszcze do nauki.</p></div> 
     </div>
     <div class="ui-content skills">
 

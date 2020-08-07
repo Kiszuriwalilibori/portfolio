@@ -34,4 +34,4 @@ https://web.dev/en/replace-gifs-with-videos/ albo tak
 
 https://web.dev/en/native-lazy-loading/
 
-browserify init.js -o bundle.js
+watchify init.js -o bundle.js

@@ -270,6 +270,28 @@
   }
 }
 
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @font-face {
   font-family: "Oxygen";
   src: url("../fonts/oxygen/oxygen-latin-bold.woff2") format("woff2"), url("../fonts/oxygen/oxygen-latin-bold.woff") format("woff"), url("../fonts/oxygen/oxygen-latin-bold.ttf") format("truetype"), url("../fonts/oxygen/oxygen-latin-bold.svg") format("svg");
@@ -606,6 +628,25 @@ html {
           align-items: center;
 }
 
+#emailModal.active .emailModal__delete {
+  width: 64px;
+  height: 64px;
+  background-size: cover;
+  position: absolute;
+  top: 8px;
+  left: calc(100% - 8px);
+  z-index: 1000;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  cursor: pointer;
+}
+
+#emailModal.active .emailModal__delete svg:hover,
+#emailModal.active .emailModal__delete svg:focus {
+  -webkit-animation: rotate 2s infinite linear;
+          animation: rotate 2s infinite linear;
+}
+
 #emailModal.active .emailModal__content {
   -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);
           box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11);
@@ -849,6 +890,11 @@ html {
   z-index: 2000;
   visibility: hidden;
   cursor: pointer;
+}
+
+.hamburger:hover, .hamburger:focus {
+  -webkit-animation: rotate 2s infinite linear;
+          animation: rotate 2s infinite linear;
 }
 
 .webp .hero-background {
@@ -1536,6 +1582,24 @@ html {
   background-color: rgba(129, 75, 75, 0.54);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-icon-delete {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 8px;
+  left: calc(100% - 8px);
+  z-index: 1000;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  cursor: pointer;
+}
+
+.project-icon-delete svg:focus,
+.project-icon-delete svg:hover {
+  -webkit-animation: rotate 2s infinite linear;
+          animation: rotate 2s infinite linear;
 }
 
 @media (max-width: 700px) {
