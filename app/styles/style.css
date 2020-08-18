@@ -1267,19 +1267,23 @@ html {
   height: unset;
 }
 
-.project:hover {
+.project:hover, .project:focus {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 }
 
-.project:hover .left-cover {
+.project:hover .left-cover, .project:focus .left-cover {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
 }
 
-.project:hover .right-cover {
+.project:hover .right-cover, .project:focus .right-cover {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
+}
+
+.project:hover .project__name, .project:focus .project__name {
+  color: transparent;
 }
 
 .project.pointer {

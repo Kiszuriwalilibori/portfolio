@@ -12,7 +12,7 @@
     height: unset;
   }
 
-  &:hover {
+  &:hover, &:focus {
     @include information_shadow;
 
     & .left-cover {
@@ -22,6 +22,7 @@
     & .right-cover {
       transform: scaleX(0);
     }
+    & .project__name{@include project-hover-focus}
   }
 
   &.pointer {

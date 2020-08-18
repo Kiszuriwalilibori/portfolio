@@ -24,7 +24,7 @@
 - initial
 
 ##### 1.1
-- new delete icons, bug which caused that delete button worked on email modal only when modal was displayed for the first time removed 
+- new delete icons, bug which caused that delete button worked on email modal only when modal was displayed for the first time fixed 
 
 ### To do
 
@@ -51,3 +51,4 @@ if ('loading' in HTMLImageElement.prototype) {
 
 JS
 
+watchify app/js/init.js -o app/js/bundle.js -v

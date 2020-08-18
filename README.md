@@ -35,3 +35,7 @@ https://web.dev/en/replace-gifs-with-videos/ albo tak
 https://web.dev/en/native-lazy-loading/
 
 watchify init.js -o bundle.js
+
+w guziku wysyłania maila dodać jakiś informator progressu. Tu lepsze by było debounce
+w prepare hamburgermenu tez lepsz by było debounce albo jakiś sposób na przyspieszenie pokazywania menu.
+      //dopisać o nie -buttonie i dodawaniu tabindexu. Ale w przykładzie jest rethrowing na podstawie typu -SyntaxError - a to jest bardzo ogólne

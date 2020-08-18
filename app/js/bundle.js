@@ -7,6 +7,7 @@ const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { prepareFooter }= require('./prepareFooter');
 const { throttle } = require("./throttle");
 
+
 window.onload = function () {
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");
@@ -34,45 +35,78 @@ window.onload = function () {
   prepareFooter(body);
 };
 
-},{"./prepareChangeLocation":2,"./prepareEmailService.js":3,"./prepareFooter":4,"./prepareHamburgerMenu":5,"./prepareProjectModals":6,"./prepareResizeSensor":7,"./throttle":8}],2:[function(require,module,exports){
+},{"./prepareChangeLocation":3,"./prepareEmailService.js":4,"./prepareFooter":5,"./prepareHamburgerMenu":6,"./prepareProjectModals":7,"./prepareResizeSensor":8,"./throttle":9}],2:[function(require,module,exports){
+const { throttle } = require("./throttle");
+
+
+function isFunction(x) {
+  return Object.prototype.toString.call(x) == "[object Function]";
+}
+
+function isNode(o) {
+  return typeof Node === "object" ? o instanceof Node : o && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName === "string";
+}
+
+module.exports = {
+  mountClickAndEnterHandler: function mountClickAndEnterHandler(item, fn) {
+    try {
+      if (!isNode(item)) {
+        throw new Error("item is not a node");
+      }
+      if (!isFunction(fn)) {
+        throw new Error("fn is not a function");
+      }
+      if (!item || !document.body.contains(item)) {
+        throw new Error("item is not a HTML node within document body");
+      }
+      item.addEventListener("click", fn);
+      item.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          fn(event);
+        }
+      });
+
+    } catch (err) {
+      console.log(`${arguments.callee.name} function error: ${err.message}`);
+    }
+  },
+  throttled: function throttled(fn, delay){return typeof throttle !== "undefined" ? throttle(fn, delay) : throttle;}
+};
+
+},{"./throttle":9}],3:[function(require,module,exports){
+
+const { mountClickAndEnterHandler, throttled } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
-    function change_location(ev) {
+    function changeLocation(ev) {
       if (ev.target.dataset.target) {
         const intro = document.getElementById("intro");
-        window.location.hash ="";
+        window.location.hash = "";
         window.location.hash = ev.target.dataset.target;
-        console.log(location.hash, intro.clientHeight);
         window.scrollBy(0, -intro.clientHeight);
       } else console.log("event location has not valid dataset");
     }
 
-    change_location = typeof throttle !== "undefined" ? throttle(change_location, 500) : change_location;
-
-    Array.prototype.forEach.call(buttons, (button) => {
-      button.addEventListener("click", change_location);
-      button.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          event.preventDefault();
-          change_location(event);
-        }
-      });
-    });
+    Array.prototype.forEach.call(buttons, (button) => mountClickAndEnterHandler(button, throttled(changeLocation, 300)));
   },
 };
 
-},{}],3:[function(require,module,exports){
+},{"./lib":2}],4:[function(require,module,exports){
+const { mountClickAndEnterHandler, throttled } = require("./lib");
+
 module.exports = {
   prepareEmailService: function prepareEmailService(mountHooks, emailModal, iconDelete) {
-    if (iconDelete) {
-      iconDelete.addEventListener("click", toggleEmailModalVisibility);
-    }
+    // if (iconDelete) {
+    //   iconDelete.addEventListener("click", toggleEmailModalVisibility);
+    // }
+    mountClickAndEnterHandler(iconDelete, throttled(toggleEmailModalVisibility, 300));
 
     function toggleEmailModalVisibility() {
       emailModal.classList.toggle("active");
     }
 
-    toggleEmailModalVisibility = typeof throttle !== "undefined" ? throttle(toggleEmailModalVisibility, 300) : toggleEmailModalVisibility;
+    //toggleEmailModalVisibility = typeof throttle !== "undefined" ? throttle(toggleEmailModalVisibility, 300) : toggleEmailModalVisibility;
 
     function sendEmail() {
       emailModal.classList.toggle("active");
@@ -136,20 +170,20 @@ module.exports = {
         }
       });
     }
-
-    Array.prototype.forEach.call(mountHooks, (hook) => {
-      hook.addEventListener("click", sendEmail);
-      hook.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          event.preventDefault();
-          sendEmail(event);
-        }
-      });
-    });
+    Array.prototype.forEach.call(mountHooks, (hook) => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));
+    // Array.prototype.forEach.call(mountHooks, (hook) => {
+    //   hook.addEventListener("click", sendEmail);
+    //   hook.addEventListener("keyup", function (event) {
+    //     if (event.keyCode === 13) {
+    //       event.preventDefault();
+    //       sendEmail(event);
+    //     }
+    //   });
+    // });
   },
 };
 
-},{}],4:[function(require,module,exports){
+},{"./lib":2}],5:[function(require,module,exports){
 module.exports = {
   prepareFooter: function prepareFooter(target) {
     const footer = document.createElement("footer");
@@ -159,7 +193,9 @@ module.exports = {
   },
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
+const { mountClickAndEnterHandler, throttled } = require("./lib");
+
 module.exports = {
   prepareHamburgerMenu: function prepareHamburgerMenu(target, menu, uiAside) {
     if (target && menu && uiAside){
@@ -167,21 +203,24 @@ module.exports = {
       menu.classList.toggle("active");
       uiAside.classList.toggle("filled");
     };
-    toggleMenuVisibility = typeof throttle !== "undefined" ? throttle(toggleMenuVisibility, 300) : toggleMenuVisibility;
+    //toggleMenuVisibility = typeof throttle !== "undefined" ? throttle(toggleMenuVisibility, 300) : toggleMenuVisibility;
     
-    target.addEventListener("click", toggleMenuVisibility);
-    target.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        toggleMenuVisibility();
-      }
-    });
+    // target.addEventListener("click", toggleMenuVisibility);
+    // target.addEventListener("keyup", function (event) {
+    //   if (event.keyCode === 13) {
+    //     event.preventDefault();
+    //     toggleMenuVisibility();
+    //   }
+    // });
+  mountClickAndEnterHandler(target, throttled(toggleMenuVisibility, 300));
   }else{console.log('can not open hamburger menu - missing or falsey arguments')}
   },
 };
 
 //s
-},{}],6:[function(require,module,exports){
+},{"./lib":2}],7:[function(require,module,exports){
+const { mountClickAndEnterHandler, throttled } = require("./lib");
+
 module.exports = {
   prepareProjectModals: function prepareProjectModals(modal) {
     let smallProjectCovers = document.getElementsByClassName("project-pointer");
@@ -218,19 +257,20 @@ module.exports = {
       location.hash = "large-project-content";
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }
-    showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;
-    Array.prototype.forEach.call(smallProjectCovers, (cover) => {
-      cover.addEventListener("click", showModal);
-      cover.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          showModal(event);
-        }
-      });
-    });
+    Array.prototype.forEach.call(smallProjectCovers, (cover) => mountClickAndEnterHandler(cover, throttled(showModal, 300)));
+    //showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;
+    // Array.prototype.forEach.call(smallProjectCovers, (cover) => {
+    //   cover.addEventListener("click", showModal);
+    //   cover.addEventListener("keyup", function (event) {
+    //     if (event.keyCode === 13) {
+    //       showModal(event);
+    //     }
+    //   });
+    // });
   },
 };
 
-},{}],7:[function(require,module,exports){
+},{"./lib":2}],8:[function(require,module,exports){
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro) {
     function adjustMargin(item) {
@@ -256,7 +296,7 @@ module.exports = {
   },
 };
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,

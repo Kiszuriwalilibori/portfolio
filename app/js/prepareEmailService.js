@@ -1,14 +1,17 @@
+const { mountClickAndEnterHandler, throttled } = require("./lib");
+
 module.exports = {
   prepareEmailService: function prepareEmailService(mountHooks, emailModal, iconDelete) {
-    if (iconDelete) {
-      iconDelete.addEventListener("click", toggleEmailModalVisibility);
-    }
+    // if (iconDelete) {
+    //   iconDelete.addEventListener("click", toggleEmailModalVisibility);
+    // }
+    mountClickAndEnterHandler(iconDelete, throttled(toggleEmailModalVisibility, 300));
 
     function toggleEmailModalVisibility() {
       emailModal.classList.toggle("active");
     }
 
-    toggleEmailModalVisibility = typeof throttle !== "undefined" ? throttle(toggleEmailModalVisibility, 300) : toggleEmailModalVisibility;
+    //toggleEmailModalVisibility = typeof throttle !== "undefined" ? throttle(toggleEmailModalVisibility, 300) : toggleEmailModalVisibility;
 
     function sendEmail() {
       emailModal.classList.toggle("active");
@@ -72,15 +75,15 @@ module.exports = {
         }
       });
     }
-
-    Array.prototype.forEach.call(mountHooks, (hook) => {
-      hook.addEventListener("click", sendEmail);
-      hook.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          event.preventDefault();
-          sendEmail(event);
-        }
-      });
-    });
+    Array.prototype.forEach.call(mountHooks, (hook) => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));
+    // Array.prototype.forEach.call(mountHooks, (hook) => {
+    //   hook.addEventListener("click", sendEmail);
+    //   hook.addEventListener("keyup", function (event) {
+    //     if (event.keyCode === 13) {
+    //       event.preventDefault();
+    //       sendEmail(event);
+    //     }
+    //   });
+    // });
   },
 };

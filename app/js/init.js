@@ -6,6 +6,7 @@ const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { prepareFooter }= require('./prepareFooter');
 const { throttle } = require("./throttle");
 
+
 window.onload = function () {
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");

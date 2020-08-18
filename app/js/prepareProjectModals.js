@@ -1,3 +1,5 @@
+const { mountClickAndEnterHandler, throttled } = require("./lib");
+
 module.exports = {
   prepareProjectModals: function prepareProjectModals(modal) {
     let smallProjectCovers = document.getElementsByClassName("project-pointer");
@@ -34,14 +36,15 @@ module.exports = {
       location.hash = "large-project-content";
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }
-    showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;
-    Array.prototype.forEach.call(smallProjectCovers, (cover) => {
-      cover.addEventListener("click", showModal);
-      cover.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          showModal(event);
-        }
-      });
-    });
+    Array.prototype.forEach.call(smallProjectCovers, (cover) => mountClickAndEnterHandler(cover, throttled(showModal, 300)));
+    //showModal = typeof throttle !== "undefined" ? throttle(showModal, 500) : showModal;
+    // Array.prototype.forEach.call(smallProjectCovers, (cover) => {
+    //   cover.addEventListener("click", showModal);
+    //   cover.addEventListener("keyup", function (event) {
+    //     if (event.keyCode === 13) {
+    //       showModal(event);
+    //     }
+    //   });
+    // });
   },
 };

@@ -1,25 +1,16 @@
+
+const { mountClickAndEnterHandler, throttled } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
-    function change_location(ev) {
+    function changeLocation(ev) {
       if (ev.target.dataset.target) {
         const intro = document.getElementById("intro");
-        window.location.hash ="";
+        window.location.hash = "";
         window.location.hash = ev.target.dataset.target;
-        console.log(location.hash, intro.clientHeight);
         window.scrollBy(0, -intro.clientHeight);
       } else console.log("event location has not valid dataset");
     }
 
-    change_location = typeof throttle !== "undefined" ? throttle(change_location, 500) : change_location;
-
-    Array.prototype.forEach.call(buttons, (button) => {
-      button.addEventListener("click", change_location);
-      button.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          event.preventDefault();
-          change_location(event);
-        }
-      });
-    });
+    Array.prototype.forEach.call(buttons, (button) => mountClickAndEnterHandler(button, throttled(changeLocation, 300)));
   },
 };
