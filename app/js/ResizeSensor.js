@@ -341,6 +341,3 @@
 
   return ResizeSensor;
 });
-
-
-//watch

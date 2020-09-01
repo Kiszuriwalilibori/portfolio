@@ -9,7 +9,17 @@ function isNode(o) {
   return typeof Node === "object" ? o instanceof Node : o && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName === "string";
 }
 
+function reportError(err){
+  try{
+    if (!err instanceof Error ){throw new Error("it is not error object")}
+    console.error(err.name,'\n','\n',err.message,'\n','\n', err.stack);
+  }
+  catch(e){console.log(e.message)}
+
+}
 module.exports = {
+  isNode: isNode,
+  reportError: reportError,
   mountClickAndEnterHandler: function mountClickAndEnterHandler(item, fn) {
     try {
       if (!isNode(item)) {
@@ -29,8 +39,10 @@ module.exports = {
         }
       });
 
+      if (item.toUpperCase !=="BUTTON" &&(!item.hasAttribute("tabindex"))){item.setAttribute('tabindex','0')}
+
     } catch (err) {
-      console.log(`${arguments.callee.name} function error: ${err.message}`);
+      reportError(err);
     }
   },
   throttled: function throttled(fn, delay){return typeof throttle !== "undefined" ? throttle(fn, delay) : throttle;}
