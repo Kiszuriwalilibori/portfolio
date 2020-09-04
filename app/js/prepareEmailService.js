@@ -49,27 +49,25 @@ module.exports = {
             style: alert ? "successStyle" : "failureStyle",
           };
 
-          setMessage();
+          showEmailMessage(result);
           setTimeout(function () {
-            removeMessage();
+            hideEmailMessage();
           }, 3000);
 
-          function setMessage() {
-            const el = document.createElement("div");
-            el.id = "sentSuccess";
-            el.innerText = result.text;
-            el.classList.add(result.style);
-            const parent = document.getElementById("status_message");
-            parent.appendChild(el);
+          function showEmailMessage(result){
+            const message = document.getElementById("email_status_message");
+            message.classList.add(result.style);
+            message.innerText = result.text;
+            message.classList.remove('form__message-hidden');
           }
-
-          function removeMessage() {
-            const parent = document.getElementById("status_message");
-            const child = document.getElementById("sentSuccess");
-            parent.removeChild(child);
+          function hideEmailMessage(){
+            const message = document.getElementById("email_status_message");
+            message.classList.add('form__message-hidden');
             form.reset();
           }
+  
         }
+        
       });
     }
     Array.prototype.forEach.call(mountHooks, (hook) => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));

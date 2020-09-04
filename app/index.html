@@ -7,10 +7,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="Description"
     content="Piotr Maksymiuk Portfolio with basic information, skills, projects and links to additional resources" />
-  <meta property="og:title" content="Piotr Maksymiuk-Portfolio" />
+  <meta property="og:title" content="Piotr Maksymiuk- v.1.1" />
   <meta property="og:type" content="Portfolio" />
   <meta property="og:url" content="https://kiszuriwalilibori-about-me.netlify.app/" />
-  <title>Piotr Maksymiuk - Portfolio</title>
+  <title>Piotr Maksymiuk -  v. 1.1 </title>
   <link rel="preload" media="(min-width: 921px)" href="./graphics/textures/intro.webp" as="image" />
   <link rel="preload" media="(max-width: 920px)" href="./graphics/textures/intro_small.webp" as="image" />
   <link rel="preload" href="./fonts/oxygen/oxygen-latin-bold.woff2" type='font/woff2' as="font"
@@ -44,7 +44,7 @@
         <div class="former-content below_509_visible">
           <a href="https://github.com/Kiszuriwalilibori" class="ui-button location-button" target="_blank" rel="noopener" >Github</a>
           <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button location-button"target="_blank" rel="noopener" >Facebook</a>
-          <a class="ui-button location-button mail-button" tabindex="0">E-mail</a>
+          <a class="ui-button location-button mail-button" >E-mail</a>
         </div>
       </nav>
     </div>
@@ -80,6 +80,11 @@
     </div>
     <div id="emailModal">
       <div class="emailModal__content">
+        <svg class='bottom' preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
+          <path fill="rgb(152, 152, 254)" fill-opacity="1"
+            d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+          </path>
+        </svg>
         <div class="emailModal__delete">
           <svg id='emailModal-deleteIcon' height="65px" viewBox="0 0 365.71733 365" width="65px"
             xmlns="http://www.w3.org/2000/svg">
@@ -103,11 +108,9 @@
           <button class="btn intro__btn adres__btn" type="submit" id="submit_button">
             <span class="btn-inner">Wyślij</span>
           </button>
-          <div class="message">
-            <div id="status_message"></div>
-            <p>To czasowo - mam nadzieję - nie działa. Problemy z CORS po stronie dostawcy usługi.</p> 
-            <p>Po prostu wyślij email na adres piotrmaksymiuk@yahoo.com</p>
-          </div>
+
+          <div id = "email_status_message" class ='form__message form__message-hidden'>Wysłano</div>
+          
         </form>
       </div>
     </div>

@@ -110,6 +110,7 @@
   }
   nav {
     display: none;
+    
   }
   nav.active {
     display: flex;
@@ -118,7 +119,7 @@
     flex-wrap: wrap;
     left: 0;
     padding: 0 1vw 0 1vw;
-    animation: nav-enter 1s ease-in-out 0s forwards;
+    //animation: nav-enter 1s ease-in-out 0s forwards;
     & .ui-button {
       margin: 4px 0;
       min-width: 90px;
@@ -155,11 +156,10 @@
 }
 
 @media (max-width: 1110px) {
-  
   .skills.legend {
     width: 200px;
     position: relative;
-    margin: 5% auto; 
+    margin: 5% auto;
   }
 }
 

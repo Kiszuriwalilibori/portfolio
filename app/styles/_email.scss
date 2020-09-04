@@ -29,24 +29,22 @@
     & .emailModal__content {
       @include skills_shadow_hover;
       padding: 5vw;
-      background-color: white;
       @include flex_row(center, center);
       background-image: url("../graphics/textures/broken-noise.webp");
-      border: 2px solid $c_blue3;
+      background-color:rgb(85, 41, 124);
+      border: 2px solid $intro-basic-color;
       color: white;
 
       & .successStyle {
         color: #6dfe25;
-        background-color: $c_blue3;
-        padding: 10px;
-        margin: 5px;
+        border: 2px solid  #6dfe25;
+        
       }
 
       & .failureStyle {
         color: red;
-        background-color: $c_blue3;
-        padding: 10px;
-        margin: 5px;
+        border: 2px solid red;
+        
       }
 
       &:hover {
@@ -57,8 +55,8 @@
         @include flex_column(space-evenly);
         @include skills_shadow_hover;
         align-items: center;
-        background-image: linear-gradient(to right, $c_blue1, $c_blue0);
-        border: 2px solid $c_blue3;
+        background-image: linear-gradient(to right,rgb(255, 153, 153),#5A7AAC );
+        border: 2px  solid $intro-basic-color ;
         border-radius: 2px;
 
         & label,
@@ -67,25 +65,26 @@
           width: 250px;
           margin: 10px 30px;
         }
-
+        & label{color:#463158 ;}
         & textarea {
           min-height: 60px;
         }
 
         & .form__input {
           display: block;
+          cursor: pointer;
           padding: 0 0 0 4px;
           font-size: 0.875rem;
           background-color: $c_grey;
           height: 35px;
-          border: 2px solid $c_blue2;
+          border: 2px solid $intro-basic-color;
           border-radius: 4px;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
           transition: border-color, box-shadow ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
 
           &:focus {
-            border-color: $c_blue4;
-            box-shadow: 0 0 5px -1px $c_blue4;
+            border-color: #463158;
+            box-shadow: 0 0 5px -1px #463158;
           }
         }
       }
@@ -106,8 +105,8 @@
   text-align: center;
   text-indent: 2px;
   text-transform: uppercase;
-  background: $c_blue3;
-  border-color: $c_blue3;
+  background: #5573A0;
+  border-color: #5573A0;
   cursor: pointer;
   transition: color 0.1s linear 0.05s;
 
@@ -151,3 +150,19 @@
     }
   }
 }
+
+.form__message {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 10px 30px 10px;
+  height: 35px;
+  min-width: 60%;
+  
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+  transition: border-color, box-shadow ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
+}
+.form__message-hidden{visibility:hidden;}
