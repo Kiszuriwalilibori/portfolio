@@ -382,6 +382,10 @@ html {
   font-family: "Oxygen", sans-serif;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .ui-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -455,6 +459,7 @@ html {
   color: #ffaf44;
   background-color: #8083ff;
   margin-top: 0;
+  visibility: hidden;
   -webkit-transition: margin-top 2s ease-in-out;
   transition: margin-top 2s ease-in-out;
 }
@@ -490,6 +495,7 @@ html {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   position: relative;
+  visibility: hidden;
   -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11);
           box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.11), 0 0 2px 2px rgba(0, 0, 0, 0.11), 0 0 4px 4px rgba(0, 0, 0, 0.11), 0 0 8px 8px rgba(0, 0, 0, 0.11), 0 0 16px 16px rgba(0, 0, 0, 0.11), 0 0 32px 32px rgba(0, 0, 0, 0.11);
 }
@@ -502,6 +508,7 @@ html {
 .ui-section:nth-child(4) {
   color: #bab247;
   background-color: rgba(24, 12, 240, 0.5);
+  visibility: hidden;
 }
 
 .ui-section:nth-child(4) .ui-content {

@@ -52,6 +52,7 @@
 .ui-section:nth-child(2) {
   @include section(#ffaf44, #8083ff);
   margin-top: 0;
+  visibility: hidden;
   transition: margin-top 2s ease-in-out;
 
   & .ui-content {
@@ -74,6 +75,7 @@
   z-index: 1000;
   transition: all 0.5s ease-in-out;
   position: relative;
+  visibility:hidden;
   @include skills_shadow;
 
   &:hover {
@@ -83,7 +85,7 @@
 
 .ui-section:nth-child(4) {
   @include section(#bab247, rgba(24, 12, 240, 0.5));
-
+visibility:hidden;
   & .ui-content {
     flex-flow: row wrap;
     justify-content: space-around;
