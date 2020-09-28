@@ -1,6 +1,100 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const { throttle } = require("./throttle");
+module.exports = {
+  defineImages: function defineImages() {
+    class violetGirl extends HTMLImageElement {
+      constructor() {
+        super();
 
+        this.setAttribute("style", "width: 180px; margin: 0 auto;");
+        this.setAttribute("alt", "violet girl");
+        this.setAttribute("loading", "lazy");
+        this.setAttribute("width", "180");
+        this.setAttribute("height", "180");
+        this.setAttribute("src", "./graphics/gifs/violet_girl.webp");
+      }
+    }
+
+    if (this.customElements) {
+      try {
+        customElements.define("violet-girl", violetGirl, { extends: "img" });
+      } catch (_) {
+        document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
+      }
+    } else {
+      document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+    }
+
+    class elephant extends HTMLImageElement {
+      constructor() {
+        super();
+
+        this.setAttribute("style", "width: 200px; margin: 0 auto;");
+        this.setAttribute("alt", "dancing elephant");
+        this.setAttribute("loading", "lazy");
+        this.setAttribute("width", "200");
+        this.setAttribute("height", "200");
+        this.setAttribute("src", "./graphics/gifs/elephant.webp");
+      }
+    }
+
+    if (this.customElements) {
+      try {
+        customElements.define("dancing-elephant", elephant, { extends: "img" });
+      } catch (_) {
+        document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
+      }
+    } else {
+      document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+    }
+
+    class boys extends HTMLImageElement {
+      constructor() {
+        super();
+
+        this.setAttribute("style", "width: 180px; margin: 0 auto;");
+        this.setAttribute("alt", "dancing boys");
+        this.setAttribute("loading", "lazy");
+        this.setAttribute("width", "180");
+        this.setAttribute("height", "165");
+        this.setAttribute("src", "./graphics/gifs/boys.webp");
+      }
+    }
+
+    if (this.customElements) {
+      try {
+        customElements.define("dancing-boys", boys, { extends: "img" });
+      } catch (_) {
+        document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
+      }
+    } else {
+      document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+    }
+
+    class nigga extends HTMLImageElement {
+      constructor() {
+        super();
+
+        this.setAttribute("style", "width: 180px; margin: 0 auto; position: absolute; bottom:0; left:50%; z-index:2000;transform: translateX(-50%);-webkit-transform: translateX(-50%);");
+        this.setAttribute("alt", "dancing nigga");
+        this.setAttribute("src", "./graphics/gifs/dancer.webp");
+      }
+    }
+
+    if (this.customElements) {
+      try {
+        customElements.define("dancing-nigga", nigga, { extends: "img" });
+      } catch (_) {
+        document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
+      }
+    } else {
+      document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+    }
+
+  },
+};
+
+},{}],2:[function(require,module,exports){
+const { throttle } = require("./throttle");
 
 function isFunction(x) {
   return Object.prototype.toString.call(x) == "[object Function]";
@@ -10,17 +104,32 @@ function isNode(o) {
   return typeof Node === "object" ? o instanceof Node : o && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName === "string";
 }
 
-function reportError(err){
-  try{
-    if (!err instanceof Error ){throw new Error("it is not error object")}
-    console.error(err.name,'\n','\n',err.message,'\n','\n', err.stack);
+function reportError(err) {
+  try {
+    if (!err instanceof Error) {
+      throw new Error("it is not error object");
+    }
+    console.error(err.name, "\n", "\n", err.message, "\n", "\n", err.stack);
+  } catch (e) {
+    console.log(e.message);
   }
-  catch(e){console.log(e.message)}
-
 }
+
+function getAttributeValue(target, attr) {
+  
+    const item = document.getElementById(target);
+    if(item){
+    const style = item.currentStyle || window.getComputedStyle(item);
+    return style[attr] ? parseInt(style[attr], 10) : 0;
+  } else {
+    return 0;
+  }
+}
+
 module.exports = {
   isNode: isNode,
   reportError: reportError,
+  getAttributeValue: getAttributeValue,
   mountClickAndEnterHandler: function mountClickAndEnterHandler(item, fn) {
     try {
       if (!isNode(item)) {
@@ -40,25 +149,35 @@ module.exports = {
         }
       });
 
-      if (item.toUpperCase !=="BUTTON" &&(!item.hasAttribute("tabindex"))){item.setAttribute('tabindex','0')}
-
+      if (item.toUpperCase !== "BUTTON" && !item.hasAttribute("tabindex")) {
+        item.setAttribute("tabindex", "0");
+      }
     } catch (err) {
       reportError(err);
     }
   },
-  throttled: function throttled(fn, delay){return typeof throttle !== "undefined" ? throttle(fn, delay) : throttle;}
+  throttled: function throttled(fn, delay) {
+    return typeof throttle !== "undefined" ? throttle(fn, delay) : throttle;
+  },
 };
 
-},{"./throttle":9}],2:[function(require,module,exports){
+},{"./throttle":10}],3:[function(require,module,exports){
 const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { prepareFooter }= require('./prepareFooter');
-const { throttle } = require("./throttle");
+const { defineImages }= require('./defineImages');
+
 
 window.onload = function () {
+
+  const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
+  
+  invisibles.forEach(element => element.style.visibility ="visible");
+
+
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");
   const heading = document.getElementById("heading");
@@ -69,7 +188,7 @@ window.onload = function () {
   const hamburgerMenu = document.getElementById("hamburger");
   const menu = document.getElementsByTagName("nav");
   const introUIAside = document.getElementById("intro-ui-aside");
-  const body =document.getElementsByTagName('body')[0];
+  const body = document.getElementsByTagName('body')[0];
   const iconDeleteEmailModal = document.getElementById("emailModal-deleteIcon");
 
   if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside && body && iconDeleteEmailModal)) {
@@ -77,15 +196,16 @@ window.onload = function () {
     return false;
   }
   
+  defineImages();
   prepareResizeSensor(informations, intro);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-  prepareFooter(body);
+  
 };
 
-},{"./prepareChangeLocation":3,"./prepareEmailService.js":4,"./prepareFooter":5,"./prepareHamburgerMenu":6,"./prepareProjectModals":7,"./prepareResizeSensor":8,"./throttle":9}],3:[function(require,module,exports){
+},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareEmailService.js":5,"./prepareFooter":6,"./prepareHamburgerMenu":7,"./prepareProjectModals":8,"./prepareResizeSensor":9}],4:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
@@ -107,7 +227,7 @@ module.exports = {
   },
 };
 
-},{"./lib":1}],4:[function(require,module,exports){
+},{"./lib":2}],5:[function(require,module,exports){
 const {
   mountClickAndEnterHandler,
   throttled
@@ -184,7 +304,7 @@ module.exports = {
 
   },
 };
-},{"./lib":1}],5:[function(require,module,exports){
+},{"./lib":2}],6:[function(require,module,exports){
 const {
   isNode,
   reportError
@@ -205,7 +325,7 @@ module.exports = {
     }
   },
 };
-},{"./lib":1}],6:[function(require,module,exports){
+},{"./lib":2}],7:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -224,7 +344,7 @@ module.exports = {
   },
 };
 
-},{"./lib":1}],7:[function(require,module,exports){
+},{"./lib":2}],8:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -266,7 +386,7 @@ module.exports = {
   },
 };
 
-},{"./lib":1}],8:[function(require,module,exports){
+},{"./lib":2}],9:[function(require,module,exports){
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro) {
     intro.classList.add("regular");
@@ -292,7 +412,7 @@ module.exports = {
   },
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,
@@ -321,4 +441,4 @@ module.exports = {
   },
 };
 
-},{}]},{},[2]);
+},{}]},{},[3]);

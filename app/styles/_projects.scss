@@ -10,6 +10,7 @@
 
   &.large {
     height: unset;
+    animation: girl-intro 0.5s ease-in-out;
   }
 
   &:hover, &:focus {
@@ -285,6 +286,7 @@
 
   &:focus,
   &:hover {
+    
     background-color: rgba(129, 75, 75, 0.54);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
   }
@@ -303,7 +305,6 @@
 
   & svg:focus,
   & svg:hover {
-
     animation: rotate 2s infinite linear;
   }
 }

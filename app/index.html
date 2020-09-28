@@ -10,7 +10,7 @@
   <meta property="og:title" content="Piotr Maksymiuk- v.1.1" />
   <meta property="og:type" content="Portfolio" />
   <meta property="og:url" content="https://kiszuriwalilibori-about-me.netlify.app/" />
-  <title>Piotr Maksymiuk -  v. 1.1 </title>
+  <title>Piotr Maksymiuk - v. 1.1 </title>
   <link rel="preload" media="(min-width: 921px)" href="./graphics/textures/intro.webp" as="image" />
   <link rel="preload" media="(max-width: 920px)" href="./graphics/textures/intro_small.webp" as="image" />
   <link rel="preload" href="./fonts/oxygen/oxygen-latin-bold.woff2" type='font/woff2' as="font"
@@ -21,20 +21,18 @@
   <script src="./js/ResizeSensor.min.js" defer></script>
   <script src="./js/modernizr-custom.js" defer></script>
   <script src="./js/bundle.js" defer></script>
-  
-  
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
 </head>
 
 <body>
-  <section class="ui-section -hero hero-background" id="intro" >
-    
+  <section class="ui-section -hero hero-background" id="intro">
+
     <div class="ui-aside" id='intro-ui-aside'>
-     
+
       <div class="author-foto"></div>
       <h1 class="ui-heading" id="heading">
-        <img class="gif gif_intro-blue" id ='girl' src="./graphics/gifs/blue_girl.webp" alt="blue dancing girl" />
-        <script src='./js/trans.js'></script>
+        <img class="gif gif_intro-blue" id='girl' src="./graphics/gifs/blue_girl.webp" alt="blue dancing girl" />
         <img class="gif gif_intro" src="./graphics/gifs/red_girl.webp" alt="red dancing girl" />
         <span class="ui-heading-inner">
           <span>Piotr</span>
@@ -42,20 +40,23 @@
         </span>
       </h1>
       <nav>
-        <a class="ui-button location-button" data-target="informations" >Informacje</a>
+        <a class="ui-button location-button" data-target="informations">Informacje</a>
         <a class="ui-button location-button" data-target="skills">Umiejętności</a>
         <a class="ui-button location-button" data-target="projects">Projekty</a>
         <div class="former-content below_509_visible">
-          <a href="https://github.com/Kiszuriwalilibori" class="ui-button location-button" target="_blank" rel="noopener" >Github</a>
-          <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button location-button"target="_blank" rel="noopener" >Facebook</a>
-          <a class="ui-button location-button mail-button" >E-mail</a>
+          <a href="https://github.com/Kiszuriwalilibori" class="ui-button location-button" target="_blank"
+            rel="noopener">Github</a>
+          <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button location-button" target="_blank"
+            rel="noopener">Facebook</a>
+          <a class="ui-button location-button mail-button">E-mail</a>
         </div>
       </nav>
     </div>
     <div class="ui-content">
       <div class="ui-buttons above_509_visible">
         <a href="https://github.com/Kiszuriwalilibori" class="ui-button" target="_blank" rel="noopener">Github</a>
-        <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button" target="_blank"
+          rel="noopener">Facebook</a>
         <a class="ui-button mail-button">Email</a>
       </div>
       <p class="desktop-visible">
@@ -90,7 +91,7 @@
           </path>
         </svg>
         <div class="emailModal__delete">
-          <svg id='emailModal-deleteIcon' height="65px" viewBox="0 0 365.71733 365" width="65px"
+          <svg id='emailModal-deleteIcon' class='test' height="65px" viewBox="0 0 365.71733 365" width="65px"
             xmlns="http://www.w3.org/2000/svg">
             <g fill="#f44336">
               <path
@@ -113,16 +114,15 @@
             <span class="btn-inner">Wyślij</span>
           </button>
 
-          <div id = "email_status_message" class ='form__message form__message-hidden'>Wysłano</div>
-          
+          <div id="email_status_message" class='form__message form__message-hidden'>Wysłano</div>
+
         </form>
       </div>
     </div>
   </section>
   <section class="ui-section" id="informations">
     <div class="ui-aside">
-      <img class="gif gif_boys" src="./graphics/gifs/boys.webp" width="100" height="165" alt="dancing boys"
-        loading="lazy" />
+      <img is='dancing-boys' />
       <h1 class="ui-heading">Informacje</h1>
     </div>
     <div class="ui-content">
@@ -185,29 +185,46 @@
 
     <div class="ui-aside">
 
-      <div class="skills legend starter">
-        <p>Coś tam wiem na ten temat, ale nie żeby dużo. Na razie staram się to ogarnąć na prostych
-          przykładach. Jest więcej pytań niż odpowiedzi. Takie rozpoznanie bojem.</p>
-      </div>
-      <div class='skills legend average'>
-        <p>Pierwsze kroki za mną, ale do zadowolenia bardzo daleko. Tworzę coraz bardziej
-          zaawansowane mutacje przykładów, i wrzucam je do tu będących projektów. Takie czeladnictwo.</p>
+      <div class="legends-container">
+        <div class="information-item information-item-legend starter">
+          <p class="legend_starter">Coś tam wiem na ten temat, ale nie żeby dużo. Na razie staram się to ogarnąć na
+            prostych przykładach. Jest więcej pytań niż odpowiedzi. Takie rozpoznanie bojem.</p>
+        </div>
+        <div class="information-item information-item-legend average">
+          <p class="legend_average">Pierwsze kroki za mną, ale do zadowolenia bardzo daleko. Tworzę coraz bardziej
+            zaawansowane mutacje przykładów, i wrzucam je do tu będących projektów. Takie czeladnictwo.</p>
+        </div>
+        <div class="information-item information-item-legend fair">
+          <p class="legend_fair">Nareszcie pewna swoboda w operowaniu. Bez wahania stosuję to w projektach, ale i
+            stawiam coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i
+            pokazuje ile jeszcze do nauki.</p>
+        </div>
       </div>
 
-      <img class="gif" src="./graphics/gifs/elephant.webp" width="200" height="200" alt="dancing elephant"
-        loading="lazy" />
+      <img is='dancing-elephant'>
+     
       <h1 class="ui-heading">
         Umki<br />
         albo inaczej skille
       </h1>
-      <div class="skills legend fair">
-        <p>Nareszcie pewna swoboda w operowaniu. Bez wahania stosuję to w projektach, ale i stawiam
-          coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i pokazuje ile
-          jeszcze do nauki.</p>
-      </div>
+      
     </div>
     <div class="ui-content skills">
-
+      <div class="legends-container-mobile">
+        <div class="information-item information-item-legend starter">
+          <p class="legend_starter">Coś tam wiem na ten temat, ale nie żeby dużo. Na razie staram się to ogarnąć na
+            prostych przykładach. Jest więcej pytań niż odpowiedzi. Takie rozpoznanie bojem.</p>
+        </div>
+        <div class="information-item information-item-legend average">
+          <p class="legend_average">Pierwsze kroki za mną, ale do zadowolenia bardzo daleko. Tworzę coraz bardziej
+            zaawansowane mutacje przykładów, i wrzucam je do tu będących projektów. Takie czeladnictwo.</p>
+        </div>
+        <div class="information-item information-item-legend fair">
+          <p class="legend_fair">Nareszcie pewna swoboda w operowaniu. Bez wahania stosuję to w projektach, ale i
+            stawiam coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i
+            pokazuje ile jeszcze do nauki.</p>
+        </div>
+      </div>
       <div class='skill'>
         <header class='fair'>
           <h1>HTML</h1>
@@ -365,8 +382,7 @@
       <div class="large-project__cover initial">
         <div class="project" id="large-project-content"></div>
       </div>
-      <img class="gif" src="./graphics/gifs/violet_girl.webp" width="180" height="180" alt="dancing girl"
-        loading="lazy" />
+      <img is='violet-girl' />
       <h1 class="ui-heading">Projekty<br /></h1>
     </div>
 
@@ -374,7 +390,7 @@
       <div class="project project-pointer" tabindex="0">
         <div class='left-cover'></div>
         <div class='right-cover'></div>
-        <div class="project__name pointer" >Fizjoterapia</div>
+        <div class="project__name pointer">Fizjoterapia</div>
         <div class="project__image image-fizjo"></div>
         <div class="project__data initial">
           <h2 class="project__title">Fizjoterapia</h2>
@@ -383,13 +399,14 @@
           </div>
           <div class="project__skills"><span>HTML</span><span>JS</span><span>jQuery</span><span>Greensock</span></div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/Fizjoterapia/" tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/Fizjoterapia" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/Fizjoterapia/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/Fizjoterapia" tabindex="0"
+              target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex= "0">
+      <div class="project project-pointer" tabindex="0">
         <div class='left-cover'></div>
         <div class='right-cover'></div>
         <div class="project__name pointer">JS Books</div>
@@ -403,16 +420,17 @@
           </div>
           <div class="project__skills"><span>HTML</span><span>JS</span><span>MVC</span><span>Browserify</span></div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/JSBN/" tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/JSBN" tabindex="0"target="_blank" rel="noopener" >GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/JSBN/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/JSBN" tabindex="0" target="_blank"
+              rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex ='0'>
+      <div class="project project-pointer" tabindex='0'>
         <div class='left-cover'></div>
         <div class='right-cover'></div>
-        <div class="project__name pointer" >Firebase</div>
+        <div class="project__name pointer">Firebase</div>
         <div class="project__image image-firebase"></div>
         <div class="project__data initial">
           <h2 class="project__title">Wstęp do Firebase</h2>
@@ -424,16 +442,17 @@
             <span>React</span><span>Redux</span><span>Thunk</span><span>React-Router</span><span>Material-UI</span><span>Styled
               Components</span></div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/firebase/" tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/firebase" tabindex="0" target="_blank" rel="noopener" >Github</a>
+            <a href="https://kiszuriwalilibori.github.io/firebase/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/firebase" tabindex="0"
+              target="_blank" rel="noopener">Github</a>
           </div>
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0" >
+      <div class="project project-pointer" tabindex="0">
         <div class='left-cover'></div>
         <div class='right-cover'></div>
-        <div class="project__name pointer" >Kryptowaluty</div>
+        <div class="project__name pointer">Kryptowaluty</div>
         <div class="project__image image-cryptocurrency"></div>
         <div class="project__data initial">
           <h2 class="project__title">Tracker kryptowalut</h2>
@@ -446,8 +465,9 @@
               Components</span>
           </div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/crypto_redux_router/" tabindex="0" target="_blank" rel="noopener" >Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/crypto_redux_router" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/crypto_redux_router/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/crypto_redux_router" tabindex="0"
+              target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -467,16 +487,17 @@
             <span>React</span><span>Redux</span><span>Thunk</span><span>React-Router</span><span>Material-UI</span><span>Axios</span>
           </div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/google_books_router_redux/" tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/google_books_router_redux" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/google_books_router_redux/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/google_books_router_redux"
+              tabindex="0" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0" >
+      <div class="project project-pointer" tabindex="0">
         <div class='left-cover'></div>
         <div class='right-cover'></div>
-        <div class="project__name pointer" >Pogodynka</div>
+        <div class="project__name pointer">Pogodynka</div>
         <div class="project__image image-pogodynka"></div>
         <div class="project__data initial">
           <h2 class="project__title">Pogodynka</h2>
@@ -488,8 +509,9 @@
             <span>React</span><span>Redux</span><span>Thunk</span><span>React-Router</span><span>Material-UI</span>
           </div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/pogodynka/ " tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/pogodynka" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/pogodynka/ " tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/pogodynka" tabindex="0"
+              target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -507,8 +529,9 @@
           <div class="project__skills"><span>React</span><span>Redux</span><span>Thunk</span><span>Material-UI</span>
           </div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/hype4mobile/" tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/hype4mobile" tabindex="0"target="_blank" rel="noopener" >GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/hype4mobile/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/hype4mobile" tabindex="0"
+              target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -525,16 +548,17 @@
           </div>
           <div class="project__skills"><span>React</span><span>HTML</span><span>JS</span></div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/Athletes/" tabindex="0" target="_blank" rel="noopener" >Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/Athletes" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/Athletes/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/Athletes" tabindex="0"
+              target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
 
-      <div class="project project-pointer" tabindex="0" >
+      <div class="project project-pointer" tabindex="0">
         <div class='left-cover'></div>
         <div class='right-cover'></div>
-        <div class="project__name pointer" >Archiwalne portfolio 1</div>
+        <div class="project__name pointer">Archiwalne portfolio 1</div>
         <div class="project__image image-arch1"></div>
         <div class="project__data initial">
           <h2 class="project__title">Archiwalne portfolio 1</h2>
@@ -543,8 +567,9 @@
           </div>
           <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_1/" tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/Portfolio_Archiwalne_1" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_1/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/Portfolio_Archiwalne_1"
+              tabindex="0" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -552,7 +577,7 @@
       <div class="project project-pointer" tabindex="0">
         <div class='left-cover'></div>
         <div class='right-cover'></div>
-        <div class="project__name pointer" >Archiwalne portfolio 2</div>
+        <div class="project__name pointer">Archiwalne portfolio 2</div>
         <div class="project__image image-arch2"></div>
         <div class="project__data initial">
           <h2 class="project__title">Archiwalne portfolio 2</h2>
@@ -561,8 +586,9 @@
           </div>
           <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span><span>PUG</span></div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_2/" tabindex="0" target="_blank" rel="noopener">Projekt</a><a
-              href="https://github.com/Kiszuriwalilibori/Portfolio_Archiwalne_2" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori.github.io/Portfolio_Archiwalne_2/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a><a href="https://github.com/Kiszuriwalilibori/Portfolio_Archiwalne_2"
+              tabindex="0" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -578,8 +604,10 @@
           </div>
           <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span><span>PUG</span></div>
           <div class="project__links">
-            <a href="https://kiszuriwalilibori-about-me.netlify.app/" tabindex="0" target="_blank" rel="noopener">Projekt</a>
-            <a href="https://github.com/Kiszuriwalilibori/portfolio" tabindex="0" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://kiszuriwalilibori-about-me.netlify.app/" tabindex="0" target="_blank"
+              rel="noopener">Projekt</a>
+            <a href="https://github.com/Kiszuriwalilibori/portfolio" tabindex="0" target="_blank"
+              rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -595,6 +623,13 @@
       </path>
     </svg>
   </section>
+  <footer class="ui-footer"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+      style="height: 100%; width: 100%; position:absolute; bottom:0; left:0;">
+      <path d="M0.27,1.47 C222.62,412.00 311.23,-263.98 499.72,150.48 L500.27,153.45 L0.00,150.00 Z"
+        style="stroke: none;fill:#8083FF;"></path>
+    </svg><img class="gif gif-footer" src="./graphics/gifs/dancer.webp" alt="dancer"><strong>
+      <p>Created by Piotr Maksymiuk | 2020. © Wszelkie prawa zastrzeżone</p>
+    </strong></footer>
 </body>
 
 </html>

@@ -80,6 +80,7 @@
   .ui-footer p {
     font-size: calc(20px + 16 * ((100vw - 508px) / 192));
   }
+  .legends-container{display:none;}
 }
 
 @media (min-width: 701px) {
@@ -91,6 +92,7 @@
     padding-bottom: 1vh;
     line-height: 1.3;
   }
+  .legends-container-mobile{display:none;}
 }
 
 @media (max-width: 508px) {
