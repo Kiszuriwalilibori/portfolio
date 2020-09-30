@@ -394,7 +394,7 @@ module.exports = {
 
     function adjustInformationsMargin(item) {
     
-      requestanimationFrame(informations.style.marginTop = item.offsetHeight + "px");
+      requestAnimationFrame(function(){informations.style.marginTop = item.offsetHeight + "px"});
      
     }
   },

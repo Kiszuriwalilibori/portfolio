@@ -1802,7 +1802,6 @@ html {
   z-index: 1000;
   border-radius: 0.25em;
   color: #003b46;
-  will-change: transform;
 }
 
 .information-item:before {
