@@ -1,15 +1,13 @@
-const {
-  mountClickAndEnterHandler,
-  throttled
-} = require("./lib");
+const { mountClickAndEnterHandler, throttled } = require("./lib");
 
 module.exports = {
   prepareEmailService: function prepareEmailService(mountHooks, emailModal, iconDelete) {
-    
     mountClickAndEnterHandler(iconDelete, throttled(toggleEmailModalVisibility, 300));
 
     function toggleEmailModalVisibility() {
-      if (emailModal) {emailModal.classList.toggle("active");}
+      if (emailModal) {
+        emailModal.classList.toggle("active");
+      }
     }
 
     function sendEmail() {
@@ -26,24 +24,22 @@ module.exports = {
           name: name.value,
           email: email.value,
           message: message.value,
-          
         };
 
         //fetch("https://www.enformed.io/9kibv8hh/", {
-        fetch("https://formspree.io/mnqgkkgg",{
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify(content),
-          })
-          .then((response) => response.json())
-          .then((data) => handleResult(true))
-          .catch((error) => handleResult(false));
+        fetch("https://formspree.io/mnqgkkgg", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(content),
+        })
+          .then(response => response.json())
+          .then(data => handleResult(true))
+          .catch(error => handleResult(false));
 
         function handleResult(alert) {
-          
           let result = {
             text: alert ? "Wysłano" : "Błąd połączenia",
             style: alert ? "successStyle" : "failureStyle",
@@ -54,23 +50,20 @@ module.exports = {
             hideEmailMessage();
           }, 3000);
 
-          function showEmailMessage(result){
+          function showEmailMessage(result) {
             const message = document.getElementById("email_status_message");
             message.classList.add(result.style);
             message.innerText = result.text;
-            message.classList.remove('form__message-hidden');
+            message.classList.remove("form__message-hidden");
           }
-          function hideEmailMessage(){
+          function hideEmailMessage() {
             const message = document.getElementById("email_status_message");
-            message.classList.add('form__message-hidden');
+            message.classList.add("form__message-hidden");
             form.reset();
           }
-  
         }
-        
       });
     }
-    Array.prototype.forEach.call(mountHooks, (hook) => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));
-
+    Array.prototype.forEach.call(mountHooks, hook => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));
   },
 };

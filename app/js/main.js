@@ -31,7 +31,7 @@ window.onload = function () {
   }
   
   defineImages();
-  prepareResizeSensor(informations, intro);
+  prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);

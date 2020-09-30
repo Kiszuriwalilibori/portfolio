@@ -36,7 +36,7 @@
     border: 1px solid red;
     z-index: 200;
   }
-  & p {
+  &__text {
     &:before {
       content: "";
       position: absolute;

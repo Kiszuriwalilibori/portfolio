@@ -2,43 +2,16 @@
   @include flex_row(center, stretch);
   min-height: 100vh;
   color: $intro-btn-hover;
-  & svg.bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    opacity: 0.7;
-  }
-  & svg.top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    &.top-small {
-      height: 50%;
-    }
-  }
-  & svg.border {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-  }
+  
 
   & .ui-heading {
     text-shadow: 0.5px 0.5px black;
   }
 
-  & > * {
-    flex: 1 1 50%;
-    width: 50%;
-  }
+  // & > * {
+  //   flex: 1 1 50%;
+  //   width: 50%;
+  // }
 }
 
 .webp .ui-section {
@@ -50,27 +23,82 @@
 }
 
 .ui-section:nth-child(2) {
-  @include section(#ffaf44, #8083ff);
-  margin-top: 0;
-  visibility: hidden;
-  transition: margin-top 2s ease-in-out;
+
 
   & .ui-content {
     @include flex_column(space-between);
 
-    & .informacje_item {
-      padding: 10px;
-      margin: 5% 0 5% 0;
-      font-size: 14px;
-      color: white;
-      width: 100%;
-      background: rgba(0, 58, 69, 0.35);
-      @include information_shadow;
-    }
+  }  
+}
+
+.ui-section:nth-child(4) {
+
+  & .ui-content {
+    flex-flow: row wrap;
+    justify-content: space-around;
   }
 }
 
-.ui-section:nth-child(3) {
+.ui-section-regular-informations{
+@include section(#ffaf44, #8083ff);
+  visibility: hidden;
+  transition: margin-top 2s ease-in-out;
+
+}
+
+
+.ui-content {
+  @include flex_column(center);
+  flex: 1 1 50%;
+  width: 50%;
+  line-height: 1.5;
+  align-items: flex-start;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  font-family: "Oxygen-Regular", sans-serif;
+}
+
+
+.ui-content-reduced {
+  flex: 1 1 50%;
+  width: 50%;
+  line-height: 1.5;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  font-family: "Oxygen-Regular", sans-serif;
+}
+//i do tego dodawać flexy i specyfiki
+
+//  .intro{
+//   animation: content-enter 1s 2s cubic-bezier(0.61, 0, 0.2, 1) both;
+// flex-direction: column-reverse;
+// color: white;
+// font-weight: bold;
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ui-section-regular-projects{
+  @include section(#bab247, rgba(24, 12, 240, 0.5));
+  visibility:hidden;
+}
+
+.ui-section-regular-skills{
   @include section(orange, rgba(0, 100, 255, 0.55));
   z-index: 1000;
   transition: all 0.5s ease-in-out;
@@ -81,13 +109,63 @@
   &:hover {
     @include skills_shadow_hover;
   }
+
 }
 
-.ui-section:nth-child(4) {
-  @include section(#bab247, rgba(24, 12, 240, 0.5));
-visibility:hidden;
-  & .ui-content {
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
+.svg-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  opacity: 0.7;
 }
+.svg-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  
+}
+
+.svg-top-small {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 0;
+  
+}
+.svg-border{
+  height: 100%; 
+  width: 100%; 
+  position:absolute; 
+  bottom:0; 
+  left:0;
+}
+
+.section-regular__header{
+  
+  margin: 0;
+  text-align: right;
+  padding: 1rem 2rem;
+  font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
+  text-shadow: 0.5px 0.5px black;
+}
+
+
+
+.shortest-information-desktop{
+    visibility: visible;
+    padding-bottom: 1vh;
+    line-height: 1.3;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    font-family: "Oxygen-Regular", sans-serif;
+    z-index:1;
+  }

@@ -16,11 +16,11 @@
   &:hover, &:focus {
     @include information_shadow;
 
-    & .left-cover {
+    & .project__left-cover {
       transform: scaleX(0);
     }
 
-    & .right-cover {
+    & .project__right-cover {
       transform: scaleX(0);
     }
     & .project__name{@include project-hover-focus}
@@ -35,7 +35,7 @@
     display: none !important;
   }
 
-  & .left-cover {
+  &__left-cover {
     z-index: 500;
     position: absolute;
     top: 0;
@@ -49,7 +49,7 @@
     transform: scaleX(1);
   }
 
-  & .right-cover {
+  &__right-cover {
     z-index: 500;
     position: absolute;
     top: 0;

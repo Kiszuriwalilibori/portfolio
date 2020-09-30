@@ -1,5 +1,5 @@
 module.exports = {
-  prepareResizeSensor: function prepareResizeSensor(informations, intro) {
+  prepareResizeSensor: function prepareResizeSensor(informations, intro, heading) {
     intro.classList.add("regular");
     adjustInformationsMargin(heading);
     window.scrollTo({
@@ -18,7 +18,9 @@ module.exports = {
     }
 
     function adjustInformationsMargin(item) {
-      informations.style.marginTop = item && item.offsetHeight ? item.offsetHeight + "px" : 0;
+    
+      informations.style.marginTop = item.offsetHeight + "px";
+     
     }
   },
 };

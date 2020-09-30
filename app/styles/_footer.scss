@@ -1,5 +1,5 @@
-.ui-footer {
-  
+.footer {
+
   width: 100%;
   padding: 1rem;
   background-color:#1A1B4A;
@@ -12,7 +12,7 @@
   &:hover {
     @include skills_shadow_hover;
   }
-  & p {
+  &__text{
     text-align: center;
     font-size: 36px;
     

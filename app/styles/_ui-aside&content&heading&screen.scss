@@ -2,6 +2,8 @@
   @include flex_column(center);
   padding-right: 0;
   z-index: 1000;
+  flex: 1 1 50%;
+    width: 50%;
 }
 
 .ui-aside:after {
@@ -18,19 +20,10 @@
   background-repeat: no-repeat;
 }
 
-.ui-aside > ul {
-  margin: 0;
-  text-align: right;
-  list-style-type: none;
-  padding-right: 2rem;
-}
-
-.ui-aside li {
-  line-height: 1.5;
-}
-
 .ui-content {
   @include flex_column(center);
+  flex: 1 1 50%;
+  width: 50%;
   line-height: 1.5;
   align-items: flex-start;
   padding-right: 2rem;
@@ -39,6 +32,7 @@
   letter-spacing: 0.75px;
   font-family: "Oxygen-Regular", sans-serif;
 }
+
 
 .ui-content > * {
   z-index: 1;

@@ -161,20 +161,18 @@ module.exports = {
   },
 };
 
-},{"./throttle":10}],3:[function(require,module,exports){
+},{"./throttle":9}],3:[function(require,module,exports){
 const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
-const { prepareFooter }= require('./prepareFooter');
 const { defineImages }= require('./defineImages');
 
 
 window.onload = function () {
 
   const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
-  
   invisibles.forEach(element => element.style.visibility ="visible");
 
 
@@ -197,7 +195,7 @@ window.onload = function () {
   }
   
   defineImages();
-  prepareResizeSensor(informations, intro);
+  prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
@@ -205,7 +203,7 @@ window.onload = function () {
   
 };
 
-},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareEmailService.js":5,"./prepareFooter":6,"./prepareHamburgerMenu":7,"./prepareProjectModals":8,"./prepareResizeSensor":9}],4:[function(require,module,exports){
+},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareEmailService.js":5,"./prepareHamburgerMenu":6,"./prepareProjectModals":7,"./prepareResizeSensor":8}],4:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
@@ -228,18 +226,16 @@ module.exports = {
 };
 
 },{"./lib":2}],5:[function(require,module,exports){
-const {
-  mountClickAndEnterHandler,
-  throttled
-} = require("./lib");
+const { mountClickAndEnterHandler, throttled } = require("./lib");
 
 module.exports = {
   prepareEmailService: function prepareEmailService(mountHooks, emailModal, iconDelete) {
-    
     mountClickAndEnterHandler(iconDelete, throttled(toggleEmailModalVisibility, 300));
 
     function toggleEmailModalVisibility() {
-      if (emailModal) {emailModal.classList.toggle("active");}
+      if (emailModal) {
+        emailModal.classList.toggle("active");
+      }
     }
 
     function sendEmail() {
@@ -256,24 +252,22 @@ module.exports = {
           name: name.value,
           email: email.value,
           message: message.value,
-          
         };
 
         //fetch("https://www.enformed.io/9kibv8hh/", {
-        fetch("https://formspree.io/mnqgkkgg",{
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify(content),
-          })
-          .then((response) => response.json())
-          .then((data) => handleResult(true))
-          .catch((error) => handleResult(false));
+        fetch("https://formspree.io/mnqgkkgg", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(content),
+        })
+          .then(response => response.json())
+          .then(data => handleResult(true))
+          .catch(error => handleResult(false));
 
         function handleResult(alert) {
-          
           let result = {
             text: alert ? "Wysłano" : "Błąd połączenia",
             style: alert ? "successStyle" : "failureStyle",
@@ -284,48 +278,25 @@ module.exports = {
             hideEmailMessage();
           }, 3000);
 
-          function showEmailMessage(result){
+          function showEmailMessage(result) {
             const message = document.getElementById("email_status_message");
             message.classList.add(result.style);
             message.innerText = result.text;
-            message.classList.remove('form__message-hidden');
+            message.classList.remove("form__message-hidden");
           }
-          function hideEmailMessage(){
+          function hideEmailMessage() {
             const message = document.getElementById("email_status_message");
-            message.classList.add('form__message-hidden');
+            message.classList.add("form__message-hidden");
             form.reset();
           }
-  
         }
-        
       });
     }
-    Array.prototype.forEach.call(mountHooks, (hook) => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));
-
+    Array.prototype.forEach.call(mountHooks, hook => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));
   },
 };
+
 },{"./lib":2}],6:[function(require,module,exports){
-const {
-  isNode,
-  reportError
-} = require("./lib");
-
-module.exports = {
-  prepareFooter: function prepareFooter(target) {
-    try {
-      if (!isNode(target)) {
-        throw new Error("passed argument is not a node");
-      }
-      const footer = document.createElement("footer");
-      footer.classList.add('ui-footer');
-      footer.innerHTML = "<svg viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%; width: 100%; position:absolute; bottom:0; left:0;'><path d= 'M0.27,1.47 C222.62,412.00 311.23,-263.98 499.72,150.48 L500.27,153.45 L0.00,150.00 Z' style='stroke: none;fill:#8083FF;'></path></svg><img class='gif gif-footer' src='./graphics/gifs/dancer.webp' alt='dancer' /><strong><p>Created by Piotr Maksymiuk | 2020. © Wszelkie prawa zastrzeżone</p></strong>"
-      target.appendChild(footer);
-    } catch (err) {
-      reportError(err);
-    }
-  },
-};
-},{"./lib":2}],7:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -344,7 +315,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],8:[function(require,module,exports){
+},{"./lib":2}],7:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -355,24 +326,25 @@ module.exports = {
     function showModal(ev) {
       modal.innerHTML = ev.target.parentNode.innerHTML;
       modal.removeChild(modal.getElementsByClassName("project__name pointer")[0]);
-      modal.removeChild(modal.getElementsByClassName("left-cover")[0]);
-      modal.removeChild(modal.getElementsByClassName("right-cover")[0]);
+      modal.removeChild(modal.getElementsByClassName("project__left-cover")[0]);
+      modal.removeChild(modal.getElementsByClassName("project__right-cover")[0]);
       modal.getElementsByClassName("initial")[0].classList.toggle("initial");
 
-      const deleteIconSvgContent =
-        '<svg id = "projectModal-deleteIcon" height="65px" viewBox="0 0 365.71733 365" width="65px" xmlns="http://www.w3.org/2000/svg"><g fill="#f44336"><path d="m356.339844 296.347656-286.613282-286.613281c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503906-12.5 32.769532 0 45.25l286.613281 286.613282c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082032c12.523438-12.480468 12.523438-32.75.019532-45.25zm0 0"/><path d="m295.988281 9.734375-286.613281 286.613281c-12.5 12.5-12.5 32.769532 0 45.25l15.082031 15.082032c12.503907 12.5 32.769531 12.5 45.25 0l286.632813-286.59375c12.503906-12.5 12.503906-32.765626 0-45.246094l-15.082032-15.082032c-12.5-12.523437-32.765624-12.523437-45.269531-.023437zm0 0"/></g></svg>';
-      const delete_button = document.createElement("div");
-      delete_button.classList.add("project-icon-delete");
-      delete_button.innerHTML = deleteIconSvgContent; //
-      delete_button.tabIndex = 0;
+      let deleteButtonPattern = document.getElementById('delete_icon').content.querySelector("div");
+      let deleteButtonPatternContent = document.importNode(deleteButtonPattern, true);
+      deleteButtonPatternContent.addEventListener("click", hide_modal);
 
       function hide_modal() {
-        projectModalDeleteIcon.removeEventListener("click", hide_modal);
+
+        deleteButtonPatternContent.removeEventListener("click", hide_modal);
         modal.innerHTML = "";
+        location.hash = "";
+        location.hash = "projects";
+        window.scrollBy(0, -document.getElementById("intro").clientHeight);
+
       }
-      modal.appendChild(delete_button);
-      const projectModalDeleteIcon = document.getElementById("projectModal-deleteIcon"); 
-      projectModalDeleteIcon.addEventListener("click", hide_modal);
+     
+      modal.appendChild(deleteButtonPatternContent);
       modal.classList.add("large");
       modal.getElementsByClassName("project__image")[0].classList.add("large");
       modal.style.display = "block";
@@ -386,9 +358,9 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],9:[function(require,module,exports){
+},{"./lib":2}],8:[function(require,module,exports){
 module.exports = {
-  prepareResizeSensor: function prepareResizeSensor(informations, intro) {
+  prepareResizeSensor: function prepareResizeSensor(informations, intro, heading) {
     intro.classList.add("regular");
     adjustInformationsMargin(heading);
     window.scrollTo({
@@ -407,12 +379,14 @@ module.exports = {
     }
 
     function adjustInformationsMargin(item) {
-      informations.style.marginTop = item && item.offsetHeight ? item.offsetHeight + "px" : 0;
+    
+      informations.style.marginTop = item.offsetHeight + "px";
+     
     }
   },
 };
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,

@@ -56,3 +56,5 @@ https://blog.piotrnalepa.pl/2019/06/19/tajemnice-atrybutu-tabindex-jak-to-popraw
 
 
 w skillach może lepiej wbedą wyglądała legenda jako poziome długie
+
+przenieść możliwie dużo semantyki z ui-content do ui-content-cośtam bo się znosi
