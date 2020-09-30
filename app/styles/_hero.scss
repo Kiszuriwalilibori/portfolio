@@ -10,6 +10,7 @@
 .ui-section.-hero {
   color: $intro-basic-color;
   @include hero_shadow_large;
+  will-change: transform;
   position: fixed;
   transform: translateZ(0);
   top: 0;
