@@ -57,4 +57,8 @@ https://blog.piotrnalepa.pl/2019/06/19/tajemnice-atrybutu-tabindex-jak-to-popraw
 
 w skillach może lepiej wbedą wyglądała legenda jako poziome długie
 
-przenieść możliwie dużo semantyki z ui-content do ui-content-cośtam bo się znosi
+przenieść możliwie dużo semantyki z ui-content do ui-content-cośtam bo się 
+
+
+przenieść spróbować większość dodawanych sjryptów na po animacji bo teraz może spowalniać animacje
+document content load toam powinny isć defineimages

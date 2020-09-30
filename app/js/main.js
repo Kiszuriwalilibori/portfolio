@@ -30,11 +30,15 @@ window.onload = function () {
     return false;
   }
   
+
+
+
   defineImages();
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-  
+
+
 };

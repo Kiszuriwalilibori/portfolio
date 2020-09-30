@@ -1,5 +1,15 @@
 module.exports = {
   defineImages: function defineImages() {
+
+
+    // const nav = document.querySelector('nav');
+    // console.log(nav);
+    // nav.addEventListener('animationend', function() {
+    //   console.log("koniec");
+    // });
+
+
+
     class violetGirl extends HTMLImageElement {
       constructor() {
         super();

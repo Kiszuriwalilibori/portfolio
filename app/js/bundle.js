@@ -1,6 +1,16 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports = {
   defineImages: function defineImages() {
+
+
+    // const nav = document.querySelector('nav');
+    // console.log(nav);
+    // nav.addEventListener('animationend', function() {
+    //   console.log("koniec");
+    // });
+
+
+
     class violetGirl extends HTMLImageElement {
       constructor() {
         super();
@@ -194,13 +204,17 @@ window.onload = function () {
     return false;
   }
   
+
+
+
   defineImages();
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-  
+
+
 };
 
 },{"./defineImages":1,"./prepareChangeLocation":4,"./prepareEmailService.js":5,"./prepareHamburgerMenu":6,"./prepareProjectModals":7,"./prepareResizeSensor":8}],4:[function(require,module,exports){
@@ -380,7 +394,7 @@ module.exports = {
 
     function adjustInformationsMargin(item) {
     
-      informations.style.marginTop = item.offsetHeight + "px";
+      requestanimationFrame(informations.style.marginTop = item.offsetHeight + "px");
      
     }
   },

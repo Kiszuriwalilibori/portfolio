@@ -19,7 +19,7 @@ module.exports = {
 
     function adjustInformationsMargin(item) {
     
-      informations.style.marginTop = item.offsetHeight + "px";
+      requestanimationFrame(informations.style.marginTop = item.offsetHeight + "px");
      
     }
   },
