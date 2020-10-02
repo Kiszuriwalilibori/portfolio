@@ -55,5 +55,5 @@ tabindex -1 na modalach
 https://blog.piotrnalepa.pl/2019/06/19/tajemnice-atrybutu-tabindex-jak-to-poprawnie-uzywac-w-kodzie-html/
 
 dynamiczna podmiana numeru wersji w tymco wyswietla html
-
+FLIP w animacjach headera
 przenieść spróbować większość dodawanych sjryptów na po animacji bo teraz może spowalniać animacj
