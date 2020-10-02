@@ -171,20 +171,14 @@
 //   }
 // }
 
-@media (max-width: 920px) {
-  .webp .hero-background {
-    background: white url("../graphics/textures/intro_small.webp") no-repeat center center fixed;
-    background-size: cover;
-  }
-  .nowebp .hero-background {
-    background: white url("../graphics/textures/intro-small.jpg") no-repeat center center fixed;
-    background-size: cover;
-  }
+// @media (max-width: 920px) {
+//   .webp .hero-background {
+//     background: white url("../graphics/textures/intro_small.webp") no-repeat center center fixed;
+//     background-size: cover;
+//   }
+//   .nowebp .hero-background {
+//     background: white url("../graphics/textures/intro-small.jpg") no-repeat center center fixed;
+//     background-size: cover;
+//   }
 
-  // .skills.legend.average,
-  // .skills.legend.starter,
-  // .skills.legend.fair {
-  //   left: 0;
-  //   right: 0;
-  // }
-}
+// }

@@ -7,10 +7,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="Description"
     content="Piotr Maksymiuk Portfolio with basic information, skills, projects and links to additional resources" />
-  <meta property="og:title" content="Piotr Maksymiuk- v.1.1" />
+  <meta property="og:title" content="Piotr Maksymiuk- v.1.2" />
   <meta property="og:type" content="Portfolio" />
   <meta property="og:url" content="https://kiszuriwalilibori-about-me.netlify.app/" />
-  <title>Piotr Maksymiuk - v. 1.1 </title>
+  <title>Piotr Maksymiuk - v. 1.2 </title>
   <link rel="preload" media="(min-width: 921px)" href="./graphics/textures/intro.webp" as="image" />
   <link rel="preload" media="(max-width: 920px)" href="./graphics/textures/intro_small.webp" as="image" />
   <link rel="preload" href="./fonts/oxygen/oxygen-latin-bold.woff2" type='font/woff2' as="font"
@@ -35,14 +35,46 @@
   </div>
 </template>
 
+<template id ='author_foto_template'>
+  <style>
+    :host {
+
+      width: 30px;
+      height: 42px;
+      margin: 1vh 0 1vh 0;
+      position: absolute;
+      top: 1vw;
+      left: 1vw;
+      
+    }
+    div{
+      width: 30px;
+      height: 42px;
+      background-image: url("./graphics/author/foto2.png");
+      opacity: 0;
+      animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
+      animation-delay: 5s;
+
+    }
+    
+@keyframes girl-intro {
+from {
+  opacity: 0%;
+}
+to {
+  opacity: 100%;
+}
+}
+  </style>
+    <div></div>
+</template>
+
 </head>
 
 <body>
-  <section class="ui-section -hero hero-background" id="intro">
-
+  <section class="ui-section -hero" style ="background: white url('./graphics/textures/intro.webp') no-repeat center center fixed; background-size: cover;" id="intro">
     <div class="ui-aside" id='intro-ui-aside'>
-
-      <div class="author-foto"></div>
+      <div id="author_foto"></div>
       <h1 class="ui-heading" id="heading">
         <img class="gif gif_intro-blue" id='girl' src="./graphics/gifs/blue_girl.webp" alt="blue dancing girl" />
         <img class="gif gif_intro" src="./graphics/gifs/red_girl.webp" alt="red dancing girl" />
@@ -133,6 +165,22 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <section class="ui-section ui-section-regular-informations" id="informations">
     <div class="ui-aside">
       <img is='dancing-boys' />

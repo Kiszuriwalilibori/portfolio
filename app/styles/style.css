@@ -960,16 +960,6 @@ html {
           animation: rotate 2s infinite linear;
 }
 
-.webp .hero-background {
-  background: white url("../graphics/textures/intro.webp") no-repeat center center fixed;
-  background-size: cover;
-}
-
-.nowebp .hero-background {
-  background: white url("../graphics/textures/intro.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
 .ui-section.-hero {
   color: #FB6542;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
@@ -1777,17 +1767,6 @@ html {
 @media (max-width: 508px) {
   .below_509_visible {
     display: block;
-  }
-}
-
-@media (max-width: 920px) {
-  .webp .hero-background {
-    background: white url("../graphics/textures/intro_small.webp") no-repeat center center fixed;
-    background-size: cover;
-  }
-  .nowebp .hero-background {
-    background: white url("../graphics/textures/intro-small.jpg") no-repeat center center fixed;
-    background-size: cover;
   }
 }
 

@@ -1,14 +1,10 @@
 module.exports = {
   defineImages: function defineImages() {
-
-
     // const nav = document.querySelector('nav');
     // console.log(nav);
     // nav.addEventListener('animationend', function() {
     //   console.log("koniec");
     // });
-
-
 
     class violetGirl extends HTMLImageElement {
       constructor() {
@@ -99,5 +95,7 @@ module.exports = {
       document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
     }
 
+    const shadow = document.querySelector("#author_foto").attachShadow({ mode: "open", });
+    shadow.appendChild(document.querySelector("#author_foto_template").content);
   },
 };

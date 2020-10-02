@@ -5,6 +5,9 @@ const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { defineImages }= require('./defineImages');
 
+window.addEventListener('DOMContentLoaded', (event) => {
+  defineImages();
+})
 
 window.onload = function () {
 
@@ -33,7 +36,7 @@ window.onload = function () {
 
 
 
-  defineImages();
+  // defineImages();
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);

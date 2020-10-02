@@ -1,15 +1,11 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports = {
   defineImages: function defineImages() {
-
-
     // const nav = document.querySelector('nav');
     // console.log(nav);
     // nav.addEventListener('animationend', function() {
     //   console.log("koniec");
     // });
-
-
 
     class violetGirl extends HTMLImageElement {
       constructor() {
@@ -100,6 +96,8 @@ module.exports = {
       document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
     }
 
+    const shadow = document.querySelector("#author_foto").attachShadow({ mode: "open", });
+    shadow.appendChild(document.querySelector("#author_foto_template").content);
   },
 };
 
@@ -179,6 +177,9 @@ const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { defineImages }= require('./defineImages');
 
+window.addEventListener('DOMContentLoaded', (event) => {
+  defineImages();
+})
 
 window.onload = function () {
 
@@ -207,7 +208,7 @@ window.onload = function () {
 
 
 
-  defineImages();
+  // defineImages();
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);

@@ -1,11 +1,11 @@
-.webp .hero-background {
-  background: white url("../graphics/textures/intro.webp") no-repeat center center fixed;
-  background-size: cover;
-}
-.nowebp .hero-background {
-  background: white url("../graphics/textures/intro.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
+// .webp .hero-background {
+//   background: white url("../graphics/textures/intro.webp") no-repeat center center fixed;
+//   background-size: cover;
+// }
+// .nowebp .hero-background {
+//   background: white url("../graphics/textures/intro.jpg") no-repeat center center fixed;
+//   background-size: cover;
+// }
 
 .ui-section.-hero {
   color: $intro-basic-color;
@@ -88,9 +88,9 @@
   flex-direction: column-reverse;
   // color: white;
   // font-weight: bold;
-  & .above_509_visible {
-    //margin-bottom: 1vw;
-  }
+  //& .above_509_visible {
+   //margin-bottom: 1vw;
+  //}
 }
 
 .ui-section.-hero .ui-button {
