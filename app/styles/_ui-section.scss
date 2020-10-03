@@ -158,7 +158,6 @@
 }
 
 
-
 .shortest-information-desktop{
     visibility: visible;
     padding-bottom: 1vh;
@@ -168,4 +167,6 @@
     letter-spacing: 0.75px;
     font-family: "Oxygen-Regular", sans-serif;
     z-index:1;
+    animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
+    animation-delay: 5s;
   }
