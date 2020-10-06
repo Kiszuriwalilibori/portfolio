@@ -18,10 +18,14 @@
 
     & .project__left-cover {
       transform: scaleX(0);
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
     }
 
     & .project__right-cover {
       transform: scaleX(0);
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
     }
     & .project__name{@include project-hover-focus}
   }

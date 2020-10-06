@@ -46,6 +46,7 @@
       position: absolute;
       top: 1vw;
       left: 1vw;
+      overflow:hidden;
       
     }
     div{
@@ -55,6 +56,7 @@
       opacity: 0;
       animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
       animation-delay: 5s;
+      overflow:hidden;
 
     }
     
@@ -73,21 +75,23 @@ to {
 </head>
 
 <body>
+  
   <section class="ui-section -hero" style ="background: white url('./graphics/textures/intro.webp') no-repeat center center fixed; background-size: cover;" id="intro">
     <div class="ui-aside" id='intro-ui-aside'>
       <div id="author_foto"></div>
-      <h1 class="ui-heading" id="heading">
+      <div class="ui-heading" id="heading">
         <img class="gif gif_intro-blue" id='girl' src="./graphics/gifs/blue_girl.webp" alt="blue dancing girl" />
         <img class="gif gif_intro" src="./graphics/gifs/red_girl.webp" alt="red dancing girl" />
-        <span class="ui-heading-inner">
-          <span>Piotr</span>
-          <span>Maksymiuk</span>
-        </span>
-      </h1>
+        <div class="ui-heading-inner">
+          <!-- <span class ='intro__name'>Piotr</span>
+          <span class ='intro__name'>Maksymiuk</span> -->
+          <author-name></author-name>
+        </div>
+      </div>
       <nav>
-        <a class="ui-button location-button" data-target="informations">Informacje</a>
-        <a class="ui-button location-button" data-target="skills">Umiejętności</a>
-        <a class="ui-button location-button" data-target="projects">Projekty</a>
+        <button class="ui-button location-button" data-target="informations">Informacje</button>
+        <button class="ui-button location-button" data-target="skills">Umiejętności</button>
+        <button class="ui-button location-button" data-target="projects">Projekty</button>
         <div class="former-content below_509_visible">
           <a href="https://github.com/Kiszuriwalilibori" class="ui-button location-button" target="_blank"
             rel="noopener">Github</a>
@@ -99,10 +103,9 @@ to {
     </div>
     <div class="ui-content">
       <div class="ui-buttons above_509_visible">
-        <a href="https://github.com/Kiszuriwalilibori" class="ui-button" target="_blank" rel="noopener">Github</a>
-        <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button" target="_blank"
-          rel="noopener">Facebook</a>
-        <a class="ui-button mail-button">Email</a>
+        <button href="https://github.com/Kiszuriwalilibori" class="ui-button" target="_blank" rel="noopener">Github</button>
+        <button href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button" target="_blank" rel="noopener">Facebook</button>
+        <button class="ui-button mail-button">Email</button>
       </div>
       <!-- <p class="desktop-visible"> -->
         <p class = 'shortest-information-desktop'>
@@ -262,6 +265,7 @@ to {
             pokazuje ile jeszcze do nauki.</p>
         </div>
       </div>
+      
 
       <img is='dancing-elephant'>
      

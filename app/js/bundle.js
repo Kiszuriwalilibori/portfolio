@@ -1,11 +1,51 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports = {
   defineImages: function defineImages() {
-    // const nav = document.querySelector('nav');
-    // console.log(nav);
-    // nav.addEventListener('animationend', function() {
-    //   console.log("koniec");
-    // });
+
+    customElements.define('author-name', class extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({
+          mode: 'open'
+        });
+
+        this.shadowRoot.innerHTML = `
+    <style>
+    span{
+      font-family: "Oxygen", sans-serif;
+      font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
+      color: #FB6542;
+    }
+    @media (max-width: 700px) {span {font-size:3rem;}}
+    @media (max-width: 508px) {span {font-size:2rem;}}
+  }
+    }
+  </style>
+  <span>Piotr Maksymiuk</span>`;
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     class violetGirl extends HTMLImageElement {
       constructor() {
@@ -22,7 +62,9 @@ module.exports = {
 
     if (this.customElements) {
       try {
-        customElements.define("violet-girl", violetGirl, { extends: "img" });
+        customElements.define("violet-girl", violetGirl, {
+          extends: "img"
+        });
       } catch (_) {
         document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
       }
@@ -45,7 +87,9 @@ module.exports = {
 
     if (this.customElements) {
       try {
-        customElements.define("dancing-elephant", elephant, { extends: "img" });
+        customElements.define("dancing-elephant", elephant, {
+          extends: "img"
+        });
       } catch (_) {
         document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
       }
@@ -68,7 +112,9 @@ module.exports = {
 
     if (this.customElements) {
       try {
-        customElements.define("dancing-boys", boys, { extends: "img" });
+        customElements.define("dancing-boys", boys, {
+          extends: "img"
+        });
       } catch (_) {
         document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
       }
@@ -88,7 +134,9 @@ module.exports = {
 
     if (this.customElements) {
       try {
-        customElements.define("dancing-nigga", nigga, { extends: "img" });
+        customElements.define("dancing-nigga", nigga, {
+          extends: "img"
+        });
       } catch (_) {
         document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
       }
@@ -96,11 +144,25 @@ module.exports = {
       document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
     }
 
-    const shadow = document.querySelector("#author_foto").attachShadow({ mode: "open", });
+    const shadow = document.querySelector("#author_foto").attachShadow({
+      mode: "open",
+    });
     shadow.appendChild(document.querySelector("#author_foto_template").content);
   },
-};
 
+
+
+
+
+
+
+
+
+
+
+
+
+};
 },{}],2:[function(require,module,exports){
 const { throttle } = require("./throttle");
 

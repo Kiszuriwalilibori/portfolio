@@ -35,9 +35,10 @@
     text-align: center;
   }
   .ui-section .ui-heading {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
   }
+
   .section-regular__header{
     font-size: 2rem;
     text-align: center;
@@ -87,6 +88,7 @@
     font-size: calc(20px + 16 * ((100vw - 508px) / 192));
   }
   .legends-container{display:none;}
+  .intro__name{font-size: 3rem;}
 }
 
 @media (min-width: 701px) {
@@ -102,6 +104,7 @@
 }
 
 @media (max-width: 508px) {
+  .intro__name{font-size: 2rem;}
   .hamburger {
     visibility: visible;
   }

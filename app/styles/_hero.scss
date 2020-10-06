@@ -1,11 +1,3 @@
-// .webp .hero-background {
-//   background: white url("../graphics/textures/intro.webp") no-repeat center center fixed;
-//   background-size: cover;
-// }
-// .nowebp .hero-background {
-//   background: white url("../graphics/textures/intro.jpg") no-repeat center center fixed;
-//   background-size: cover;
-// }
 
 .ui-section.-hero {
   color: $intro-basic-color;
@@ -36,6 +28,7 @@
     animation: nav-enter 1s ease-in-out 4s forwards;
     @media(max-width:508px){
       animation: nav-enter 1s ease-in-out 0s forwards;
+      bottom:0;
     }
 
 
@@ -55,7 +48,7 @@
   right: 0;
   width: 0.5rem;
   height: 100%;
-  animation: blink 1s step-start both;
+  //animation: blink 1s step-start both;
 }
 
 .ui-section.-hero .ui-heading > .ui-heading-inner {
@@ -67,30 +60,27 @@
   animation: heading-span-enter 1s 1s cubic-bezier(0.61, 0, 0.2, 1) both, heading-span-border 2s 1s cubic-bezier(0.61, 0, 0.2, 1) both;
   overflow: hidden;
 }
-.ui-section.-hero .ui-heading > .ui-heading-inner > span {
-  display: inline-block;
-}
-.ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(1) {
-  animation: heading-word-enter 0.6s 1s cubic-bezier(0.61, 0, 0.2, 1) both;
-}
-.ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(2) {
-  animation: heading-word-enter 0.6s 1.2s cubic-bezier(0.61, 0, 0.2, 1) both;
-}
-.ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(3) {
-  animation: heading-word-enter 0.6s 1.4s cubic-bezier(0.61, 0, 0.2, 1) both;
-}
-.ui-section.-hero .ui-heading > .ui-heading-inner > span:before {
-  content: "\00a0";
-}
+// .ui-section.-hero .ui-heading > .ui-heading-inner > span {
+//   display: inline-block;
+// }
+// .ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(1) {
+//   animation: heading-word-enter 0.6s 1s cubic-bezier(0.61, 0, 0.2, 1) both;
+// }
+// .ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(2) {
+//   animation: heading-word-enter 0.6s 1.2s cubic-bezier(0.61, 0, 0.2, 1) both;
+// }
+// .ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(3) {
+//   animation: heading-word-enter 0.6s 1.4s cubic-bezier(0.61, 0, 0.2, 1) both;
+// }
+// .ui-section.-hero .ui-heading > .ui-heading-inner > span:before {
+//   content: "\00a0";
+// }
 
 .ui-section.-hero > .ui-content {
   animation: content-enter 1s 2s cubic-bezier(0.61, 0, 0.2, 1) both;
   flex-direction: column-reverse;
-  // color: white;
-  // font-weight: bold;
-  //& .above_509_visible {
-   //margin-bottom: 1vw;
-  //}
+  justify-content: space-around;
+  
 }
 
 .ui-section.-hero .ui-button {
@@ -99,4 +89,12 @@
 }
 .ui-section.-hero .ui-button:hover {
   border-color: #31444f;
+}
+.intro__name{
+
+  // animation: heading-word-enter 0.6s 1s cubic-bezier(0.61, 0, 0.2, 1) both;
+  // text-shadow: 0.5px 0.5px black;
+  font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
+
+  &::before{content: "\00a0";}
 }
