@@ -1,5 +1,7 @@
-console.log(document.getElementById("intro"));
-document.getElementById("intro").addEventListener("animationstart", myEndFunction);
+module.exports = {
+  trans: function trans() {
+
+document.getElementById("heading").addEventListener("animationend", myEndFunction);
 
 function myEndFunction() {
   
@@ -7,5 +9,6 @@ function myEndFunction() {
   
   invisibles.forEach(element => element.style.visibility ="visible");
       
-  };
-
+  }
+  }
+}

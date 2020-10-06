@@ -7,20 +7,8 @@ module.exports = {
         this.attachShadow({
           mode: 'open'
         });
-
-        this.shadowRoot.innerHTML = `
-    <style>
-    span{
-      font-family: "Oxygen", sans-serif;
-      font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
-      color: #FB6542;
-    }
-    @media (max-width: 700px) {span {font-size:3rem;}}
-    @media (max-width: 508px) {span {font-size:2rem;}}
-  }
-    }
-  </style>
-  <span>Piotr Maksymiuk</span>`;
+        this.shadowRoot.appendChild(document.getElementById('author-name-template').content.cloneNode('true'));
+  
       }
     });
 

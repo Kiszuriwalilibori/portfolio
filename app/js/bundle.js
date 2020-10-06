@@ -8,20 +8,8 @@ module.exports = {
         this.attachShadow({
           mode: 'open'
         });
-
-        this.shadowRoot.innerHTML = `
-    <style>
-    span{
-      font-family: "Oxygen", sans-serif;
-      font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
-      color: #FB6542;
-    }
-    @media (max-width: 700px) {span {font-size:3rem;}}
-    @media (max-width: 508px) {span {font-size:2rem;}}
-  }
-    }
-  </style>
-  <span>Piotr Maksymiuk</span>`;
+        this.shadowRoot.appendChild(document.getElementById('author-name-template').content.cloneNode('true'));
+  
       }
     });
 
@@ -238,15 +226,17 @@ const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { defineImages }= require('./defineImages');
+const { trans} = require ('./trans');
 
 window.addEventListener('DOMContentLoaded', (event) => {
   defineImages();
+  trans();
 })
 
 window.onload = function () {
 
-  const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
-  invisibles.forEach(element => element.style.visibility ="visible");
+  // const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
+  // invisibles.forEach(element => element.style.visibility ="visible");
 
 
   const intro = document.getElementById("intro");
@@ -280,7 +270,7 @@ window.onload = function () {
 
 };
 
-},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareEmailService.js":5,"./prepareHamburgerMenu":6,"./prepareProjectModals":7,"./prepareResizeSensor":8}],4:[function(require,module,exports){
+},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareEmailService.js":5,"./prepareHamburgerMenu":6,"./prepareProjectModals":7,"./prepareResizeSensor":8,"./trans":10}],4:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
@@ -492,4 +482,19 @@ module.exports = {
   },
 };
 
+},{}],10:[function(require,module,exports){
+module.exports = {
+  trans: function trans() {
+
+document.getElementById("heading").addEventListener("animationend", myEndFunction);
+
+function myEndFunction() {
+  
+  const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
+  
+  invisibles.forEach(element => element.style.visibility ="visible");
+      
+  }
+  }
+}
 },{}]},{},[3]);

@@ -72,6 +72,23 @@ to {
     <div></div>
 </template>
 
+
+<template id = 'author-name-template'>
+  <style>   
+    span{
+      all: initial;
+      font-family: "Oxygen", sans-serif;
+      font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
+      color: #FB6542;
+    }
+    @media (max-width: 700px) {span {font-size:3rem;}}
+    @media (max-width: 508px) {span {font-size:2rem;}}
+  
+    
+  </style>
+  <span>Piotr Maksymiuk</span>
+</template>
+
 </head>
 
 <body>
@@ -428,7 +445,16 @@ to {
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
-        <img class ='skill__image' loading="lazy" alt='java script logo' width="160" height='160' src='./graphics/skills/pug.svg'>
+        <img class ='skill__image' loading="lazy" alt='pug logo' width="160" height='160' src='./graphics/skills/pug.svg'>
+      </div>
+      <div class='skill'>
+        <header class='skill__header skill__header-starter'>
+          <h1 class ='skill__name' >Web Components</h1>
+          <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="lightgray" points="0,100 100,0 100,100" />
+          </svg>
+        </header>
+        <img class ='skill__image' loading="lazy" alt='web components logo' width="160" height='160' src='./graphics/skills/webcomponents.svg'>
       </div>
     </div>
     </div>
@@ -668,7 +694,7 @@ to {
           <div class="project__description">
             Aktualna wersja portfolio, wyłącznie dla łatwiejszego przejścia do githuba.
           </div>
-          <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span><span>PUG</span></div>
+          <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span><span>PUG</span><span>Web Components</span></div>
           <div class="project__links">
             <a href="https://kiszuriwalilibori-about-me.netlify.app/" tabindex="0" target="_blank"
               rel="noopener">Projekt</a>

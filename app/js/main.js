@@ -4,15 +4,17 @@ const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { defineImages }= require('./defineImages');
+const { trans} = require ('./trans');
 
 window.addEventListener('DOMContentLoaded', (event) => {
   defineImages();
+  trans();
 })
 
 window.onload = function () {
 
-  const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
-  invisibles.forEach(element => element.style.visibility ="visible");
+  // const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
+  // invisibles.forEach(element => element.style.visibility ="visible");
 
 
   const intro = document.getElementById("intro");
