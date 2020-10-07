@@ -4,11 +4,12 @@ const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { defineImages }= require('./defineImages');
-const { trans} = require ('./trans');
+const { prepareCloseModalsWithEscape } = require('./prepareCloseModalsWithEscape');
+const { showInvisibleContent} = require ('./showInvisibleContent');
 
 window.addEventListener('DOMContentLoaded', (event) => {
   defineImages();
-  trans();
+  showInvisibleContent();
 })
 
 window.onload = function () {
@@ -44,6 +45,6 @@ window.onload = function () {
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-
+  prepareCloseModalsWithEscape();
 
 };

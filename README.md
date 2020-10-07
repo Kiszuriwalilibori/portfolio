@@ -59,3 +59,5 @@ FLIP w animacjach headera
 przenieść spróbować większość dodawanych sjryptów na po animacji bo teraz może spowalniać animacj
 prawdopodbnie w main należaloby pozbyć się tych ogolnych zmiennych bo nie są garbowane
 https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/
+
+Dać lepszy lazy loading bo w chrome nie dziala jak powinien

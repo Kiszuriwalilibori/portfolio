@@ -219,18 +219,19 @@ module.exports = {
   },
 };
 
-},{"./throttle":9}],3:[function(require,module,exports){
+},{"./throttle":11}],3:[function(require,module,exports){
 const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { defineImages }= require('./defineImages');
-const { trans} = require ('./trans');
+const { prepareCloseModalsWithEscape } = require('./prepareCloseModalsWithEscape');
+const { showInvisibleContent} = require ('./showInvisibleContent');
 
 window.addEventListener('DOMContentLoaded', (event) => {
   defineImages();
-  trans();
+  showInvisibleContent();
 })
 
 window.onload = function () {
@@ -266,11 +267,11 @@ window.onload = function () {
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-
+  prepareCloseModalsWithEscape();
 
 };
 
-},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareEmailService.js":5,"./prepareHamburgerMenu":6,"./prepareProjectModals":7,"./prepareResizeSensor":8,"./trans":10}],4:[function(require,module,exports){
+},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareCloseModalsWithEscape":5,"./prepareEmailService.js":6,"./prepareHamburgerMenu":7,"./prepareProjectModals":8,"./prepareResizeSensor":9,"./showInvisibleContent":10}],4:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
@@ -293,6 +294,32 @@ module.exports = {
 };
 
 },{"./lib":2}],5:[function(require,module,exports){
+module.exports = {
+  prepareCloseModalsWithEscape: function prepareCloseModalsWithEscape() {
+    document.onkeydown = function (evt) {
+      evt = evt || window.event;
+      var isEscape = false;
+      if ("key" in evt) {
+        isEscape = evt.key === "Escape" || evt.key === "Esc";
+      } else {
+        isEscape = evt.keyCode === 27;
+      }
+      if (isEscape) {
+        const project = document.getElementById('large-project-content');
+        if (project.style.display ='block'){
+            project.innerHTML = "";
+            project.style.display = 'none';
+        }
+        const email = document.getElementById('emailModal');
+        if(email.classList.contains('active')){
+            email.classList.remove('active');
+        }
+      }
+    };
+  },
+};
+
+},{}],6:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled } = require("./lib");
 
 module.exports = {
@@ -363,7 +390,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],6:[function(require,module,exports){
+},{"./lib":2}],7:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -382,7 +409,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],7:[function(require,module,exports){
+},{"./lib":2}],8:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -396,7 +423,8 @@ module.exports = {
       modal.removeChild(modal.getElementsByClassName("project__left-cover")[0]);
       modal.removeChild(modal.getElementsByClassName("project__right-cover")[0]);
       modal.getElementsByClassName("initial")[0].classList.toggle("initial");
-
+      modal.setAttribute("tabindex", "-1");
+      
       let deleteButtonPattern = document.getElementById('delete_icon').content.querySelector("div");
       let deleteButtonPatternContent = document.importNode(deleteButtonPattern, true);
       deleteButtonPatternContent.addEventListener("click", hide_modal);
@@ -425,7 +453,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],8:[function(require,module,exports){
+},{"./lib":2}],9:[function(require,module,exports){
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro, heading) {
     intro.classList.add("regular");
@@ -453,7 +481,18 @@ module.exports = {
   },
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
+module.exports = {
+  showInvisibleContent: function showInvisibleContent() {
+    document.getElementById("heading").addEventListener("animationend", showContent);
+    function showContent() {
+      const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
+      invisibles.forEach(element => (element.style.visibility = "visible"));
+    }
+  },
+};
+
+},{}],11:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,
@@ -482,19 +521,4 @@ module.exports = {
   },
 };
 
-},{}],10:[function(require,module,exports){
-module.exports = {
-  trans: function trans() {
-
-document.getElementById("heading").addEventListener("animationend", myEndFunction);
-
-function myEndFunction() {
-  
-  const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
-  
-  invisibles.forEach(element => element.style.visibility ="visible");
-      
-  }
-  }
-}
 },{}]},{},[3]);
