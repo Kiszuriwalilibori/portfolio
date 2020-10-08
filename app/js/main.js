@@ -6,17 +6,20 @@ const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { defineImages }= require('./defineImages');
 const { prepareCloseModalsWithEscape } = require('./prepareCloseModalsWithEscape');
 const { showInvisibleContent} = require ('./showInvisibleContent');
+var lozad = require('lozad');
 
 window.addEventListener('DOMContentLoaded', (event) => {
   defineImages();
   showInvisibleContent();
+
+  const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+  observer.observe();
+
+
+
 })
 
 window.onload = function () {
-
-  // const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
-  // invisibles.forEach(element => element.style.visibility ="visible");
-
 
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");
@@ -36,10 +39,6 @@ window.onload = function () {
     return false;
   }
   
-
-
-
-  // defineImages();
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);

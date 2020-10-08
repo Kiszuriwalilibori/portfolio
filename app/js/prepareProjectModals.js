@@ -11,8 +11,7 @@ module.exports = {
       modal.removeChild(modal.getElementsByClassName("project__left-cover")[0]);
       modal.removeChild(modal.getElementsByClassName("project__right-cover")[0]);
       modal.getElementsByClassName("initial")[0].classList.toggle("initial");
-      modal.setAttribute("tabindex", "-1");
-      
+
       let deleteButtonPattern = document.getElementById('delete_icon').content.querySelector("div");
       let deleteButtonPatternContent = document.importNode(deleteButtonPattern, true);
       deleteButtonPatternContent.addEventListener("click", hide_modal);
@@ -30,6 +29,7 @@ module.exports = {
       modal.appendChild(deleteButtonPatternContent);
       modal.classList.add("large");
       modal.getElementsByClassName("project__image")[0].classList.add("large");
+      // modal.getElementsByClassName("project__image-new")[0].classList.add("large");
       modal.style.display = "block";
 
       location.hash = "large-project-content";

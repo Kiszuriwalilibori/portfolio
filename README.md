@@ -32,11 +32,16 @@
 - better timeframes for intro animation in modal view
 - background image stable
 - author foto as animation in shadowDOM
+- modals can be closed with Escape button
+- lazy load also for background-images
+- fixed bug with projects display
 
 ### To do
 
-fallback dla lazy loading native
-render ścieżi krytycznej 
+fallback dla lazy loading native 
+
+jeszcze raz przejrzeć animacje czy się nie zazebiają
+render ścieżi krytycznej css
 
 https://web.dev/en/replace-gifs-with-videos/ albo tak
 
@@ -47,17 +52,10 @@ w guziku wysyłania maila dodać jakiś informator progressu. Tu lepsze by było
 w prepare hamburgermenu tez lepsz by było debounce albo jakiś sposób na przyspieszenie pokazywania menu.
       //dopisać o nie -buttonie i dodawaniu tabindexu. Ale w przykładzie jest rethrowing na podstawie typu -SyntaxError - a to jest bardzo 
 
-
-zamykanie popupów przez escape
-
 w nav jest niekonsekwencja -są tam a a treść jest buttonowa
-tabindex -1 na modalach
-https://blog.piotrnalepa.pl/2019/06/19/tajemnice-atrybutu-tabindex-jak-to-poprawnie-uzywac-w-kodzie-html/
-
 dynamiczna podmiana numeru wersji w tymco wyswietla html
 FLIP w animacjach headera
 przenieść spróbować większość dodawanych sjryptów na po animacji bo teraz może spowalniać animacj
 prawdopodbnie w main należaloby pozbyć się tych ogolnych zmiennych bo nie są garbowane
 https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/
 
-Dać lepszy lazy loading bo w chrome nie dziala jak powinien

@@ -1081,6 +1081,13 @@ html {
   content: "\00a0";
 }
 
+.above_509_visible {
+  -webkit-animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
+          animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
 .footer {
   width: 100%;
   padding: 1rem;
@@ -1312,6 +1319,16 @@ html {
 
 .project__image.large {
   width: 345px;
+  height: 216px;
+}
+
+.project__image-new {
+  width: 100%;
+  height: 100%;
+}
+
+.project__image-new.large {
+  width: 345px;
   height: 237px;
 }
 
@@ -1420,6 +1437,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .project__name:focus {
@@ -1457,10 +1475,6 @@ html {
   display: none;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
-}
-
-.large-project__cover .project .project__image {
-  width: 100%;
 }
 
 .large-project__cover .project .project__data {
@@ -1753,6 +1767,9 @@ html {
   }
   .footer__text {
     font-size: 20px;
+  }
+  .skill__name {
+    font-size: 1.5rem;
   }
 }
 
