@@ -944,6 +944,12 @@ html {
   z-index: -1;
 }
 
+.anchor_link {
+  color: #FB6542;
+  text-decoration: none;
+  background: transparent;
+}
+
 .hamburger {
   position: fixed;
   top: 1vw;
