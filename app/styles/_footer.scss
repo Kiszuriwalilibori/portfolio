@@ -6,6 +6,7 @@
   text-align: center;
   border-width: 0 0 10px;
   border-bottom-style: solid;
+  visibility:hidden;
   -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
   border-image: linear-gradient(139deg, #e02aff, #0d70f1, #475eac, #4ac163) 3;
   @include skills_shadow;

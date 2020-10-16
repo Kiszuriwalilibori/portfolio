@@ -34,10 +34,6 @@ window.onload = function () {
   const body = document.getElementsByTagName('body')[0];
   const iconDeleteEmailModal = document.getElementById("emailModal-deleteIcon");
 
-  // if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside && body && iconDeleteEmailModal)) {
-  //   window.alert("Nie odnaleziono jednego lub więcej ważnych identyfikatorów. Strona nie będzie działać proawidłowo");
-  //   return false;
-  // }
   
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);

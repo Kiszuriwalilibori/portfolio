@@ -104,7 +104,7 @@ to {
           <author-name></author-name>
         </div>
       </div>
-      <nav>
+      <nav aria-label ='menu'>
         <button class="ui-button location-button" data-target="informations">Informacje</button>
         <button class="ui-button location-button" data-target="skills">Umiejętności</button>
         <button class="ui-button location-button" data-target="projects">Projekty</button>
@@ -118,7 +118,7 @@ to {
       </nav>
     </div>
     <div class="ui-content">
-      <div class="ui-buttons above_509_visible">
+      <div class="ui-buttons above_509_visible" aria-label ='menu'>
         <button href="https://github.com/Kiszuriwalilibori" class="ui-button" target="_blank" rel="noopener">Github</button>
         <button href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button" target="_blank" rel="noopener">Facebook</button>
         <button class="ui-button mail-button">Email</button>
@@ -132,7 +132,7 @@ to {
       </p>
       <div class="ui-screen desktop-visible"></div>
     </div>
-    <div class='hamburger'>
+    <div class='hamburger'aria-label ='menu' >
       <svg tabindex='0' id='hamburger' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="50px"
         height="50px">
         <path fill="" d="M64 14A50 50 0 1 0 64 114A50 50 0 1 0 64 14Z" />
@@ -195,15 +195,10 @@ to {
 
 
 
-
-
-
-
-
-  <section class="ui-section ui-section-regular-informations" id="informations">
+  <section class="ui-section ui-section-regular-informations" id="informations" aria-labelledby ='informations-heading'>
     <div class="ui-aside">
       <img is='dancing-boys' />
-      <h1 class="section-regular__header">Informacje</h1>
+      <h1 class="section-regular__header" id ='informations-heading'>Informacje</h1>
     </div>
     <div class="ui-content ui-content-informations">
       <div class="information-item desktop-hidden">
@@ -261,7 +256,7 @@ to {
     </svg>
   </section>
 
-  <section class="ui-section ui-section-regular-skills" id="skills">
+  <section class="ui-section ui-section-regular-skills" id="skills" aria-labelledby ='skills-heading'>
 
     <div class="ui-aside">
 
@@ -284,7 +279,7 @@ to {
 
       <img is='dancing-elephant'>
      
-      <h1 class="section-regular__header">
+      <h1 class="section-regular__header" id = 'skills-heading'>
         Umki<br />
         albo inaczej skille
       </h1>
@@ -467,13 +462,13 @@ to {
       </path>
     </svg>
   </section>
-  <section class="ui-section ui-section-regular-projects" id="projects">
+  <section class="ui-section ui-section-regular-projects" id="projects" aria-labelledby ='projects-heading'>
     <div class="ui-aside">
       <div class="large-project__cover initial">
         <div class="project" id="large-project-content"></div>
       </div>
       <img is='violet-girl' />
-      <h1 class="section-regular__header">Projekty<br /></h1>
+      <h1 class="section-regular__header" id ='projects-heading'>Projekty<br /></h1>
     </div>
 
     <div class="ui-content ui-content-projects " id="projects-container">
@@ -521,7 +516,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Firebase</div>
-        <!-- <div class="project__image image-firebase"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/firebase.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Wstęp do Firebase</h2>
@@ -544,7 +538,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Kryptowaluty</div>
-        <!-- <div class="project__image image-cryptocurrency"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/cryptocurrency.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Tracker kryptowalut</h2>
@@ -568,7 +561,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Wyszukiwarka książek</div>
-        <!-- <div class="project__image image-gbfinder"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/gbfinder.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Wyszukiwarka książek Google Books</h2>
@@ -591,7 +583,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Pogodynka</div>
-        <!-- <div class="project__image image-pogodynka"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/pogodynka.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Pogodynka</h2>
@@ -614,7 +605,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Drzewo</div>
-        <!-- <div class="project__image image-drzewo"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/drzewo.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Interfejs drzewa decyzyjnego</h2>
@@ -635,7 +625,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Ukryty potencjał</div>
-        <!-- <div class="project__image image-athletes"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/athletes.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Ukryty potencjał sportowców</h2>
@@ -655,7 +644,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Archiwalne portfolio 1</div>
-        <!-- <div class="project__image image-arch1"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/arch1.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Archiwalne portfolio 1</h2>
@@ -675,7 +663,6 @@ to {
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Archiwalne portfolio 2</div>
-        <!-- <div class="project__image image-arch2"></div> -->
         <div class="project__image lozad" data-background-image ="./graphics/project_images/arch2.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Archiwalne portfolio 2</h2>
@@ -690,29 +677,6 @@ to {
           </div>
         </div>
       </div> 
-<!--  
-      <div class="project project-pointer" tabindex="0">
-        <div class='project__left-cover'></div>
-        <div class='project__right-cover'></div>
-        <div class="project__name pointer">Te portfolio</div>
-        <div class="project__image image-portfolio"></div>
-        <div class="project__data initial">
-          <h2 class="project__title">Te portfolio</h2>
-          <div class="project__description">
-            Aktualna wersja portfolio, wyłącznie dla łatwiejszego przejścia do githuba.
-          </div>
-          <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span><span>PUG</span><span>Web Components</span></div>
-          <div class="project__links">
-            <a href="https://kiszuriwalilibori-about-me.netlify.app/" tabindex="0" target="_blank"
-              rel="noopener">Projekt</a>
-            <a href="https://github.com/Kiszuriwalilibori/portfolio" tabindex="0" target="_blank"
-              rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </div>
-
- -->
-
 
       <div class="project project-pointer" tabindex="0">
         <div class='project__left-cover'></div>
@@ -733,13 +697,6 @@ to {
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
     </div>
     
     <svg class='svg-top' preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
