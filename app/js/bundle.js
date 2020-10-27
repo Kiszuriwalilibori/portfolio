@@ -225,24 +225,20 @@ const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
-const { defineImages }= require('./defineImages');
-const { prepareCloseModalsWithEscape } = require('./prepareCloseModalsWithEscape');
-const { showInvisibleContent} = require ('./showInvisibleContent');
-var lozad = require('lozad');
+const { defineImages } = require("./defineImages");
+const { prepareCloseModalsWithEscape } = require("./prepareCloseModalsWithEscape");
+const { showInvisibleContent } = require("./showInvisibleContent");
+var lozad = require("lozad");
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener("DOMContentLoaded", event => {
   defineImages();
   showInvisibleContent();
 
   const observer = lozad(); // lazy loads elements with default selector as ".lozad"
   observer.observe();
-
-
-
-})
+});
 
 window.onload = function () {
-
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");
   const heading = document.getElementById("heading");
@@ -253,14 +249,9 @@ window.onload = function () {
   const hamburgerMenu = document.getElementById("hamburger");
   const menu = document.getElementsByTagName("nav");
   const introUIAside = document.getElementById("intro-ui-aside");
-  const body = document.getElementsByTagName('body')[0];
+  const body = document.getElementsByTagName("body")[0];
   const iconDeleteEmailModal = document.getElementById("emailModal-deleteIcon");
 
-  // if (!(informations && heading && intro && locationButtons && mailButtons && emailModal && hamburger && menu &&introUIAside && body && iconDeleteEmailModal)) {
-  //   window.alert("Nie odnaleziono jednego lub więcej ważnych identyfikatorów. Strona nie będzie działać proawidłowo");
-  //   return false;
-  // }
-  
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
@@ -268,6 +259,18 @@ window.onload = function () {
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
   prepareCloseModalsWithEscape();
 
+  if ("serviceWorker" in navigator) {
+    const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
+    navigator.serviceWorker.register(`${prefix}/sw.js`).then(
+      function (registration) {
+        console.log("[success] scope: ", registration.scope);
+      },
+      function (err) {
+        console.log("[fail]: ", err);
+      }
+    );
+  }
+  console.log("index.js modified");
 };
 
 },{"./defineImages":1,"./prepareChangeLocation":4,"./prepareCloseModalsWithEscape":5,"./prepareEmailService.js":6,"./prepareHamburgerMenu":7,"./prepareProjectModals":8,"./prepareResizeSensor":9,"./showInvisibleContent":10,"lozad":12}],4:[function(require,module,exports){

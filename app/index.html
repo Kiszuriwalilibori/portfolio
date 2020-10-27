@@ -24,8 +24,6 @@
   <script src="./js/bundle.js" defer></script>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
    
-  
-
 <template id = 'delete_icon'>
   <div class="project-icon-delete" tabindex="0">
     <svg id="projectModal-deleteIcon" height="65px" viewBox="0 0 365.71733 365" width="65px" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +130,7 @@ to {
       </p>
       <div class="ui-screen desktop-visible"></div>
     </div>
-    <div class='hamburger'aria-label ='menu' >
+    <button class='hamburger'>
       <svg tabindex='0' id='hamburger' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="50px"
         height="50px">
         <path fill="" d="M64 14A50 50 0 1 0 64 114A50 50 0 1 0 64 14Z" />
@@ -144,9 +142,7 @@ to {
           <path fill="#FB6542" d="M86.5,82h-45c-1.7,0-3-1.3-3-3s1.3-3,3-3h45c1.7,0,3,1.3,3,3S88.2,82,86.5,82z" />
         </g>
       </svg>
-
-
-    </div>
+    </button>
     <div id="emailModal">
       <div class="emailModal__content">
         <svg class='svg-bottom' preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
@@ -198,7 +194,7 @@ to {
   <section class="ui-section ui-section-regular-informations" id="informations" aria-labelledby ='informations-heading'>
     <div class="ui-aside">
       <img is='dancing-boys' />
-      <h1 class="section-regular__header" id ='informations-heading'>Informacje</h1>
+      <h2 class="section-regular__header" id ='informations-heading'>Informacje</h2>
     </div>
     <div class="ui-content ui-content-informations">
       <div class="information-item desktop-hidden">
@@ -279,10 +275,10 @@ to {
 
       <img is='dancing-elephant'>
      
-      <h1 class="section-regular__header" id = 'skills-heading'>
+      <h2 class="section-regular__header" id = 'skills-heading'>
         Umki<br />
         albo inaczej skille
-      </h1>
+      </h2>
       
     </div>
     <div class="ui-content skills">
@@ -303,7 +299,7 @@ to {
       </div>
       <div class='skill'>
         <header class='skill__header skill__header-fair'>
-          <h1 class ='skill__name'>HTML</h1>
+          <h2 class ='skill__name'>HTML</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
@@ -311,162 +307,162 @@ to {
         <img class ='skill__image' loading="lazy" alt='html5 logo' width="140" height='140' src='./graphics/skills/html5.svg'>
       </div>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-fair'>
-          <h1 class ='skill__name' >CSS</h1>
+          <h2 class ='skill__name' >CSS</h2>
           <svg  class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='css logo' width="140" height='140' src='./graphics/skills/css3.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-average'>
-          <h1 class ='skill__name' >Sass</h1>
+          <h2 class ='skill__name' >Sass</h2>
           <svg  class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='sass logo' width="160" height='160' src='./graphics/skills/sass.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-fair'>
-          <h1 class ='skill__name' >Java Script</h1>
+          <h2 class ='skill__name' >Java Script</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='java script logo' width="140" height='140' src='./graphics/skills/javascript.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-average'>
-          <h1 class ='skill__name' >jQuery</h1>
+          <h2 class ='skill__name' >jQuery</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='jQuery logo' width="140" height='140' src='./graphics/skills/jquery.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-fair'>
-          <h1 class ='skill__name' >React</h1>
+          <h2 class ='skill__name' >React</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='react logo' width="140" height='140' src='./graphics/skills/react.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-average'>
-          <h1 class ='skill__name' >Redux</h1>
+          <h2 class ='skill__name' >Redux</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='redux logo' width="140" height='140' src='./graphics/skills/redux.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-starter'>
-          <h1 class ='skill__name' >React-Router</h1>
+          <h2 class ='skill__name' >React-Router</h2>
           <svg class = 'skill__svg'  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='react-router logo' width="160" height='160' src='./graphics/skills/react-router.svg'>
-      </div>
-      <div class='skill'>
+      </article>
+      <article class='skill'>
         <header class='skill__header skill__header-starter'>
-          <h1 class ='skill__name' >MySQL</h1>
+          <h2 class ='skill__name' >MySQL</h2>
           <svg class = 'skill__svg'  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='mysql logo' width="160" height='160' src='./graphics/skills/mysql.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-starter'>
-          <h1 class ='skill__name' >PHP</h1>
+          <h2 class ='skill__name' >PHP</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='php logo' width="160" height='160' src='./graphics/skills/php.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-starter'>
-          <h1 class ='skill__name' >Linux</h1>
+          <h2 class ='skill__name' >Linux</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='java script logo' width="160" height='160' src='./graphics/skills/linux.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-average'>
-          <h1 class ='skill__name' >Material UI</h1>
+          <h2 class ='skill__name' >Material UI</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='material-ui logo' width="160" height='160' src='./graphics/skills/material.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-average'>
-          <h1 class ='skill__name' >Styled Components</h1>
+          <h2 class ='skill__name' >Styled Components</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image'  loading="lazy" alt='styled components logo' width="160" height='160'
           src='./graphics/skills/styled-components.svg'>
-      </div>
+      </article>
 
-      <div class='skill'>
+      <article class='skill'>
         <header class='skill__header skill__header-average'>
-          <h1 class ='skill__name' >Pug</h1>
+          <h2 class ='skill__name' >Pug</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='pug logo' width="160" height='160' src='./graphics/skills/pug.svg'>
-      </div>
-      <div class='skill'>
+      </article>
+      <article class='skill'>
         <header class='skill__header skill__header-starter'>
-          <h1 class ='skill__name' >Web Components</h1>
+          <h2 class ='skill__name' >Web Components</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='web components logo' width="160" height='160' src='./graphics/skills/webcomponents.svg'>
-      </div>
-      <div class='skill'>
+      </article>
+      <article class='skill'>
         <header class='skill__header skill__header-starter'>
-          <h1 class ='skill__name' >Type Script</h1>
+          <h2 class ='skill__name' >Type Script</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='web components logo' width="160" height='160' src='./graphics/skills/typescript.svg'>
-      </div>
-      <div class='skill'>
+      </article>
+      <article class='skill'>
         <header class='skill__header skill__header-starter'>
-          <h1 class ='skill__name' >Web Workers</h1>
+          <h2 class ='skill__name' >Web Workers</h2>
           <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="lightgray" points="0,100 100,0 100,100" />
           </svg>
         </header>
         <img class ='skill__image' loading="lazy" alt='web components logo' width="160" height='160' src='./graphics/skills/webworkers.svg'>
-      </div>
+      </article>
     </div>
     </div>
     <svg class='svg-bottom' preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
@@ -486,7 +482,7 @@ to {
         <div class="project" id="large-project-content"></div>
       </div>
       <img is='violet-girl' />
-      <h1 class="section-regular__header" id ='projects-heading'>Projekty<br /></h1>
+      <h2 class="section-regular__header" id ='projects-heading'>Projekty<br /></h2>
     </div>
 
     <div class="ui-content ui-content-projects " id="projects-container">
@@ -584,7 +580,7 @@ to {
           <h2 class="project__title">Wyszukiwarka książek Google Books</h2>
           <div class="project__description">
             Łączy się z API Google Books, umożliwia łatwe wyszukiwanie potrzebnych książek i podstawowe operacje na
-            wynikach wyszukiwania (sortowanie, filtrowanie).
+            wynikach wyszukiwania (sortowanie, filtrowanie, usuwanie, stronicowanie).
           </div>
           <div class="project__skills">
             <span>React</span><span>Redux</span><span>Thunk</span><span>React-Router</span><span>Material-UI</span><span>Axios</span>
@@ -627,9 +623,9 @@ to {
         <div class="project__data initial">
           <h2 class="project__title">Interfejs drzewa decyzyjnego</h2>
           <div class="project__description">
-            Samo w sobie ma raczej ograniczone zastosowanie, ale pokazuje sposób budowy drzewa wyborów
+            Samo w sobie ma raczej ograniczone zastosowanie, ale pokazuje sposób budowy drzewa wyborów, w większości w Type Scripcie
           </div>
-          <div class="project__skills"><span>React</span><span>Redux</span><span>Thunk</span><span>Material-UI</span>
+          <div class="project__skills"><span>React</span><span>Redux</span><span>Thunk</span><span>Type Script</span><span>Material-UI</span>
           </div>
           <div class="project__links">
             <a href="https://kiszuriwalilibori.github.io/hype4mobile/" tabindex="0" target="_blank"

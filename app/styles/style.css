@@ -958,6 +958,8 @@ html {
   height: 50px;
   z-index: 2000;
   visibility: hidden;
+  background: transparent;
+  border: none;
   cursor: pointer;
 }
 
