@@ -1,4 +1,4 @@
-console.log(document.getElementById("intro"));
+
 document.getElementById("intro").addEventListener("animationstart", myEndFunction);
 
 function myEndFunction() {

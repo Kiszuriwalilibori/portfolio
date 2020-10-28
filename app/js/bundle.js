@@ -270,7 +270,7 @@ window.onload = function () {
       }
     );
   }
-  console.log("index.js modified");
+
 };
 
 },{"./defineImages":1,"./prepareChangeLocation":4,"./prepareCloseModalsWithEscape":5,"./prepareEmailService.js":6,"./prepareHamburgerMenu":7,"./prepareProjectModals":8,"./prepareResizeSensor":9,"./showInvisibleContent":10,"lozad":12}],4:[function(require,module,exports){
