@@ -23,6 +23,10 @@
   <script src="./js/modernizr-custom.js" defer></script>
   <script src="./js/bundle.js" defer></script>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json">
+  <meta name= 'theme-color' content="#488195">
+  <link rel="apple-touch-icon" href="./icon/apple-icon-180x180-dunplab-manifest-23627.png">
+  <link rel="shortcut icon" href="./icon/favicon-16x16-dunplab-manifest-23627.png" type="image/x-icon" />
    
 <template id = 'delete_icon'>
   <div class="project-icon-delete" tabindex="0">
@@ -35,58 +39,58 @@
   </div>
 </template>
 
-<template id ='author_foto_template'>
-  <style>
-    :host {
+  <template id ='author_foto_template'>
+    <style>
+      :host {
 
-      width: 30px;
-      height: 42px;
-      margin: 1vh 0 1vh 0;
-      position: absolute;
-      top: 1vw;
-      left: 1vw;
-      overflow:hidden;
+        width: 30px;
+        height: 42px;
+        margin: 1vh 0 1vh 0;
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        overflow:hidden;
+        
+      }
+      div{
+        width: 30px;
+        height: 42px;
+        background-image: url("./graphics/author/foto2.png");
+        opacity: 0;
+        animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
+        animation-delay: 5s;
+        overflow:hidden;
+
+      }
       
-    }
-    div{
-      width: 30px;
-      height: 42px;
-      background-image: url("./graphics/author/foto2.png");
-      opacity: 0;
-      animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
-      animation-delay: 5s;
-      overflow:hidden;
-
-    }
-    
-@keyframes girl-intro {
-from {
-  opacity: 0%;
-}
-to {
-  opacity: 100%;
-}
-}
-  </style>
-    <div></div>
-</template>
+  @keyframes girl-intro {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+  }
+    </style>
+      <div></div>
+  </template>
 
 
-<template id = 'author-name-template'>
-  <style>   
-    span{
-      all: initial;
-      font-family: "Oxygen", sans-serif;
-      font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
-      color: #FB6542;
-    }
-    @media (max-width: 700px) {span {font-size:3rem;}}
-    @media (max-width: 508px) {span {font-size:2rem;}}
-  
-    
-  </style>
-  <span>Piotr Maksymiuk</span>
-</template>
+    <template id = 'author-name-template'>
+      <style>   
+        span{
+          all: initial;
+          font-family: "Oxygen", sans-serif;
+          font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
+          color: #FB6542;
+        }
+        @media (max-width: 700px) {span {font-size:3rem;}}
+        @media (max-width: 508px) {span {font-size:2rem;}}
+      
+        
+      </style>
+      <span>Piotr Maksymiuk</span>
+    </template>
 
 </head>
 
@@ -463,6 +467,15 @@ to {
         </header>
         <img class ='skill__image' loading="lazy" alt='web components logo' width="160" height='160' src='./graphics/skills/webworkers.svg'>
       </article>
+      <article class='skill'>
+        <header class='skill__header skill__header-starter'>
+          <h2 class ='skill__name' >PWA</h2>
+          <svg class = 'skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="lightgray" points="0,100 100,0 100,100" />
+          </svg>
+        </header>
+        <img class ='skill__image' loading="lazy" alt='web components logo' width="160" height='160' src='./graphics/skills/pwa.svg'>
+      </article>
     </div>
     </div>
     <svg class='svg-bottom' preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
@@ -700,9 +713,9 @@ to {
         <div class="project__data initial">
           <h2 class="project__title">Te portfolio</h2>
           <div class="project__description">
-            Aktualna wersja portfolio, wyłącznie dla łatwiejszego przejścia do githuba.
+            Uwaga- w trakcie przekształcania w PWA. Mogą być drobne bugi.Aktualna wersja portfolio, wyłącznie dla łatwiejszego przejścia do githuba.
           </div>
-          <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span><span>PUG</span><span>Web Components</span></div>
+          <div class="project__skills"><span>PWA</span><span>Workbox</span><span>CSS</span><span>JS</span><span>PUG</span><span>Web Components</span></div>
           <div class="project__links">
             <a href="https://kiszuriwalilibori-about-me.netlify.app/" tabindex="0" target="_blank"
               rel="noopener">Projekt</a>
