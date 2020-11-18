@@ -1840,6 +1840,10 @@ html {
   z-index: 200;
 }
 
+.information-item__text {
+  padding-bottom: 0.5em;
+}
+
 .information-item__text:before {
   content: "";
   position: absolute;
