@@ -15,6 +15,14 @@ module.exports = {
       }
     }
 
-    Array.prototype.forEach.call(buttons, (button) => mountClickAndEnterHandler(button, throttled(changeLocation, 300)));
+    //Array.prototype.forEach.call(buttons, (button) => mountClickAndEnterHandler(button, throttled(changeLocation, 300)));
+
+    const body = document.querySelector('body');
+    
+    body && mountClickAndEnterHandler(body, throttled(changeLocation, 300));
+
+
   },
 };
+
+

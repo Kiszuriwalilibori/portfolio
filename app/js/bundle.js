@@ -291,9 +291,17 @@ module.exports = {
       }
     }
 
-    Array.prototype.forEach.call(buttons, (button) => mountClickAndEnterHandler(button, throttled(changeLocation, 300)));
+    //Array.prototype.forEach.call(buttons, (button) => mountClickAndEnterHandler(button, throttled(changeLocation, 300)));
+
+    const body = document.querySelector('body');
+    
+    body && mountClickAndEnterHandler(body, throttled(changeLocation, 300));
+
+
   },
 };
+
+
 
 },{"./lib":2}],5:[function(require,module,exports){
 module.exports = {
