@@ -36,6 +36,9 @@
 - lazy load also for background-images
 - fixed bug with projects display
 
+##### 1.3
+- mobile menu as slider
+- restyled 
 ### To do
 
 fallback dla lazy loading native 
@@ -55,7 +58,8 @@ w prepare hamburgermenu tez lepsz by było debounce albo jakiś sposób na przys
 w nav jest niekonsekwencja -są tam a a treść jest buttonowa
 dynamiczna podmiana numeru wersji w tymco wyswietla html
 FLIP w animacjach headera
-przenieść spróbować większość dodawanych sjryptów na po animacji bo teraz może spowalniać animacj
+przenieść spróbować większość dodawanych skryptów na po animacji bo teraz może spowalniać animacj
 prawdopodbnie w main należaloby pozbyć się tych ogolnych zmiennych bo nie są garbowane
+
 https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/
 

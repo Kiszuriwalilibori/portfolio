@@ -662,18 +662,22 @@ html {
 }
 
 #emailModal.active .emailModal__delete {
-  width: 64px;
-  height: 64px;
+  width: 40px;
   background-size: cover;
   position: absolute;
   top: 8px;
   left: calc(100% - 8px);
+  top: calc(2px + 6 * ((100vw - 509px) / 700));
+  left: calc(100% - calc(2px + 6 * ((100vw - 509px) / 700)));
+  width: calc(30px + 10 * ((100vw - 509px) / 700));
   z-index: 1000;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   cursor: pointer;
 }
 
+#emailModal.active .emailModal__delete img:hover,
+#emailModal.active .emailModal__delete img:focus,
 #emailModal.active .emailModal__delete svg:hover,
 #emailModal.active .emailModal__delete svg:focus {
   -webkit-animation: rotate 2s infinite linear;
@@ -707,7 +711,7 @@ html {
 
 #emailModal.active .emailModal__content .successStyle {
   color: #6dfe25;
-  border: 2px solid  #6dfe25;
+  border: 2px solid #6dfe25;
 }
 
 #emailModal.active .emailModal__content .failureStyle {
@@ -742,11 +746,25 @@ html {
   border-radius: 2px;
 }
 
+@media only screen and (max-width: 508px) {
+  #emailModal.active .emailModal__content .emailform {
+    margin: 3vw;
+  }
+}
+
 #emailModal.active .emailModal__content .emailform label,
 #emailModal.active .emailModal__content .emailform input,
 #emailModal.active .emailModal__content .emailform textarea {
   width: 250px;
   margin: 10px 30px;
+}
+
+@media only screen and (max-width: 508px) {
+  #emailModal.active .emailModal__content .emailform label,
+  #emailModal.active .emailModal__content .emailform input,
+  #emailModal.active .emailModal__content .emailform textarea {
+    width: calc(150px + 100 * ((100vw - 320px) / 190));
+  }
 }
 
 #emailModal.active .emailModal__content .emailform label {
@@ -895,16 +913,12 @@ html {
   padding: calc(4px + 10 * ((100vw - 320px) / 1080));
   font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
   background: transparent;
-  color: #54467a;
-  border: 1px solid #54467a;
+  margin-left: 1rem;
+  color: #FB6542;
+  border: 1px solid #FB6542;
   overflow: hidden;
   cursor: pointer;
   outline: none;
-}
-
-.ui-button + .ui-button,
-.ui-buttons:hover > .ui-button + .ui-button {
-  margin-left: 1rem;
 }
 
 .ui-button:hover,
@@ -1587,17 +1601,18 @@ html {
 }
 
 .project-icon-delete {
-  width: 64px;
-  height: 64px;
   position: absolute;
-  top: 8px;
-  left: calc(100% - 8px);
+  top: calc(2px + 6 * ((100vw - 509px) / 700));
+  left: calc(100% - calc(2px + 6 * ((100vw - 509px) / 700)));
+  width: calc(30px + 10 * ((100vw - 509px) / 700));
   z-index: 1000;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   cursor: pointer;
 }
 
+.project-icon-delete img:focus,
+.project-icon-delete img:hover,
 .project-icon-delete svg:focus,
 .project-icon-delete svg:hover {
   -webkit-animation: rotate 2s infinite linear;
@@ -1896,7 +1911,7 @@ html {
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: 150;
+  z-index: 2000;
   background-color: transparent;
   display: none;
 }
@@ -1912,15 +1927,13 @@ html {
 }
 
 .app-mobile-menu {
-  background-color: rgba(251, 101, 66, 0.3);
+  background: rgba(251, 101, 66, 0.3);
   position: relative;
   max-width: 400px;
-  width: 90%;
+  width: 100%;
   height: 100%;
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   -webkit-transform: translateX(-103%);
-  transform: translateX(-103%);
+          transform: translateX(-103%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1938,20 +1951,19 @@ html {
 
 .mobile-menu--visible .app-mobile-menu {
   -webkit-transform: none;
-  transform: none;
+          transform: none;
 }
 
 .mobile-menu--animatable .app-mobile-menu {
-  -webkit-transition: all 130ms ease-in;
-  transition: all 130ms ease-in;
+  -webkit-transition: all 130ms ease-out;
+  transition: all 130ms ease-out;
 }
 
 .mobile-menu--visible.mobile-menu--animatable .app-mobile-menu {
-  -webkit-transition: all 330ms ease-in-out;
-  transition: all 330ms ease-in-out;
+  -webkit-transition: all 1000ms ease-out;
+  transition: all 1000ms ease-out;
 }
 
-/* aux */
 .mobile-menu-icon {
   content: "Menu";
   color: #fff;
@@ -1960,16 +1972,11 @@ html {
   height: 40px;
 }
 
-.app-mobile-menu {
-  width: 300px;
-  height: 667px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background-color: #ddd;
-}
-
-.mobile-menu:after {
-  width: 375px;
-  height: 667px;
+.mobile-menu-button {
+  padding: 1rem;
+  font-size: 14px;
+  width: 140px;
+  margin: 0 auto;
+  background: #54467a;
 }
 /*# sourceMappingURL=style.css.map */

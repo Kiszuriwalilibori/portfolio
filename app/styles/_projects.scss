@@ -310,15 +310,17 @@
 
 .project-icon-delete {
 
-  width: 64px;
-  height: 64px;
   position: absolute;
-  top: 8px;
-  left: calc(100% - 8px);
+  top: calc(2px + 6 * ((100vw - 509px) / 700));
+  left: calc(100% - calc(2px + 6 * ((100vw - 509px) / 700)));
+  width: calc(30px + 10 * ((100vw - 509px) / 700));
+
   z-index: 1000;
   transform: translateX(-100%);
   cursor: pointer;
 
+  & img:focus,
+  & img:hover,
   & svg:focus,
   & svg:hover {
     animation: rotate 2s infinite linear;

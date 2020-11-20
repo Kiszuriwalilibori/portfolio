@@ -10,16 +10,23 @@
     @include flex_row(center, center);
 
     & .emailModal__delete {
-      width: 64px;
-      height: 64px;
+      width: 40px;
+
       background-size: cover;
       position: absolute;
+
       top: 8px;
       left: calc(100% - 8px);
+      top: calc(2px + 6 * ((100vw - 509px) / 700));
+      left: calc(100% - calc(2px + 6 * ((100vw - 509px) / 700)));
+      width: calc(30px + 10 * ((100vw - 509px) / 700));
+      
       z-index: 1000;
       transform: translateX(-100%);
       cursor: pointer;
 
+      & img:hover,
+      & img:focus,
       & svg:hover,
       & svg:focus {
         animation: rotate 2s infinite linear;
@@ -31,21 +38,21 @@
       padding: 5vw;
       @include flex_row(center, center);
       background-image: url("../graphics/textures/broken-noise.webp");
-      background-color:rgb(85, 41, 124);
+      background-color: rgb(85, 41, 124);
       border: 2px solid $intro-basic-color;
       color: white;
       animation: girl-intro 0.5s ease-in-out;
 
       & .successStyle {
         color: #6dfe25;
-        border: 2px solid  #6dfe25;
-        
+        border: 2px solid #6dfe25;
+
       }
 
       & .failureStyle {
         color: red;
         border: 2px solid red;
-        
+
       }
 
       &:hover {
@@ -56,17 +63,31 @@
         @include flex_column(space-evenly);
         @include skills_shadow_hover;
         align-items: center;
-        background-image: linear-gradient(to right,rgb(255, 153, 153),#5A7AAC );
-        border: 2px  solid $intro-basic-color ;
+        background-image: linear-gradient(to right, rgb(255, 153, 153), #5A7AAC);
+        border: 2px solid $intro-basic-color;
         border-radius: 2px;
+
+        @media only screen and (max-width: 508px) {
+          margin: 3vw
+        }
 
         & label,
         input,
         textarea {
           width: 250px;
           margin: 10px 30px;
+
+          @media only screen and (max-width: 508px) {
+
+            width: calc(150px + 100 * ((100vw - 320px) / 190));
+          }
+
         }
-        & label{color:#463158 ;}
+
+        & label {
+          color: #463158;
+        }
+
         & textarea {
           min-height: 60px;
         }
@@ -161,9 +182,12 @@
   margin: 10px 10px 30px 10px;
   height: 35px;
   min-width: 60%;
-  
+
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
   transition: border-color, box-shadow ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
 }
-.form__message-hidden{visibility:hidden;}
+
+.form__message-hidden {
+  visibility: hidden;
+}

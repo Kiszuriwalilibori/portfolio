@@ -18,17 +18,23 @@
   padding: calc(4px + 10 * ((100vw - 320px) / 1080));
   font-size: calc(10px + 6 * ((100vw - 320px) / 1080));
   background: transparent;
-  color: $intro-btn-hover;
-  border: 1px solid $intro-btn-hover;
+  margin-left:1rem;
+  // color: $intro-btn-hover;
+  // border: 1px solid $intro-btn-hover;
+
+  color: $intro-basic-color;
+  border: 1px solid $intro-basic-color;
+
   overflow: hidden;
   cursor: pointer;
   outline: none;
 }
 
-.ui-button + .ui-button,
-.ui-buttons:hover > .ui-button + .ui-button {
-  margin-left: 1rem;
-}
+// .ui-button + .ui-button,
+// .ui-buttons:hover > .ui-button + .ui-button {
+//   margin-left: 1rem;
+  
+// }
 
 .ui-button:hover,
 .ui-buttons:hover > .ui-button:hover,
@@ -65,3 +71,4 @@
   text-decoration:none;
   background:transparent;
 }
+

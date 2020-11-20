@@ -3,6 +3,8 @@ const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
 const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
+const { prepareHamburgerMenuNew } = require("./prepareHamburgerMenuNew");
+
 const { defineImages } = require("./defineImages");
 const { prepareCloseModalsWithEscape } = require("./prepareCloseModalsWithEscape");
 const { showInvisibleContent } = require("./showInvisibleContent");
@@ -12,7 +14,7 @@ window.addEventListener("DOMContentLoaded", event => {
   defineImages();
   showInvisibleContent();
 
-  const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+  const observer = lozad(); 
   observer.observe();
 });
 
@@ -35,8 +37,8 @@ window.onload = function () {
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
-  prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
-  //prepareHamburgerMenu(hamburgerMenu, mobileMenu);
+ // prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
+  prepareHamburgerMenuNew(hamburgerMenu, mobileMenu);
 
   prepareCloseModalsWithEscape();
 

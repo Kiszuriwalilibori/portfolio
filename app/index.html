@@ -30,12 +30,7 @@
    
 <template id = 'delete_icon'>
   <div class="project-icon-delete" tabindex="0">
-    <svg id="projectModal-deleteIcon" height="65px" viewBox="0 0 365.71733 365" width="65px" xmlns="http://www.w3.org/2000/svg">
-      <g fill="#f44336">
-        <path d="m356.339844 296.347656-286.613282-286.613281c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503906-12.5 32.769532 0 45.25l286.613281 286.613282c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082032c12.523438-12.480468 12.523438-32.75.019532-45.25zm0 0"></path><path d="m295.988281 9.734375-286.613281 286.613281c-12.5 12.5-12.5 32.769532 0 45.25l15.082031 15.082032c12.503907 12.5 32.769531 12.5 45.25 0l286.632813-286.59375c12.503906-12.5 12.503906-32.765626 0-45.246094l-15.082032-15.082032c-12.5-12.523437-32.765624-12.523437-45.269531-.023437zm0 0">
-        </path>
-      </g>
-    </svg>
+    <img src="./graphics/icons/closeiconnew.svg" id='projectModal-deleteIcon', alt="icon closing email form" />
   </div>
 </template>
 
@@ -95,12 +90,7 @@
 </head>
 
 <body>
-  <!-- <div class ='mobile-menu'>
-    <div class="app-mobile-menu">
-      <span>A</span>
-      <span>B</span>
-    </div>
-  </div> -->
+  
   <section class="ui-section -hero" style ="background: white url('./graphics/textures/intro.webp') no-repeat center center fixed; background-size: cover;" id="intro">
     <div class="ui-aside" id='intro-ui-aside'>
       <div id="author_foto"></div>
@@ -115,13 +105,7 @@
         <button class="ui-button location-button" data-target="informations">Informacje</button>
         <button class="ui-button location-button" data-target="skills">Umiejętności</button>
         <button class="ui-button location-button" data-target="projects">Projekty</button>
-        <div class="former-content below_509_visible">
-          <a href="https://github.com/Kiszuriwalilibori" class="ui-button location-button" target="_blank"
-            rel="noopener">Github</a>
-          <a href="https://www.facebook.com/piotr.maksymiuk.940" class="ui-button location-button" target="_blank"
-            rel="noopener">Facebook</a>
-          <a class="ui-button location-button mail-button">E-mail</a>
-        </div>
+        
       </nav>
     </div>
     <div class="ui-content">
@@ -160,15 +144,7 @@
           </path>
         </svg>
         <div class="emailModal__delete">
-          <svg id='emailModal-deleteIcon' class='test' height="65px" viewBox="0 0 365.71733 365" width="65px"
-            xmlns="http://www.w3.org/2000/svg">
-            <g fill="#f44336">
-              <path
-                d="m356.339844 296.347656-286.613282-286.613281c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503906-12.5 32.769532 0 45.25l286.613281 286.613282c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082032c12.523438-12.480468 12.523438-32.75.019532-45.25zm0 0" />
-              <path
-                d="m295.988281 9.734375-286.613281 286.613281c-12.5 12.5-12.5 32.769532 0 45.25l15.082031 15.082032c12.503907 12.5 32.769531 12.5 45.25 0l286.632813-286.59375c12.503906-12.5 12.503906-32.765626 0-45.246094l-15.082032-15.082032c-12.5-12.523437-32.765624-12.523437-45.269531-.023437zm0 0" />
-            </g>
-          </svg>
+          <img src="./graphics/icons/closeiconnew.svg" id='emailModal-deleteIcon', alt="icon closing email form" />
         </div>
         <form class="emailform" id="contact-form">
           <label for="name">Imię&nbsp;i&nbsp;nazwisko</label>
@@ -770,7 +746,20 @@
         style="stroke: none;fill:#8083FF;"></path>
     </svg><img is = 'dancing-nigga'><strong>
       <p class = 'footer__text'>Created by Piotr Maksymiuk | 2020. © Wszelkie prawa zastrzeżone</p>
-    </strong></footer>
+    </strong>
+  </footer>
+  <div class ='mobile-menu'>
+    <div class="app-mobile-menu">
+      <button class="ui-button location-button mobile-menu-button" data-target="informations">Informacje</button>
+      <button class="ui-button location-button mobile-menu-button" data-target="skills">Umiejętności</button>
+      <button class="ui-button location-button mobile-menu-button" data-target="projects">Projekty</button>
+      <button  class="ui-button mobile-menu-button" ><a class = "anchor_link" href="https://github.com/Kiszuriwalilibori" target="_blank" rel="noopener" >Github</a></button>
+      <button class="ui-button mobile-menu-button" ><a class = "anchor_link" href="https://www.facebook.com/piotr.maksymiuk.940" target="_blank" rel="noopener" >Facebook</a></button>
+      <button class="ui-button mail-button mobile-menu-button ">Email</button>
+
+
+    </div>
+  </div>
 </body>
 
 </html>
