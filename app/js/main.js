@@ -29,12 +29,15 @@ window.onload = function () {
   const introUIAside = document.getElementById("intro-ui-aside");
   const body = document.getElementsByTagName("body")[0];
   const iconDeleteEmailModal = document.getElementById("emailModal-deleteIcon");
+  const mobileMenu = document.querySelector(".mobile-menu");
 
   prepareResizeSensor(informations, intro, heading);
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
+  //prepareHamburgerMenu(hamburgerMenu, mobileMenu);
+
   prepareCloseModalsWithEscape();
 
   if ("serviceWorker" in navigator) {
