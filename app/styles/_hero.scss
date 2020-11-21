@@ -41,12 +41,21 @@
 
 .ui-section.-hero .ui-heading {
   overflow: hidden;
+  //background-color: $intro-basic-color;
+  //will-change: transform;
+  //will-change: opacity;
+  //animation: heading-enter 2s cubic-bezier(0.61, 0, 0.2, 1) 1s both, heading-color 2s ease-in-out 3s forwards;
+}
+.ui-section.-hero .ui-heading__mask {
+  @include full_size;
+  position: absolute;
+  top: 0;
+  right: 0;
   background-color: $intro-basic-color;
   will-change: transform;
-  will-change: background-color;
+  will-change: opacity;
   animation: heading-enter 2s cubic-bezier(0.61, 0, 0.2, 1) 1s both, heading-color 2s ease-in-out 3s forwards;
 }
-
 .ui-section.-hero .ui-heading:after {
   content: "";
   display: block;
@@ -64,8 +73,11 @@
   @include full_size;
   padding: 0 2rem 0 1rem;
   text-align: right;
-  animation: heading-span-enter 1s 1s cubic-bezier(0.61, 0, 0.2, 1) both, heading-span-border 2s 1s cubic-bezier(0.61, 0, 0.2, 1) both;
+  will-change: opacity;
+  animation: author-name 2s linear 2s both;
+  //animation: heading-span-enter 1s 2s linear both;
   overflow: hidden;
+  
 }
 
 // .ui-section.-hero .ui-heading > .ui-heading-inner > span {

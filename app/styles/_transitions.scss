@@ -12,14 +12,26 @@
     transform: translateX(0);
   }
 }
+
+// @keyframes heading-color {
+//   from {
+//     background-color: $intro-basic-color;
+//   }
+//   to {
+//     background-color: transparent;
+//   }
+// }
+
 @keyframes heading-color {
   from {
-    background-color: $intro-basic-color;
+    opacity:1;
   }
   to {
-    background-color: transparent;
+    opacity:0;
   }
 }
+
+
 
 @keyframes girl-intro {
   from {
@@ -38,6 +50,17 @@
     transform: translateX(0);
   }
 }
+
+@keyframes author-name {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 @keyframes heading-span-border {
   from {

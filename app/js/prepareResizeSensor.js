@@ -1,6 +1,6 @@
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro, heading) {
-    intro.classList.add("regular");
+    intro.classList.add("regular");// prawdopodbnie tu by lepiej poszło flip
     adjustInformationsMargin(heading);
     window.scrollTo({
       top: 0,

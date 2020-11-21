@@ -21,8 +21,6 @@ module.exports = {
       OnTransitionEndMenuMobile =function () {
         menu.classList.remove("mobile-menu--animatable");
       }
-
-      console.log('building hamburger');
       menu.addEventListener("transitionend", OnTransitionEndMenuMobile, false);
       mountClickAndEnterHandler(target, throttled(toggleClassMenuMobile, 300));
       mountClickAndEnterHandler(menu, throttled(toggleClassMenuMobile, 300));

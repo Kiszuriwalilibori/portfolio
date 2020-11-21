@@ -484,8 +484,6 @@ module.exports = {
       OnTransitionEndMenuMobile =function () {
         menu.classList.remove("mobile-menu--animatable");
       }
-
-      console.log('building hamburger');
       menu.addEventListener("transitionend", OnTransitionEndMenuMobile, false);
       mountClickAndEnterHandler(target, throttled(toggleClassMenuMobile, 300));
       mountClickAndEnterHandler(menu, throttled(toggleClassMenuMobile, 300));
@@ -542,7 +540,7 @@ module.exports = {
 },{"./lib":2}],10:[function(require,module,exports){
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro, heading) {
-    intro.classList.add("regular");
+    intro.classList.add("regular");// prawdopodbnie tu by lepiej poszło flip
     adjustInformationsMargin(heading);
     window.scrollTo({
       top: 0,
