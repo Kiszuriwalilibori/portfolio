@@ -186,7 +186,7 @@ module.exports = {
       constructor() {
         super();
 
-        this.setAttribute("style", "opacity: 0%; animation: girl-intro 0.3s ease-in-out 4s forwards;");
+        this.setAttribute("style", "opacity: 0%; animation: girl-intro 0.3s ease-in-out 4s forwards; @keyframes girl-intro {from {opacity: 0%;}to { opacity: 100%; }}")
         
         this.setAttribute("alt", "red girl");
         this.setAttribute("loading", "lazy");
