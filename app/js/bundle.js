@@ -14,6 +14,16 @@ module.exports = {
     });
 
 
+    // customElements.define('header-mask', class extends HTMLElement {
+    //   constructor() {
+    //     super();
+    //     this.attachShadow({
+    //       mode: 'open'
+    //     });
+    //     this.shadowRoot.appendChild(document.getElementById('header-mask-template').content.cloneNode('true'));
+  
+    //   }
+    // });
 
 
 
@@ -110,6 +120,15 @@ module.exports = {
       document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
     }
 
+
+
+
+
+
+
+
+
+
     class nigga extends HTMLImageElement {
       constructor() {
         super();
@@ -132,23 +151,125 @@ module.exports = {
       document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
     }
 
+
+
+    class blueGirl extends HTMLImageElement {
+      constructor() {
+        super();
+
+        this.setAttribute("style", "opacity: 0%; animation: girl-intro 0.3s ease-in-out 4s forwards; float: left;");
+        this.setAttribute("id", "girl");
+        this.setAttribute("alt", "blue girl");
+        this.setAttribute("loading", "lazy");
+        this.setAttribute("width", "100");
+        this.setAttribute("height", "204");
+        this.setAttribute("src", "./graphics/gifs/blue_girl.webp");
+      }
+    }
+
+    if (this.customElements) {
+      try {
+        customElements.define("blue-girl", blueGirl, {
+          extends: "img"
+        });
+      } catch (_) {
+        document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
+      }
+    } else {
+      document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+    }
+
+
+
+
+    class redGirl extends HTMLImageElement {
+      constructor() {
+        super();
+
+        this.setAttribute("style", "opacity: 0%; animation: girl-intro 0.3s ease-in-out 4s forwards;");
+        
+        this.setAttribute("alt", "red girl");
+        this.setAttribute("loading", "lazy");
+        this.setAttribute("width", "99");
+        this.setAttribute("height", "201");
+        this.setAttribute("src", "./graphics/gifs/red_girl.webp");
+      }
+    }
+
+    if (this.customElements) {
+      try {
+        customElements.define("red-girl", redGirl, {
+          extends: "img"
+        });
+      } catch (_) {
+        document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
+      }
+    } else {
+      document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+    }
+
+
+
+
+
+
+
+
+
+
+
+    class headerMask extends HTMLImageElement {
+      constructor() {
+        super();
+        this.setAttribute("style", 
+        "height: 100%; width: 100%; position: absolute; top: 0; right: 0; background-color: #fb6542; will-change: transform; will-change: opacity; -webkit-animation: heading-enter 2s cubic-bezier(.61,0,.2,1) 1s both,heading-color 2s ease-in-out 3s forwards; animation: heading-enter 2s cubic-bezier(.61,0,.2,1) 1s both,heading-color 2s ease-in-out 3s forwards;"
+      );
+    }
+    }
+
+    if (this.customElements) {
+      try {
+        customElements.define("header-mask", headerMask, {
+          extends: "div"
+        });
+      } catch (_) {
+        document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><\x2fscript>');
+      }
+    } else {
+      document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const shadow = document.querySelector("#author_foto").attachShadow({
       mode: "open",
     });
     shadow.appendChild(document.querySelector("#author_foto_template").content);
   },
-
-
-
-
-
-
-
-
-
-
-
-
 
 };
 },{}],2:[function(require,module,exports){

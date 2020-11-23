@@ -563,6 +563,7 @@ html {
   letter-spacing: 0.75px;
   font-family: "Oxygen-Regular", sans-serif;
   z-index: 1;
+  will-change: opacity;
   -webkit-animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
           animation: girl-intro 0.4s cubic-bezier(0.61, 0, 0.2, 1) both;
   -webkit-animation-delay: 5s;
@@ -1101,6 +1102,8 @@ html {
   will-change: opacity;
   -webkit-animation: author-name 2s linear 2s both;
           animation: author-name 2s linear 2s both;
+  -webkit-animation: heading-span-enter 1s 2s linear both;
+          animation: heading-span-enter 1s 2s linear both;
   overflow: hidden;
 }
 

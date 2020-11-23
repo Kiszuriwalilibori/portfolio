@@ -75,26 +75,10 @@
   text-align: right;
   will-change: opacity;
   animation: author-name 2s linear 2s both;
-  //animation: heading-span-enter 1s 2s linear both;
+  animation: heading-span-enter 1s 2s linear both;
   overflow: hidden;
   
 }
-
-// .ui-section.-hero .ui-heading > .ui-heading-inner > span {
-//   display: inline-block;
-// }
-// .ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(1) {
-//   animation: heading-word-enter 0.6s 1s cubic-bezier(0.61, 0, 0.2, 1) both;
-// }
-// .ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(2) {
-//   animation: heading-word-enter 0.6s 1.2s cubic-bezier(0.61, 0, 0.2, 1) both;
-// }
-// .ui-section.-hero .ui-heading > .ui-heading-inner > span:nth-child(3) {
-//   animation: heading-word-enter 0.6s 1.4s cubic-bezier(0.61, 0, 0.2, 1) both;
-// }
-// .ui-section.-hero .ui-heading > .ui-heading-inner > span:before {
-//   content: "\00a0";
-// }
 
 .ui-section.-hero>.ui-content {
   animation: content-enter 1s 2s cubic-bezier(0.61, 0, 0.2, 1) both;
@@ -114,8 +98,6 @@
 
 .intro__name {
 
-  // animation: heading-word-enter 0.6s 1s cubic-bezier(0.61, 0, 0.2, 1) both;
-  // text-shadow: 0.5px 0.5px black;
   font-size: calc(16px + 32 * ((100vw - 320px) / 1080));
 
   &::before {
