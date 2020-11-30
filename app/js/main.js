@@ -2,9 +2,7 @@ const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
-const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { prepareHamburgerMenuNew } = require("./prepareHamburgerMenuNew");
-
 const { defineImages } = require("./defineImages");
 const { prepareCloseModalsWithEscape } = require("./prepareCloseModalsWithEscape");
 const { showInvisibleContent } = require("./showInvisibleContent");
@@ -13,7 +11,6 @@ var lozad = require("lozad");
 window.addEventListener("DOMContentLoaded", event => {
   defineImages();
   showInvisibleContent();
-
   const observer = lozad(); 
   observer.observe();
 });
@@ -37,7 +34,6 @@ window.onload = function () {
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
- // prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
   prepareHamburgerMenuNew(hamburgerMenu, mobileMenu);
 
   prepareCloseModalsWithEscape();

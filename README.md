@@ -39,11 +39,13 @@
 ##### 1.3
 - mobile menu as slider
 - restyled 
+##### 1.4
+- one of animations delayed to avaoid overlapping with previous
 ### To do
 
 fallback dla lazy loading native 
 
-jeszcze raz przejrzeć animacje czy się nie zazebiają
+
 render ścieżi krytycznej css
 
 https://web.dev/en/replace-gifs-with-videos/ albo tak

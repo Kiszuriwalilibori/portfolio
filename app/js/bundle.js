@@ -340,14 +340,12 @@ module.exports = {
   },
 };
 
-},{"./throttle":12}],3:[function(require,module,exports){
+},{"./throttle":11}],3:[function(require,module,exports){
 const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
 const { prepareChangeLocation } = require("./prepareChangeLocation");
-const { prepareHamburgerMenu } = require("./prepareHamburgerMenu");
 const { prepareHamburgerMenuNew } = require("./prepareHamburgerMenuNew");
-
 const { defineImages } = require("./defineImages");
 const { prepareCloseModalsWithEscape } = require("./prepareCloseModalsWithEscape");
 const { showInvisibleContent } = require("./showInvisibleContent");
@@ -356,7 +354,6 @@ var lozad = require("lozad");
 window.addEventListener("DOMContentLoaded", event => {
   defineImages();
   showInvisibleContent();
-
   const observer = lozad(); 
   observer.observe();
 });
@@ -380,7 +377,6 @@ window.onload = function () {
   prepareChangeLocation(locationButtons);
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
- // prepareHamburgerMenu(hamburgerMenu, menu[0], introUIAside);
   prepareHamburgerMenuNew(hamburgerMenu, mobileMenu);
 
   prepareCloseModalsWithEscape();
@@ -399,7 +395,7 @@ window.onload = function () {
 
 };
 
-},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareCloseModalsWithEscape":5,"./prepareEmailService.js":6,"./prepareHamburgerMenu":7,"./prepareHamburgerMenuNew":8,"./prepareProjectModals":9,"./prepareResizeSensor":10,"./showInvisibleContent":11,"lozad":13}],4:[function(require,module,exports){
+},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareCloseModalsWithEscape":5,"./prepareEmailService.js":6,"./prepareHamburgerMenuNew":7,"./prepareProjectModals":8,"./prepareResizeSensor":9,"./showInvisibleContent":10,"lozad":12}],4:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
@@ -523,65 +519,6 @@ module.exports = {
 };
 
 },{"./lib":2}],7:[function(require,module,exports){
-const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
-
-//const { toggleClassMenuMobile } = require("./mobilemenu");
-
-module.exports = {
-  prepareHamburgerMenu: function prepareHamburgerMenu(target, menu, uiAside) {
-    try {
-      if (!(target && menu && uiAside)) {
-        throw new Error("can not open hamburger menu - missing or falsey arguments");
-      }
-      toggleMenuVisibility = function () {
-        menu.classList.toggle("active");
-        uiAside.classList.toggle("filled");
-      };
-      mountClickAndEnterHandler(target, throttled(toggleMenuVisibility, 300));
-    } catch (err) {reportError(err)}
-
-  },
-};
-
-// const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
-
-// module.exports = {
-//   prepareHamburgerMenu: function prepareHamburgerMenu(target, menu) {
-//     try {
-//       if (!(target && menu)) {
-        
-//         throw new Error("can not open hamburger menu - missing or falsey arguments");
-//       }
-//       // toggleMenuVisibility = function () {
-//       //   menu.classList.toggle("active");
-//       //   uiAside.classList.toggle("filled");
-//       // };
-//       console.log('target', target);
-//       console.log('menu', menu);
-
-//       toggleClassMenuMobile = function () {
-//         menu.classList.add("mobile-menu--animatable");	
-//         if(!menu.classList.contains("mobile-menu--visible")) {		
-//           menu.classList.add("mobile-menu--visible");
-//         } else {
-//           menu.classList.remove('mobile-menu--visible');		
-//         }	
-//       },
-
-//       OnTransitionEndMenuMobile =function () {
-//         menu.classList.remove("mobile-menu--animatable");
-//       }
-
-//       console.log('building hamburger');
-//       menu.addEventListener("transitionend", OnTransitionEnd, false);
-//       mountClickAndEnterHandler(target, throttled(toggleClassMenuMobile, 300));
-
-//     } catch (err) {console.log(err)}
-
-//   },
-// };
-
-},{"./lib":2}],8:[function(require,module,exports){
 
 const { mountClickAndEnterHandler, throttled} = require("./lib");
 
@@ -614,7 +551,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],9:[function(require,module,exports){
+},{"./lib":2}],8:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -658,7 +595,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],10:[function(require,module,exports){
+},{"./lib":2}],9:[function(require,module,exports){
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro, heading) {
     intro.classList.add("regular");// prawdopodbnie tu by lepiej poszło flip
@@ -686,10 +623,10 @@ module.exports = {
   },
 };
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = {
   showInvisibleContent: function showInvisibleContent() {
-    document.getElementById("heading").addEventListener("animationend", showContent);
+    document.getElementById("heading-mask").addEventListener("animationend", showContent);
     function showContent() {
       const invisibles = document.querySelectorAll("#informations, #skills, #projects, footer");
       invisibles.forEach(element => (element.style.visibility = "visible"));
@@ -697,7 +634,7 @@ module.exports = {
   },
 };
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,
@@ -726,7 +663,7 @@ module.exports = {
   },
 };
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /*! lozad.js - v1.16.0 - 2020-09-06
 * https://github.com/ApoorvSaxena/lozad.js
 * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
