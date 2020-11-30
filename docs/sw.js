@@ -48,21 +48,3 @@ workbox.routing.registerRoute(
   })
 );
 
-
-console.log('form srcs')
-
-const networkOnly = new NetworkOnly();
-const navigationHandler = async (params) => {
-  try {
-    // Attempt a network request.
-    console.log('OK')
-    return await networkOnly.handle(params);
-    
-  } catch (error) {
-    // If it fails, return the cached HTML.
-    console.log('dupa');
-    return caches.match(FALLBACK_HTML_URL, {
-      cacheName: CACHE_NAME,
-    });
-  }
-};
