@@ -68,8 +68,9 @@ const networkOnly = new NetworkOnly();
 const navigationHandler = async (params) => {
   try {
     // Attempt a network request.
-    return await networkOnly.handle(params);
     console.log('OK')
+    return await networkOnly.handle(params);
+    
   } catch (error) {
     // If it fails, return the cached HTML.
     console.log('dupa');
