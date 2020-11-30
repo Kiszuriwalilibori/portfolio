@@ -383,7 +383,7 @@ window.onload = function () {
 
   if ("serviceWorker" in navigator) {
     const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
-    navigator.serviceWorker.register(`${prefix}/sw.js`).then(
+    navigator.serviceWorker.register(`${prefix}/src-sw.js`).then(
       function (registration) {
         console.log("[success] scope: ", registration.scope);
       },

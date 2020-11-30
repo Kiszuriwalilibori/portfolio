@@ -62,7 +62,7 @@ workbox.routing.registerRoute(
 
 
 
-
+console.log('form srcs')
 
 const networkOnly = new NetworkOnly();
 const navigationHandler = async (params) => {
