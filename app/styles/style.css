@@ -1143,7 +1143,7 @@ html {
 .footer {
   width: 100%;
   padding: 1rem;
-  background-color: #1A1B4A;
+  background-color: #1a1b4a;
   text-align: center;
   border-width: 0 0 10px;
   border-bottom-style: solid;
@@ -1166,6 +1166,10 @@ html {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.footer__facebook {
+  float: left;
 }
 
 .webp .ui-footer {

@@ -1,26 +1,29 @@
 .footer {
-
   width: 100%;
   padding: 1rem;
-  background-color:#1A1B4A;
+  background-color: #1a1b4a;
   text-align: center;
   border-width: 0 0 10px;
   border-bottom-style: solid;
-  visibility:hidden;
+  visibility: hidden;
   -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
   border-image: linear-gradient(139deg, #e02aff, #0d70f1, #475eac, #4ac163) 3;
   @include skills_shadow;
   &:hover {
     @include skills_shadow_hover;
   }
-  &__text{
+  &__text {
     text-align: center;
     font-size: 36px;
-    
+
     background: -webkit-linear-gradient(45deg, red, navy);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  &__facebook {
+    //display: inline-block;
+    float: left;
   }
 }
 
