@@ -60,6 +60,13 @@
   font-family: "Oxygen-Regular", sans-serif;
 }
 
+.ui-content.projects{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: space-between;
+
+}
 
 .ui-content-reduced {
   flex: 1 1 50%;

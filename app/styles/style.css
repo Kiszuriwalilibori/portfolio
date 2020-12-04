@@ -474,6 +474,21 @@ html {
   font-family: "Oxygen-Regular", sans-serif;
 }
 
+.ui-content.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .ui-content-reduced {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
