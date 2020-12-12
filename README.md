@@ -17,7 +17,7 @@
 
 ## Browser Support
 
-- Not for IE <10 and Opera Mini
+- Not for IE  and Opera Mini
 
 ## Versions
 ##### 1
