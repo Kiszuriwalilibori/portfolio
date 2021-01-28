@@ -53,8 +53,9 @@ https://web.dev/en/replace-gifs-with-videos/ albo tak
 https://web.dev/en/native-lazy-loading/
 
 
+projekty i skile przepisać na funkcje z pliku
 w guziku wysyłania maila dodać jakiś informator progressu. Tu lepsze by było debounce
-w prepare hamburgermenu tez lepsz by było debounce albo jakiś sposób na przyspieszenie pokazywania menu.
+w prepare hamburgermenu tez lepsze by było debounce albo jakiś sposób na przyspieszenie pokazywania menu.
       //dopisać o nie -buttonie i dodawaniu tabindexu. Ale w przykładzie jest rethrowing na podstawie typu -SyntaxError - a to jest bardzo 
 
 w nav jest niekonsekwencja -są tam a a treść jest buttonowa
@@ -62,6 +63,8 @@ dynamiczna podmiana numeru wersji w tymco wyswietla html
 FLIP w animacjach headera
 przenieść spróbować większość dodawanych skryptów na po animacji bo teraz może spowalniać animacj
 prawdopodbnie w main należaloby pozbyć się tych ogolnych zmiennych bo nie są garbowane
+
+czy da się przenosić kursor bo strona się przesuwa po kliknięciu w projekt?
 
 https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/
 
