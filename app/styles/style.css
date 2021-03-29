@@ -1117,6 +1117,9 @@ html {
   will-change: opacity;
   -webkit-animation: author-name 2s linear 2s both;
           animation: author-name 2s linear 2s both;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
 }
 
