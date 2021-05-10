@@ -68,3 +68,7 @@ czy da się przenosić kursor bo strona się przesuwa po kliknięciu w projekt?
 
 https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/
 
+
+zabezpieczenie przed  seryjnym wysyłaniem maili
+
+
