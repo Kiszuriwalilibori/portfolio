@@ -29,9 +29,7 @@ module.exports = {
       modal.appendChild(deleteButtonPatternContent);
       modal.classList.add("large");
       modal.getElementsByClassName("project__image")[0].classList.add("large");
-      // modal.getElementsByClassName("project__image-new")[0].classList.add("large");
       modal.style.display = "block";
-
       location.hash = "large-project-content";
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }

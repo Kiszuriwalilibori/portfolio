@@ -15,7 +15,8 @@ window.addEventListener("DOMContentLoaded", event => {
   observer.observe();
 });
 
-window.onload = function () {
+window.addEventListener('load', 
+  function() { 
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");
   const heading = document.getElementById("heading");
@@ -24,9 +25,6 @@ window.onload = function () {
   const emailModal = document.getElementById("emailModal");
   const projectModal = document.getElementById("large-project-content");
   const hamburgerMenu = document.getElementById("hamburger");
-  const menu = document.getElementsByTagName("nav");
-  const introUIAside = document.getElementById("intro-ui-aside");
-  const body = document.getElementsByTagName("body")[0];
   const iconDeleteEmailModal = document.getElementById("emailModal-deleteIcon");
   const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -35,7 +33,6 @@ window.onload = function () {
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenuNew(hamburgerMenu, mobileMenu);
-
   prepareCloseModalsWithEscape();
 
   if ("serviceWorker" in navigator) {
@@ -50,4 +47,5 @@ window.onload = function () {
     );
   }
 
-};
+
+  }, false);

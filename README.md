@@ -41,6 +41,9 @@
 - restyled 
 ##### 1.4
 - one of animations delayed to avaoid overlapping with previous
+
+#### 1.5
+- added mail flood prevention
 ### To do
 
 fallback dla lazy loading native 
@@ -67,8 +70,5 @@ prawdopodbnie w main należaloby pozbyć się tych ogolnych zmiennych bo nie są
 czy da się przenosić kursor bo strona się przesuwa po kliknięciu w projekt?
 
 https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/
-
-
-zabezpieczenie przed  seryjnym wysyłaniem maili
 
 

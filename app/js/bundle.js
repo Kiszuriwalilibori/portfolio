@@ -1,4 +1,37 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+
+module.exports = {
+cookies:class cookies{
+
+static set(cname, cvalue, exMinutes) {
+  
+  
+  var d = new Date();
+  d.setTime(d.getTime() + exMinutes*60*1000);
+  var expires = "expires="+ d.toUTCString();
+  const stringifiedValue =JSON.stringify(cvalue);
+  document.cookie = cname + "=" + stringifiedValue + ";" + expires;
+}
+
+static  get(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+}
+}
+},{}],2:[function(require,module,exports){
 module.exports = {
   defineImages: function defineImages() {
 
@@ -272,7 +305,58 @@ module.exports = {
   },
 
 };
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
+const {emailStyle, emailInnerText} = require("./fixtures");
+module.exports = {
+    EmailStatusMessage_Class: class EmailStatusMessage {
+      constructor(node) {
+        this.node = node;
+        this.style = emailStyle;
+        this.innerText = emailInnerText;
+        this.handleStatus = this.handleStatus.bind(this);
+      }
+
+      hide(){
+        this.node.classList.add("form__message-hidden");
+      }
+      handleStatus(status){
+
+        switch(status) {
+            case true:
+              status ='success';
+              break;
+            case false:
+              status = 'failure';
+              break;
+            default:
+              status = status;
+          } 
+        this.node.classList.remove(...Object.values(this.style));
+
+        this.node.classList.add(this.style[status]);
+        this.node.innerText = this.innerText[status];
+        this.node.classList.remove("form__message-hidden");
+      }
+    }
+}
+},{"./fixtures":4}],4:[function(require,module,exports){
+module.exports = {
+    cookieName: 'Piotr_Maksymiuk_Portfolio_email_cookie',
+    cookieValue: 'email_recently_sent',
+    URL: "https://optad360.mgr.consensu.org/cmp/v2/vendor-list.json",
+    emailStyle: {
+        success:'successStyle',
+        failure:'failureStyle',
+        warning:'warningStyle',
+    },
+    emailInnerText: {
+        success:'Wysłano',
+        failure:'Błąd połączenia',
+        warning:'Anti - flood 1 minute break',
+    },
+}
+
+},{}],5:[function(require,module,exports){
 const { throttle } = require("./throttle");
 
 function isFunction(x) {
@@ -340,7 +424,7 @@ module.exports = {
   },
 };
 
-},{"./throttle":11}],3:[function(require,module,exports){
+},{"./throttle":14}],6:[function(require,module,exports){
 const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
@@ -358,7 +442,8 @@ window.addEventListener("DOMContentLoaded", event => {
   observer.observe();
 });
 
-window.onload = function () {
+window.addEventListener('load', 
+  function() { 
   const intro = document.getElementById("intro");
   const informations = document.getElementById("informations");
   const heading = document.getElementById("heading");
@@ -367,9 +452,6 @@ window.onload = function () {
   const emailModal = document.getElementById("emailModal");
   const projectModal = document.getElementById("large-project-content");
   const hamburgerMenu = document.getElementById("hamburger");
-  const menu = document.getElementsByTagName("nav");
-  const introUIAside = document.getElementById("intro-ui-aside");
-  const body = document.getElementsByTagName("body")[0];
   const iconDeleteEmailModal = document.getElementById("emailModal-deleteIcon");
   const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -378,7 +460,6 @@ window.onload = function () {
   prepareProjectModals(projectModal);
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenuNew(hamburgerMenu, mobileMenu);
-
   prepareCloseModalsWithEscape();
 
   if ("serviceWorker" in navigator) {
@@ -393,9 +474,9 @@ window.onload = function () {
     );
   }
 
-};
 
-},{"./defineImages":1,"./prepareChangeLocation":4,"./prepareCloseModalsWithEscape":5,"./prepareEmailService.js":6,"./prepareHamburgerMenuNew":7,"./prepareProjectModals":8,"./prepareResizeSensor":9,"./showInvisibleContent":10,"lozad":12}],4:[function(require,module,exports){
+  }, false);
+},{"./defineImages":2,"./prepareChangeLocation":7,"./prepareCloseModalsWithEscape":8,"./prepareEmailService.js":9,"./prepareHamburgerMenuNew":10,"./prepareProjectModals":11,"./prepareResizeSensor":12,"./showInvisibleContent":13,"lozad":15}],7:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
@@ -421,7 +502,7 @@ module.exports = {
 
 
 
-},{"./lib":2}],5:[function(require,module,exports){
+},{"./lib":5}],8:[function(require,module,exports){
 module.exports = {
   prepareCloseModalsWithEscape: function prepareCloseModalsWithEscape() {
     document.onkeydown = function (evt) {
@@ -447,13 +528,17 @@ module.exports = {
   },
 };
 
-},{}],6:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled } = require("./lib");
+const { cookies } = require("./cookies");
+const {cookieName, cookieValue} = require("./fixtures");
+const { EmailStatusMessage_Class } = require("./emailStatusMessage");
 
 module.exports = {
   prepareEmailService: function prepareEmailService(mountHooks, emailModal, iconDelete) {
+    
     mountClickAndEnterHandler(iconDelete, throttled(toggleEmailModalVisibility, 300));
-
+    
     function toggleEmailModalVisibility() {
       if (emailModal) {
         emailModal.classList.toggle("active");
@@ -463,9 +548,22 @@ module.exports = {
     function sendEmail() {
       emailModal.classList.toggle("active");
       let form = document.getElementById("contact-form");
-
+      let emailMessage = document.getElementById("email_status_message");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+        
+        const emailSentRecently = !!cookies.get(cookieName);
+         
+        if(emailSentRecently){
+          const handleResult = new EmailStatusMessage_Class(emailMessage);
+          handleResult.handleStatus('warning');
+          setTimeout(function () {
+            handleResult.hide();
+            form.reset();
+          }, 3000);
+          return;
+        }
+
         const name = document.getElementById("name");
         const email = document.getElementById("email");
         const message = document.getElementById("message");
@@ -489,36 +587,27 @@ module.exports = {
           .then(data => handleResult(true))
           .catch(error => handleResult(false));
 
-        function handleResult(alert) {
-          let result = {
-            text: alert ? "Wysłano" : "Błąd połączenia",
-            style: alert ? "successStyle" : "failureStyle",
-          };
-
-          showEmailMessage(result);
+        function handleResult(alert,callback) {
+          
+          if (alert){
+            cookies.set(cookieName, cookieValue, 1);
+          }
+          const handleResult = new EmailStatusMessage_Class(emailMessage);
+          handleResult.handleStatus(alert);
           setTimeout(function () {
-            hideEmailMessage();
+            handleResult.hide();
+            form.reset();
           }, 3000);
 
-          function showEmailMessage(result) {
-            const message = document.getElementById("email_status_message");
-            message.classList.add(result.style);
-            message.innerText = result.text;
-            message.classList.remove("form__message-hidden");
-          }
-          function hideEmailMessage() {
-            const message = document.getElementById("email_status_message");
-            message.classList.add("form__message-hidden");
-            form.reset();
-          }
         }
       });
     }
+
     Array.prototype.forEach.call(mountHooks, hook => mountClickAndEnterHandler(hook, throttled(sendEmail, 300)));
   },
 };
 
-},{"./lib":2}],7:[function(require,module,exports){
+},{"./cookies":1,"./emailStatusMessage":3,"./fixtures":4,"./lib":5}],10:[function(require,module,exports){
 
 const { mountClickAndEnterHandler, throttled} = require("./lib");
 
@@ -551,7 +640,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],8:[function(require,module,exports){
+},{"./lib":5}],11:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 
 module.exports = {
@@ -583,9 +672,7 @@ module.exports = {
       modal.appendChild(deleteButtonPatternContent);
       modal.classList.add("large");
       modal.getElementsByClassName("project__image")[0].classList.add("large");
-      // modal.getElementsByClassName("project__image-new")[0].classList.add("large");
       modal.style.display = "block";
-
       location.hash = "large-project-content";
       window.scrollBy(0, -document.getElementById("intro").clientHeight);
     }
@@ -595,7 +682,7 @@ module.exports = {
   },
 };
 
-},{"./lib":2}],9:[function(require,module,exports){
+},{"./lib":5}],12:[function(require,module,exports){
 module.exports = {
   prepareResizeSensor: function prepareResizeSensor(informations, intro, heading) {
     intro.classList.add("regular");// prawdopodbnie tu by lepiej poszło flip
@@ -623,7 +710,7 @@ module.exports = {
   },
 };
 
-},{}],10:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = {
   showInvisibleContent: function showInvisibleContent() {
     document.getElementById("heading-mask").addEventListener("animationend", showContent);
@@ -634,7 +721,7 @@ module.exports = {
   },
 };
 
-},{}],11:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,
@@ -663,7 +750,7 @@ module.exports = {
   },
 };
 
-},{}],12:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /*! lozad.js - v1.16.0 - 2020-09-06
 * https://github.com/ApoorvSaxena/lozad.js
 * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
@@ -675,4 +762,4 @@ module.exports = {
    */var g="undefined"!=typeof document&&document.documentMode,f={rootMargin:"0px",threshold:0,load:function(t){if("picture"===t.nodeName.toLowerCase()){var e=t.querySelector("img"),r=!1;null===e&&(e=document.createElement("img"),r=!0),g&&t.getAttribute("data-iesrc")&&(e.src=t.getAttribute("data-iesrc")),t.getAttribute("data-alt")&&(e.alt=t.getAttribute("data-alt")),r&&t.append(e)}if("video"===t.nodeName.toLowerCase()&&!t.getAttribute("data-src")&&t.children){for(var a=t.children,o=void 0,i=0;i<=a.length-1;i++)(o=a[i].getAttribute("data-src"))&&(a[i].src=o);t.load()}t.getAttribute("data-poster")&&(t.poster=t.getAttribute("data-poster")),t.getAttribute("data-src")&&(t.src=t.getAttribute("data-src")),t.getAttribute("data-srcset")&&t.setAttribute("srcset",t.getAttribute("data-srcset"));var n=",";if(t.getAttribute("data-background-delimiter")&&(n=t.getAttribute("data-background-delimiter")),t.getAttribute("data-background-image"))t.style.backgroundImage="url('"+t.getAttribute("data-background-image").split(n).join("'),url('")+"')";else if(t.getAttribute("data-background-image-set")){var d=t.getAttribute("data-background-image-set").split(n),u=d[0].substr(0,d[0].indexOf(" "))||d[0];// Substring before ... 1x
 u=-1===u.indexOf("url(")?"url("+u+")":u,1===d.length?t.style.backgroundImage=u:t.setAttribute("style",(t.getAttribute("style")||"")+"background-image: "+u+"; background-image: -webkit-image-set("+d+"); background-image: image-set("+d+")")}t.getAttribute("data-toggle-class")&&t.classList.toggle(t.getAttribute("data-toggle-class"))},loaded:function(){}};function A(t){t.setAttribute("data-loaded",!0)}var m=function(t){return"true"===t.getAttribute("data-loaded")},v=function(t){var e=1<arguments.length&&void 0!==arguments[1]?arguments[1]:document;return t instanceof Element?[t]:t instanceof NodeList?t:e.querySelectorAll(t)};return function(){var r,a,o=0<arguments.length&&void 0!==arguments[0]?arguments[0]:".lozad",t=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},e=Object.assign({},f,t),i=e.root,n=e.rootMargin,d=e.threshold,u=e.load,g=e.loaded,s=void 0;"undefined"!=typeof window&&window.IntersectionObserver&&(s=new IntersectionObserver((r=u,a=g,function(t,e){t.forEach(function(t){(0<t.intersectionRatio||t.isIntersecting)&&(e.unobserve(t.target),m(t.target)||(r(t.target),A(t.target),a(t.target)))})}),{root:i,rootMargin:n,threshold:d}));for(var c,l=v(o,i),b=0;b<l.length;b++)(c=l[b]).getAttribute("data-placeholder-background")&&(c.style.background=c.getAttribute("data-placeholder-background"));return{observe:function(){for(var t=v(o,i),e=0;e<t.length;e++)m(t[e])||(s?s.observe(t[e]):(u(t[e]),A(t[e]),g(t[e])))},triggerLoad:function(t){m(t)||(u(t),A(t),g(t))},observer:s}}});
 
-},{}]},{},[3]);
+},{}]},{},[6]);
