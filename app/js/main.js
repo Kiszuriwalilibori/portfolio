@@ -6,6 +6,7 @@ const { prepareHamburgerMenuNew } = require("./prepareHamburgerMenuNew");
 const { defineImages } = require("./defineImages");
 const { prepareCloseModalsWithEscape } = require("./prepareCloseModalsWithEscape");
 const { showInvisibleContent } = require("./showInvisibleContent");
+const { prepareServiceWorker } =  require("./prepareServiceWorker");
 var lozad = require("lozad");
 
 window.addEventListener("DOMContentLoaded", event => {
@@ -34,18 +35,19 @@ window.addEventListener('load',
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenuNew(hamburgerMenu, mobileMenu);
   prepareCloseModalsWithEscape();
+  prepareServiceWorker();
 
-  if ("serviceWorker" in navigator) {
-    const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
-    navigator.serviceWorker.register(`${prefix}/sw.js`).then(
-      function (registration) {
-        console.log("[success] scope: ", registration.scope);
-      },
-      function (err) {
-        console.log("[fail]: ", err);
-      }
-    );
-  }
+  // if ("serviceWorker" in navigator) {
+  //   const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
+  //   navigator.serviceWorker.register(`${prefix}/sw.js`).then(
+  //     function (registration) {
+  //       console.log("[success] scope: ", registration.scope);
+  //     },
+  //     function (err) {
+  //       console.log("[fail]: ", err);
+  //     }
+  //   );
+  // }
 
 
   }, false);

@@ -424,7 +424,7 @@ module.exports = {
   },
 };
 
-},{"./throttle":14}],6:[function(require,module,exports){
+},{"./throttle":15}],6:[function(require,module,exports){
 const { prepareEmailService } = require("./prepareEmailService.js");
 const { prepareProjectModals } = require("./prepareProjectModals");
 const { prepareResizeSensor } = require("./prepareResizeSensor");
@@ -433,6 +433,7 @@ const { prepareHamburgerMenuNew } = require("./prepareHamburgerMenuNew");
 const { defineImages } = require("./defineImages");
 const { prepareCloseModalsWithEscape } = require("./prepareCloseModalsWithEscape");
 const { showInvisibleContent } = require("./showInvisibleContent");
+const { prepareServiceWorker } =  require("./prepareServiceWorker");
 var lozad = require("lozad");
 
 window.addEventListener("DOMContentLoaded", event => {
@@ -461,22 +462,23 @@ window.addEventListener('load',
   prepareEmailService(mailButtons, emailModal, iconDeleteEmailModal);
   prepareHamburgerMenuNew(hamburgerMenu, mobileMenu);
   prepareCloseModalsWithEscape();
+  prepareServiceWorker();
 
-  if ("serviceWorker" in navigator) {
-    const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
-    navigator.serviceWorker.register(`${prefix}/sw.js`).then(
-      function (registration) {
-        console.log("[success] scope: ", registration.scope);
-      },
-      function (err) {
-        console.log("[fail]: ", err);
-      }
-    );
-  }
+  // if ("serviceWorker" in navigator) {
+  //   const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
+  //   navigator.serviceWorker.register(`${prefix}/sw.js`).then(
+  //     function (registration) {
+  //       console.log("[success] scope: ", registration.scope);
+  //     },
+  //     function (err) {
+  //       console.log("[fail]: ", err);
+  //     }
+  //   );
+  // }
 
 
   }, false);
-},{"./defineImages":2,"./prepareChangeLocation":7,"./prepareCloseModalsWithEscape":8,"./prepareEmailService.js":9,"./prepareHamburgerMenuNew":10,"./prepareProjectModals":11,"./prepareResizeSensor":12,"./showInvisibleContent":13,"lozad":15}],7:[function(require,module,exports){
+},{"./defineImages":2,"./prepareChangeLocation":7,"./prepareCloseModalsWithEscape":8,"./prepareEmailService.js":9,"./prepareHamburgerMenuNew":10,"./prepareProjectModals":11,"./prepareResizeSensor":12,"./prepareServiceWorker":13,"./showInvisibleContent":14,"lozad":16}],7:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
 module.exports = {
   prepareChangeLocation: function prepareChangeLocation(buttons) {
@@ -711,6 +713,26 @@ module.exports = {
 };
 
 },{}],13:[function(require,module,exports){
+
+  module.exports = {prepareServiceWorker:function prepareServiceWorker (){
+
+    if ("serviceWorker" in navigator) {
+      const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
+      navigator.serviceWorker.register(`${prefix}/sw.js`).then(
+        function (registration) {
+          console.log("[success] scope: ", registration.scope);
+        },
+        function (err) {
+          console.log("[fail]: ", err);
+        }
+      );
+    }
+  
+
+  } }
+  
+  
+},{}],14:[function(require,module,exports){
 module.exports = {
   showInvisibleContent: function showInvisibleContent() {
     document.getElementById("heading-mask").addEventListener("animationend", showContent);
@@ -721,7 +743,7 @@ module.exports = {
   },
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 module.exports = {
   throttle: function throttle(func, ms) {
     let isThrottled = false,
@@ -750,7 +772,7 @@ module.exports = {
   },
 };
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /*! lozad.js - v1.16.0 - 2020-09-06
 * https://github.com/ApoorvSaxena/lozad.js
 * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
