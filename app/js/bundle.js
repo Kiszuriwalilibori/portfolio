@@ -306,39 +306,44 @@ module.exports = {
 
 };
 },{}],3:[function(require,module,exports){
-const {emailStyle, emailInnerText} = require("./fixtures");
+const { emailStyle, emailInnerText } = require("./fixtures");
 module.exports = {
-    EmailStatusMessage_Class: class EmailStatusMessage {
-      constructor(node) {
-        this.node = node;
-        this.style = emailStyle;
-        this.innerText = emailInnerText;
-        this.handleStatus = this.handleStatus.bind(this);
-      }
-
-      hide(){
-        this.node.classList.add("form__message-hidden");
-      }
-      handleStatus(status){
-
-        switch(status) {
-            case true:
-              status ='success';
-              break;
-            case false:
-              status = 'failure';
-              break;
-            default:
-              status = status;
-          } 
-        this.node.classList.remove(...Object.values(this.style));
-
-        this.node.classList.add(this.style[status]);
-        this.node.innerText = this.innerText[status];
-        this.node.classList.remove("form__message-hidden");
-      }
+  EmailStatusMessage_Class: class EmailStatusMessage {
+    constructor(node, form) {
+      this.node = node;
+      this.style = emailStyle;
+      this.innerText = emailInnerText;
+      this.handleStatus = this.handleStatus.bind(this);
+      this.hide = this.hide.bind(this);
+      this.form = form;
     }
-}
+
+    hide() {
+      this.node.classList.add("form__message-hidden");
+    }
+
+    reset() {
+      this.form.reset();
+    }
+    handleStatus(status) {
+      switch (status) {
+        case true:
+          status = "success";
+          break;
+        case false:
+          status = "failure";
+          break;
+        default:
+          status = status;
+      }
+      this.node.classList.remove(...Object.values(this.style));
+      this.node.classList.add(this.style[status]);
+      this.node.innerText = this.innerText[status];
+      this.node.classList.remove("form__message-hidden");
+    }
+  },
+};
+
 },{"./fixtures":4}],4:[function(require,module,exports){
 module.exports = {
     cookieName: 'Piotr_Maksymiuk_Portfolio_email_cookie',
@@ -464,19 +469,6 @@ window.addEventListener('load',
   prepareCloseModalsWithEscape();
   prepareServiceWorker();
 
-  // if ("serviceWorker" in navigator) {
-  //   const prefix = location.pathname.replace(/\/(index\.html)?$/, "");
-  //   navigator.serviceWorker.register(`${prefix}/sw.js`).then(
-  //     function (registration) {
-  //       console.log("[success] scope: ", registration.scope);
-  //     },
-  //     function (err) {
-  //       console.log("[fail]: ", err);
-  //     }
-  //   );
-  // }
-
-
   }, false);
 },{"./defineImages":2,"./prepareChangeLocation":7,"./prepareCloseModalsWithEscape":8,"./prepareEmailService.js":9,"./prepareHamburgerMenuNew":10,"./prepareProjectModals":11,"./prepareResizeSensor":12,"./prepareServiceWorker":13,"./showInvisibleContent":14,"lozad":16}],7:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled, reportError } = require("./lib");
@@ -533,14 +525,13 @@ module.exports = {
 },{}],9:[function(require,module,exports){
 const { mountClickAndEnterHandler, throttled } = require("./lib");
 const { cookies } = require("./cookies");
-const {cookieName, cookieValue} = require("./fixtures");
+const { cookieName, cookieValue } = require("./fixtures");
 const { EmailStatusMessage_Class } = require("./emailStatusMessage");
 
 module.exports = {
   prepareEmailService: function prepareEmailService(mountHooks, emailModal, iconDelete) {
-    
     mountClickAndEnterHandler(iconDelete, throttled(toggleEmailModalVisibility, 300));
-    
+
     function toggleEmailModalVisibility() {
       if (emailModal) {
         emailModal.classList.toggle("active");
@@ -553,54 +544,47 @@ module.exports = {
       let emailMessage = document.getElementById("email_status_message");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        
         const emailSentRecently = !!cookies.get(cookieName);
-         
-        if(emailSentRecently){
-          const handleResult = new EmailStatusMessage_Class(emailMessage);
-          handleResult.handleStatus('warning');
+        const handleResult = new EmailStatusMessage_Class(emailMessage,form);
+        
+        if (emailSentRecently) {
+          handleResult.handleStatus("warning");
           setTimeout(function () {
             handleResult.hide();
-            form.reset();
+            handleResult.reset();
           }, 3000);
           return;
         }
 
-        const name = document.getElementById("name");
-        const email = document.getElementById("email");
-        const message = document.getElementById("message");
+        var formContent = {};
+        formData = new FormData(form);
+        for (var pair of formData.entries()) {
+          formContent[pair[0]] = pair[1];
+        }
 
-        const content = {
-          name: name.value,
-          email: email.value,
-          message: message.value,
-        };
-
-        //fetch("https://www.enformed.io/9kibv8hh/", {
+        //fetch("https://www.enformed.io/9kibv8hh/", { stary endpoint
         fetch("https://formspree.io/mnqgkkgg", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
-          body: JSON.stringify(content),
+          body: JSON.stringify(formContent),
         })
           .then(response => response.json())
-          .then(data => handleResult(true))
-          .catch(error => handleResult(false));
+          .then(data => processResult(true))
+          .catch(error => processResult(false));
 
-        function handleResult(alert,callback) {
-          
-          if (alert){
+        function processResult(alert) {
+          if (alert) {
             cookies.set(cookieName, cookieValue, 1);
           }
-          const handleResult = new EmailStatusMessage_Class(emailMessage);
+         
           handleResult.handleStatus(alert);
           setTimeout(function () {
             handleResult.hide();
-            form.reset();
+            handleResult.reset();
           }, 3000);
-
         }
       });
     }
