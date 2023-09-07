@@ -133,10 +133,11 @@
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v9.0"
     nonce="JnsWMavW"></script>
-  <section class="ui-section -hero"
+  <header class="ui-section -hero"
     style="background: white url('./graphics/textures/intro.webp') no-repeat center center fixed; background-size: cover;"
-    id="intro">
+    id="intro" role ="banner">
     <div class="ui-aside" id='intro-ui-aside'>
+      <h1 class="sr-only">Piotr Maksymiuk - portfolio</h1>
       <div id="author_foto"></div>
       <div class="ui-heading" id="heading">
         <img class="gif gif_intro-blue" width='100' height='204' id='girl' src="./graphics/gifs/blue_girl.webp"
@@ -147,11 +148,10 @@
         </div>
         <div class="ui-heading__mask" id='heading-mask'> </div>
       </div>
-      <nav aria-label='menu'>
+      <nav aria-label='main menu'>
         <button class="ui-button location-button" data-target="informations">Informacje</button>
         <button class="ui-button location-button" data-target="skills">Umiejętności</button>
         <button class="ui-button location-button" data-target="projects">Projekty</button>
-
       </nav>
     </div>
     <div class="ui-content">
@@ -212,7 +212,7 @@
         </form>
       </div>
     </div>
-  </section>
+  </header>
 
   <section class="ui-section ui-section-regular-informations" id="informations" aria-labelledby='informations-heading'>
     <div class="ui-aside">
@@ -226,8 +226,8 @@
       </div>
       <div class="information-item">
         <p class='information-item__text'>
-          Aktualnie utrzymuję się z dorywczych zleceń różnego rodzaju i nie potrzebuję dużo czasu, żeby pozamykać sprawy.
-          zatrudnić na stałe.</p>
+          Aktualnie utrzymuję się z dorywczych zleceń różnego rodzaju i nie potrzebuję dużo czasu, żeby pozamykać sprawy i 
+          zatrudnić się na stałe.</p>
       </div>
       <div class="information-item">
         <p class='information-item__text'>
@@ -273,17 +273,17 @@
     <div class="ui-aside">
 
       <div class="legends-container">
-        <article class="information-item information-item-legend starter">
+        <article class="information-item information-item-legend starter"aria-label="Poor level skills description">
           <p class="information-item__text legend_starter">Coś tam wiem na ten temat, ale nie żeby dużo. Na razie staram
             się to ogarnąć na
             prostych przykładach. Jest więcej pytań niż odpowiedzi. Takie rozpoznanie bojem.</p>
         </article>
-        <article class="information-item information-item-legend average">
+        <article class="information-item information-item-legend average" aria-label="Average level skills description">
           <p class="information-item__text legend_average">Pierwsze kroki za mną, ale do zadowolenia bardzo daleko.
             Tworzę coraz bardziej
             zaawansowane mutacje przykładów, i wrzucam je do tu będących projektów. Takie czeladnictwo.</p>
         </article>
-        <article class="information-item information-item-legend fair">
+        <article class="information-item information-item-legend fair" aria-label="Fair level skills description">
           <p class="information-item__text legend_fair">Nareszcie pewna swoboda w operowaniu. Bez wahania stosuję to w
             projektach, ale i
             stawiam coraz bardziej dociekliwe pytania na stacku i forach. Każda kolejna umka poszerza horyzonty i
@@ -318,7 +318,7 @@
             pokazuje ile jeszcze do nauki.</p>
         </div>
       </div>
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-fair'>
           <h2 class='skill__name'>HTML</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -327,9 +327,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='html5 logo' width="140" height='140'
           src='./graphics/skills/html5.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-fair'>
           <h2 class='skill__name'>CSS</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -338,9 +338,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='css logo' width="140" height='140'
           src='./graphics/skills/css3.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-average'>
           <h2 class='skill__name'>Sass</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -349,9 +349,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='sass logo' width="160" height='160'
           src='./graphics/skills/sass.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-fair'>
           <h2 class='skill__name'>Java Script</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -360,9 +360,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='java script logo' width="140" height='140'
           src='./graphics/skills/javascript.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-average'>
           <h2 class='skill__name'>jQuery</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -371,9 +371,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='jQuery logo' width="140" height='140'
           src='./graphics/skills/jquery.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-fair'>
           <h2 class='skill__name'>React</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -382,9 +382,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='react logo' width="140" height='140'
           src='./graphics/skills/react.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-average'>
           <h2 class='skill__name'>Redux</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -393,9 +393,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='redux logo' width="140" height='140'
           src='./graphics/skills/redux.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>React-Router</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -404,8 +404,8 @@
         </header>
         <img class='skill__image' loading="lazy" alt='react-router logo' width="160" height='160'
           src='./graphics/skills/react-router.svg'>
-      </article>
-      <article class='skill'>
+      </div>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>MySQL</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -414,9 +414,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='mysql logo' width="160" height='160'
           src='./graphics/skills/mysql.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>PHP</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -425,9 +425,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='php logo' width="160" height='160'
           src='./graphics/skills/php.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>Linux</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -436,9 +436,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='java script logo' width="160" height='160'
           src='./graphics/skills/linux.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-average'>
           <h2 class='skill__name'>Material UI</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -447,9 +447,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='material-ui logo' width="160" height='160'
           src='./graphics/skills/material.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-average'>
           <h2 class='skill__name'>Styled Components</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -458,9 +458,9 @@
         </header>
         <img class='skill__image' loading="lazy" alt='styled components logo' width="160" height='160'
           src='./graphics/skills/styled-components.svg'>
-      </article>
+      </div>
 
-      <article class='skill'>
+      <div class='skill'>
         <header class='skill__header skill__header-average'>
           <h2 class='skill__name'>Pug</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -469,8 +469,8 @@
         </header>
         <img class='skill__image' loading="lazy" alt='pug logo' width="160" height='160'
           src='./graphics/skills/pug.svg'>
-      </article>
-      <article class='skill'>
+      </div>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>Web Components</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -479,8 +479,8 @@
         </header>
         <img class='skill__image' loading="lazy" alt='web components logo' width="160" height='160'
           src='./graphics/skills/webcomponents.svg'>
-      </article>
-      <article class='skill'>
+      </div>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>Type Script</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -489,8 +489,8 @@
         </header>
         <img class='skill__image' loading="lazy" alt='web components logo' width="160" height='160'
           src='./graphics/skills/typescript.svg'>
-      </article>
-      <article class='skill'>
+      </div>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>Web Workers</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -499,8 +499,8 @@
         </header>
         <img class='skill__image' loading="lazy" alt='web components logo' width="160" height='160'
           src='./graphics/skills/webworkers.svg'>
-      </article>
-      <article class='skill'>
+      </div>
+      <div class='skill'>
         <header class='skill__header skill__header-starter'>
           <h2 class='skill__name'>PWA</h2>
           <svg class='skill__svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -509,7 +509,7 @@
         </header>
         <img class='skill__image' loading="lazy" alt='PWA logo' width="160" height='160'
           src='./graphics/skills/pwa.svg'>
-      </article>
+      </div>
     </div>
     </div>
     <svg class='svg-bottom' preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
@@ -535,7 +535,7 @@
     <div class="ui-content projects " id="projects-container">
 
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Projekt Gabinet Fizjoterapi">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Fizjoterapia</div>
@@ -554,7 +554,7 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Projekt YouTube">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">YouTube</div>
@@ -574,10 +574,10 @@
       </article>
 
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Projekt Unsplash">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
-        <div class="project__name pointer">My Unsplash</div>
+        <div class="project__name pointer">Unsplash po mojemu</div>
         <div class="project__image lozad" data-background-image="./graphics/project_images/unsplash.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">My Unsplash</h2>
@@ -594,7 +594,7 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex='0'>
+      <article class="project project-pointer" tabindex='0' aria-label ="Projekt Firebase">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Firebase</div>
@@ -616,7 +616,7 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Projekt kryptowaluty">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Kryptowaluty</div>
@@ -639,7 +639,7 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Wyszukiwarka książek w Google Books">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Wyszukiwarka książek</div>
@@ -662,7 +662,7 @@
       </article>
 
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Projekt Pogodynka">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Pogodynka</div>
@@ -684,10 +684,10 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Drzewo decyzyjne">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
-        <div class="project__name pointer">Drzewo</div>
+        <div class="project__name pointer">Drzewo decyzyjne</div>
         <div class="project__image lozad" data-background-image="./graphics/project_images/drzewo.webp"></div>
         <div class="project__data initial">
           <h2 class="project__title">Interfejs drzewa decyzyjnego</h2>
@@ -705,15 +705,15 @@
           </div>
         </div>
       </article>
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label = "Pseudo Chat">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
-        <div class="project__name pointer">Fake Chat</div>
+        <div class="project__name pointer">Pseudo Chat</div>
         <div class="project__image lozad" data-background-image="./graphics/project_images/fakechat.webp"></div>
         <div class="project__data initial">
-          <h2 class="project__title">Fake Chat</h2>
+          <h2 class="project__title">Pseudo Chat</h2>
           <div class="project__description">
-           Fake Chat App
+           Pseudo chat
           </div>
           <div class="project__skills"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <div class="project__links">
@@ -724,7 +724,7 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label = "Ukryty potencjał sportowców">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Ukryty potencjał</div>
@@ -743,13 +743,13 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Archiwalne portfolio floydowskie">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
-        <div class="project__name pointer">Archiwalne portfolio 1</div>
+        <div class="project__name pointer">Archiwalne portfolio floydowskie</div>
         <div class="project__image lozad" data-background-image="./graphics/project_images/arch1.webp"></div>
         <div class="project__data initial">
-          <h2 class="project__title">Archiwalne portfolio 1</h2>
+          <h2 class="project__title">Archiwalne portfolio floydowskie</h2>
           <div class="project__description">
             Stara nieutrzymywana wersja portfolio, może zawierać martwe linki.
           </div>
@@ -762,13 +762,13 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Archiwalne portfolio kosmiczne">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
-        <div class="project__name pointer">Archiwalne portfolio 2</div>
+        <div class="project__name pointer">Archiwalne portfolio kosmiczne</div>
         <div class="project__image lozad" data-background-image="./graphics/project_images/arch2.webp"></div>
         <div class="project__data initial">
-          <h2 class="project__title">Archiwalne portfolio 2</h2>
+          <h2 class="project__title">Archiwalne portfolio kosmiczne</h2>
           <div class="project__description">
             Stara nieutrzymywana wersja portfolio, może zawierać martwe linki.
           </div>
@@ -781,13 +781,13 @@
         </div>
       </article>
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Harry Potter za darmo">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
-        <div class="project__name pointer">Get Harry Potter for free</div>
+        <div class="project__name pointer">Harry Potter za darmo</div>
         <div class="project__image lozad" data-background-image="./graphics/project_images/harry.webp"></div>
         <div class="project__data initial">
-          <h2 class="project__title">Get Harry Potter for free</h2>
+          <h2 class="project__title">Harry Potter za darmo</h2>
           <div class="project__description">
           Strona do zamawiania figurek Harry'ego Pottera
           </div>
@@ -801,7 +801,7 @@
       </article>
 
 
-      <article class="project project-pointer" tabindex="0">
+      <article class="project project-pointer" tabindex="0" aria-label ="Niniejsze portfolio">
         <div class='project__left-cover'></div>
         <div class='project__right-cover'></div>
         <div class="project__name pointer">Te portfolio</div>
@@ -851,7 +851,7 @@
       <p class='footer__text'>Created by Piotr Maksymiuk | 2020. © Wszelkie prawa zastrzeżone</p>
     </strong>
   </footer>
-  <div class='mobile-menu'>
+  <nav class='mobile-menu' aria-label ="Menu mobile">
     <div class="app-mobile-menu">
       <button class="ui-button location-button mobile-menu-button" data-target="informations">Informacje</button>
       <button class="ui-button location-button mobile-menu-button" data-target="skills">Umiejętności</button>
@@ -864,7 +864,7 @@
 
 
     </div>
-  </div>
+  </nav>
 </body>
 
 </html>
